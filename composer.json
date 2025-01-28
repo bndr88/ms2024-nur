@@ -1,0 +1,20 @@
+{
+    "name": "wender/mod2-nur",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mod2Nur\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wender Mendez",
+            "email": "wendermendez@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^11.35",
+        "doctrine/dbal": "^4.2",
+        "ramsey/uuid": "^4.7"
+    }
+}
