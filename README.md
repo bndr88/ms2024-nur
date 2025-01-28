@@ -66,10 +66,11 @@ El proyecto utiliza el siguiente modelo de dominio:
 ## Ejecución
 
 1. **Levantar el Servidor Local**
-   Puedes usar el servidor embebido de PHP para pruebas locales:
+   Se puede usar el servidor embebido de PHP para pruebas locales:
    ```bash
-   php -S localhost:8000 -t public
+   php -S localhost:8000 -t ./src/Presentacion/
    ```
+   Es importante notar que la capa Presentación contiene el archivo index.php que arranca la aplicación.
 
 2. **Acceso a la Aplicación**
    Abrir un navegador web y acceder a `http://localhost:8000`.

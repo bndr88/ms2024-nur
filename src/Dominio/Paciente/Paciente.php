@@ -16,7 +16,7 @@ class Paciente extends AggregateRoot {
     private array $historial = [];
     private array $entrevistas = [];
 
-    public function __construct(string $id, string $nombre, DateTime $fechaNacimiento) {
+    public function __construct(?string $id, ?string $nombre, ?DateTime $fechaNacimiento) {
         if ($id ==='' && $nombre !== null && $fechaNacimiento !== null) {
             $this->constructorUno($nombre, $fechaNacimiento);
         } elseif ($id !== null) {
