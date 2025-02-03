@@ -38,7 +38,7 @@ if ($requestMethod === 'POST' && $requestUri === '/paciente/add') {
         // Crear un paciente
         $data = json_decode(file_get_contents('php://input'), true);
         $paciente = $pacienteController->addPaciente($data);
-        http_response_code(201);
+        http_response_code(200);
         echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()]);
     } catch (\Exception $e) {
         http_response_code(500);
@@ -93,9 +93,9 @@ if ($requestMethod === 'POST' && $requestUri === '/tipoDiag/add') {
     try {
         // Registrar un Tipo de Diagnostico
         $data = json_decode(file_get_contents('php://input'), true);
-        $tipoDiagController->addTipoDiagnostico($data);
+        $tipoDiagnostico = $tipoDiagController->addTipoDiagnostico($data);
         header('Content-Type: application/json');
-        echo json_encode($response, JSON_PRETTY_PRINT);
+        echo json_encode(['message' => 'Tipo de Diagnostico creado', 'ID registrado' => $tipoDiagnostico->getId()]);
     } catch (\Exception $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
