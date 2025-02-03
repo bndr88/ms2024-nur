@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "e98945cf-6429-4614-a107-e3e8014696fa",
+		"name": "Mod3 Activ. 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39273356"
+	},
+	"item": [
+		{
+			"name": "Add Paciente - UUID auto",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let uuid = require('uuid');\r",
+							"let guidGenerada = uuid.v4();\r",
+							"pm.environment.set(\"guidPrueba\", guidGenerada);\r",
+							"\r",
+							"// Función para generar una fecha de nacimiento aleatoria\r",
+							"function generarFechaNacimiento() {\r",
+							"    // Definir el rango de años (por ejemplo, entre 18 y 60 años atrás)\r",
+							"    var hoy = new Date();\r",
+							"    var edadMinima = 18;\r",
+							"    var edadMaxima = 60;\r",
+							"\r",
+							"    // Calcular los años aleatorios entre los límites\r",
+							"    var anioAleatorio = hoy.getFullYear() - (Math.floor(Math.random() * (edadMaxima - edadMinima + 1)) + edadMinima);\r",
+							"\r",
+							"    // Generar una fecha aleatoria dentro de ese año\r",
+							"    var mesAleatorio = Math.floor(Math.random() * 12); // Mes entre 0 y 11\r",
+							"    var diaAleatorio = Math.floor(Math.random() * 31) + 1; // Día entre 1 y 31\r",
+							"\r",
+							"    // Crear una fecha válida\r",
+							"    var fechaNacimiento = new Date(anioAleatorio, mesAleatorio, diaAleatorio);\r",
+							"\r",
+							"    // Asegurarse de que la fecha es válida (si no lo es, corregirla)\r",
+							"    if (fechaNacimiento.getDate() !== diaAleatorio) {\r",
+							"        fechaNacimiento = new Date(anioAleatorio, mesAleatorio, 0); // Último día del mes\r",
+							"    }\r",
+							"\r",
+							"    // Obtener la fecha en formato YYYY-MM-DD\r",
+							"    var anio = fechaNacimiento.getFullYear();\r",
+							"    var mes = ('0' + (fechaNacimiento.getMonth() + 1)).slice(-2); // Mes con 2 dígitos\r",
+							"    var dia = ('0' + fechaNacimiento.getDate()).slice(-2); // Día con 2 dígitos\r",
+							"\r",
+							"    // Devolver la fecha en formato YYYY-MM-DD\r",
+							"    return anio + '-' + mes + '-' + dia;\r",
+							"}\r",
+							"var fechaNacimiento = generarFechaNacimiento();\r",
+							"\r",
+							"pm.environment.set('fechaNacimientoAleatorio', fechaNacimiento);\r",
+							"\r",
+							"console.log('Fecha de nacimiento aleatoria generada: ' + fechaNacimiento);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El ID paciente registrado tiene el formato correcto\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var regex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;\r",
+							"    var idPaciente = jsonData[\"ID paciente registrado\"];\r",
+							"    pm.expect(idPaciente).to.match(regex); \r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"{{guidPrueba}}\",  \r\n  \"nombre\": \"{{$randomFullName}}\",\r\n  \"fechaNacimiento\": \"{{fechaNacimientoAleatorio}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/paciente/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Diagnostico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El ID paciente registrado tiene el formato correcto\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var regex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;\r",
+							"    var idPaciente = jsonData[\"ID diagnóstico registrado\"];\r",
+							"    pm.expect(idPaciente).to.match(regex); \r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idPaciente\": \"8287a232-1dd8-4901-9adf-b742f5739405\",\r\n    \"peso\": 70.5,\r\n    \"altura\": 1.75,\r\n    \"composicion\": \"Normal\",\r\n    \"estadoDiagnostico\": \"Pendiente\",\r\n    \"idTipoDiagnostico\": \"3d6272e4-1a09-4dc6-8eb2-d79ca96a7512\",\r\n    \"fechaDiagnostico\": \"2024-12-18\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/diagnostico/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tipo Diagnostico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descripcion\": \"Recurrente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/tipoDiag/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Paciente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/paciente/c9a3413c-2574-4cab-9d78-5d60fcf7bd6a"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Diagnostico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/diagnostico/edb5ad70-6b4a-4ef0-bad8-5e243b418974"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Paciente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"POST Request Existoso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/paciente/fe5d0ad2-1a50-48b4-b7a3-f5c2e6acf357"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "guidPrueba",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
