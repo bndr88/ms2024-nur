@@ -4,8 +4,8 @@
   },
   "interactions": [
     {
-      "description": "Una solicitud GET a /paciente/1",
-      "providerState": "Existe un paciente con ID 1",
+      "description": "Una solicitud GET a /paciente/61a9804c-299b-4dbc-9473-c8f97014f6b3",
+      "providerState": "Existe un paciente con ID dado",
       "request": {
         "method": "GET",
         "path": "/paciente/61a9804c-299b-4dbc-9473-c8f97014f6b3"
@@ -15,6 +15,30 @@
           "fechaNacimiento": "09/02/2005",
           "id": "61a9804c-299b-4dbc-9473-c8f97014f6b3",
           "nombre": "luz"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "Una solicitud POST a /paciente/add",
+      "providerState": "Debería guardar un paciente",
+      "request": {
+        "body": {
+          "fechaNacimiento": "2003-01-01",
+          "nombre": "Juan Pérez"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/paciente/add"
+      },
+      "response": {
+        "body": {
+          "message": "Paciente creado"
         },
         "headers": {
           "Content-Type": "application/json"

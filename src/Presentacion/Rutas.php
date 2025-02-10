@@ -52,8 +52,9 @@ if ($requestMethod === 'POST' && $requestUri === '/paciente/add') {
         // Crear un paciente
         $data = json_decode(file_get_contents('php://input'), true);
         $paciente = $pacienteController->addPaciente($data);
+        header('Content-Type: application/json');
         http_response_code(200);
-        echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()]);
+        echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()], JSON_PRETTY_PRINT);
     } catch (\Exception $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
