@@ -1,13 +1,21 @@
-# PRESENTACIÓN ACTIVAD NRO. 3 - MÓDULO 3
-# Universidad NUR - Diplomado en Arq. con Microservicios
-
-Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
+# Presentación Actividad Nro. 2 - Módulo 3
+# UNIVERSIDAD NUR - Diplomado Arq. con Microservicios
 
 ## Descripción de la presentación 
 
-Se desarrollaron los Contract Test con PACT. Se realizaron las siguientes activiades:
-- **`Creación de Front-end`**: Se creó un proyecto simple usando un poco de HTML y JS. 
+Se desarrollaron las pruebas de intregración con Postman. Para lo cual se usaron las técnicas aprendidas en clase como ser:
+- **`Generar Datos Aleatorios`**: Se prepararon peticiones que permiten generar peticiones con datos aleatorios de tipo:
+   - **UUID**: Para los IDs de la clase Paciente y diagnóstico
+   - **Texto**: Para los Nombres de la clase Paciente 
+   - **Fecha**: Para las fechas de nacimiento de la clase Paciente 
 - **`Verificar si la petición se realizó correctamente`**: Se hizo el script que verifica si la petición llegó con respuesta 201 o 202.
+- **`Verificar UUID recibido`**: Se hizo el script que verifica si el UUID recibido en la respuesta tiene el formato correcto.
+- **`Otras Pruebas`**: Se prepararon peticiones POST, GET, DELETE para probar otros Endpoints:
+   - **Crear Tipo de Diagnostico**: Crea Tipo de diagnóstico solo con la descripción y se verifica que el ID generado por el backend esté correcto.
+   - **Crear Diagnostico**: Se crea un diagnóstico, pero es necesario definir *IDs de Clientes* y *ID Tipo de Diagnostico* ya *creados*.
+   - **Eliminar Paciente**: Se elimina el paciente con un ID definido en la petición.
+   - **Eliminar Diagnóstico**: Se elimina el diagnóstico con un ID definido en la petición.
+   - **Obter Paciente**: Se obtiene el Paciente con un ID definido en la petición.
 
 
 ## Estructura del Proyecto
@@ -18,9 +26,6 @@ Este microservicio se encarga de gestionar todo el historial de diagnósticos de
   - **Dominio**: Representa las reglas de negocio y la lógica central.
   - **Aplicación**: Contiene casos de uso y servicios.
   - **Infraestructura**: Implementa el acceso a datos usando Eloquent como ORM, además de otras integraciones externas.
-- **`tests/`**: Contiene el código de los diferentes tipos de tests aplicados al proyecto
-  - **Dominio**: Representa las reglas de negocio y la lógica central.
-  - **Aplicación**: Contiene casos de uso y servicios.
 - **`vendor/`**: Incluye las dependencias externas instaladas mediante Composer.
 - **`composer.json`**: Define las dependencias y configuraciones del proyecto.
 - **`composer.lock`**: Bloquea las versiones de las dependencias.
