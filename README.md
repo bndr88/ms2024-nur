@@ -12,15 +12,17 @@ Se desarrollaron los Contract Test con PACT. Se realizaron las siguientes activi
    - **Node.js**
    - **npm**
    - **Mocha**: Para pruebas de JavaScript.
-   - **Chai**: Para hacer las pruebas más legibles
+   - **Chai**: Para hacer las pruebas más legibles.
    - **PACT**: Para generar el contrato (Pacto), se lo instaló mediante el comando:
    ```bash
    npm i -S @pact-foundation/pact@latest
    ```
-- **`Generación del pacto`**: En el proyecto consumidor se configuró todos los archivos y se usó la siguiente línea para ejecutar el test y generar el pacto (contrato):
+- **`Generación del pacto en Consumidor`**: En el proyecto consumidor se configuró todos los archivos (Ver cambios en repositorio) y se usó la el comando de más abajo para ejecutar el test y generar el pacto (contrato) que se generó en /tests/pacts/pacts/Frontend-Backend.json:
    ```bash
-   npm test
+   npx mocha tests/pacts/pactTest.js
    ```
+- **`Prueba del pacto en el Proveedor`**: Se copió el pacto generado en el consumidor (Frontend-Backend.json) al proyecto proveedor. Está ubicado en /tests/Pact/contracts/Frontend-Backend.json y se desarrollaron los siguientes archivos:
+   - **ProviderTest.php**: Para pruebas de JavaScript.
 
 
 ## Estructura del Proyecto
