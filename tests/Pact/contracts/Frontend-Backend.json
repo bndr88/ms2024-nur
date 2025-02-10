@@ -1,0 +1,41 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "interactions": [
+    {
+      "description": "Una solicitud GET a /paciente/1",
+      "providerState": "Existe un paciente con ID 1",
+      "request": {
+        "method": "GET",
+        "path": "/paciente/61a9804c-299b-4dbc-9473-c8f97014f6b3"
+      },
+      "response": {
+        "body": {
+          "fechaNacimiento": "09/02/2005",
+          "id": "61a9804c-299b-4dbc-9473-c8f97014f6b3",
+          "nombre": "luz"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "13.2.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "Backend"
+  }
+}
