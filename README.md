@@ -6,8 +6,21 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 ## Descripción de la presentación 
 
 Se desarrollaron los Contract Test con PACT. Se realizaron las siguientes activiades:
-- **`Creación de Front-end`**: Se creó un proyecto simple usando un poco de HTML y JS. 
-- **`Verificar si la petición se realizó correctamente`**: Se hizo el script que verifica si la petición llegó con respuesta 201 o 202.
+- **`Creación de Front-end`**: Se creó un proyecto simple usando un poco de HTML y JS. El mismo se encuentra en /tests/Pact/proyecto-consumidor.zip 
+- **`CORS`**: Se "deshabilitó" la verificación CORS. 
+- **`Inclusión de dependencias`**: Al proyecto del consumidor se agregó toas las dependencias necesarias:.
+   - **Node.js**
+   - **npm**
+   - **Mocha**: Para pruebas de JavaScript.
+   - **Chai**: Para hacer las pruebas más legibles
+   - **PACT**: Para generar el contrato (Pacto), se lo instaló mediante el comando:
+   ```bash
+   npm i -S @pact-foundation/pact@latest
+   ```
+- **`Generación del pacto`**: En el proyecto consumidor se configuró todos los archivos y se usó la siguiente línea para ejecutar el test y generar el pacto (contrato):
+   ```bash
+   npm test
+   ```
 
 
 ## Estructura del Proyecto
