@@ -12,8 +12,22 @@ use Mod2Nur\Presentacion\Controladores\PacienteController;
 use Mod2Nur\Presentacion\Controladores\TipoDiagController;
 use Mod2Nur\Presentacion\Mediator\QueryBus;
 
+// Permitir solicitudes desde cualquier origen (para evitar error 'CORS')
+//header("Access-Control-Allow-Origin: http://tudominio.com"); Si se quiere acceder solo desde un dominio
+header("Access-Control-Allow-Origin: *");
+// Permitir métodos HTTP específicos
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+// Permitir ciertos encabezados
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+// Manejo de preflight (solicitudes OPTIONS)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 // Instanciar lo necesario para trabajar con UnitOfWork
 $unitOfWork = new UnitOfWork();
@@ -38,8 +52,9 @@ if ($requestMethod === 'POST' && $requestUri === '/paciente/add') {
         // Crear un paciente
         $data = json_decode(file_get_contents('php://input'), true);
         $paciente = $pacienteController->addPaciente($data);
+        header('Content-Type: application/json');
         http_response_code(200);
-        echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()]);
+        echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()], JSON_PRETTY_PRINT);
     } catch (\Exception $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);

@@ -1,0 +1,5 @@
+{
+    "pact-foundation/pact-php:pact-ffi-lib": "336f36ea99df0b2600a8dca374a1bf859f5d7e374be2cdf18ab3720cb0d6654c",
+    "pact-foundation/pact-php:pact-ffi-headers": "7fc481b730ecaee925d07140e21abd668658688a8b1316379ff24cde0d4911eb",
+    "pact-foundation/pact-php:pact-stub-server": "73a34fec52708e0b81a86f18903218571579b3e6f7d1b462be4bdb16a11ee12a"
+}
