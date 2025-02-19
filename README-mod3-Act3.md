@@ -1,16 +1,33 @@
-# PRESENTACIÓN ACTIVAD NRO. 4 - MÓDULO 3
+# PRESENTACIÓN ACTIVAD NRO. 3 - MÓDULO 3
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
 ## Descripción de la presentación 
 
-Para esta presenteción, se realizaron las siguientes activiades:
-- **`Instalación PEST`**: Se instaló PEST para realizar los Test unitarios y poder generar el reporte de cobertura. 
-- **`Reporte de Cobertura`**: Para generar el reporte se debe ejecutar el siguiente comando: 
+Se desarrollaron los Contract Test con PACT. Se realizaron las siguientes activiades:
+- **`Creación de Front-end`**: Se creó un proyecto simple usando un poco de HTML y JS. El mismo se encuentra en /tests/Pact/proyecto-consumidor.zip 
+- **`CORS`**: Se "deshabilitó" la verificación CORS. 
+- **`Inclusión de dependencias en Consumidor`**: Al proyecto del consumidor se agregó toas las dependencias necesarias:.
+   - **Node.js**
+   - **npm**
+   - **Mocha**: Para pruebas de JavaScript.
+   - **Chai**: Para hacer las pruebas más legibles.
+   - **PACT**: Para generar el contrato (Pacto), se lo instaló mediante el comando:
    ```bash
-   .\vendor\bin\pest --coverage-html tests/Cobertura
+   npm i -S @pact-foundation/pact@latest
    ```
+- **`Generación del pacto en Consumidor`**: En el proyecto consumidor se configuró todos los archivos (Ver cambios en repositorio) y se usó la el comando de más abajo para ejecutar el test y generar el pacto (contrato) que se generó en /tests/pacts/pacts/Frontend-Backend.json:
+   ```bash
+   npx mocha tests/pacts/pactTest.js
+   ```
+- **`Inclusión de dependencias en Consumidor`**: Al proyecto del consumidor se agregó toas las dependencias necesarias:
+   - **PACT**: Para realizar el contract testing en el proveedor, se lo instaló mediante el comando:
+   ```bash
+   composer require pact-foundation/pact-php --dev
+   ```
+- **`Prueba del pacto en el Proveedor`**: Se copió el pacto generado en el consumidor (Frontend-Backend.json) al proyecto proveedor. Está ubicado en /tests/Pact/contracts/Frontend-Backend.json y se desarrollaron los siguientes archivos:
+   - **ProviderTest.php**: Para pruebas de JavaScript.
 
 
 ## Estructura del Proyecto
