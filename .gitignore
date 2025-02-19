@@ -1,1 +1,2 @@
 tests/Cobertura
+vendor/pestphp/pest/.temp/test-results
