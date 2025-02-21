@@ -3,7 +3,7 @@
         'name' => 'wender/mod2-nur',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '947e44b25cc3952309ea8d020eb1088bc2bfea8c',
+        'reference' => '11b6fd331253d067f42db5727e1084c32a72bc04',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -45,6 +45,18 @@
             'install_path' => __DIR__ . '/./semver',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'cordoval/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'davedevelopment/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v3.0.3',
@@ -180,6 +192,15 @@
             'install_path' => __DIR__ . '/../guzzlehttp/uri-template',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'hamcrest/hamcrest-php' => array(
+            'pretty_version' => 'v2.0.1',
+            'version' => '2.0.1.0',
+            'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -394,6 +415,12 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'kodova/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v11.39.1',
             'version' => '11.39.1.0',
@@ -490,6 +517,15 @@
             'reference' => 'dd8663b9bc576de0d146c166555babd2b6e9b48b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../leongrdic/smplang',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'mockery/mockery' => array(
+            'pretty_version' => '1.6.12',
+            'version' => '1.6.12.0',
+            'reference' => '1f4efdd7d3beafe9807b08156dfcb176d18f1699',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mockery/mockery',
             'aliases' => array(),
             'dev_requirement' => true,
         ),
@@ -1394,7 +1430,7 @@
         'wender/mod2-nur' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '947e44b25cc3952309ea8d020eb1088bc2bfea8c',
+            'reference' => '11b6fd331253d067f42db5727e1084c32a72bc04',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

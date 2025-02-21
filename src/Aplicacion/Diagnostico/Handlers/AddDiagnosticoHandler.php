@@ -52,9 +52,10 @@ class AddDiagnosticoHandler
                 $diagnostico = new Diagnostico(
                     id: '',
                     paciente: $paciente,
+                    fecha: $command->fechaDiagnostico,
                     peso: $command->peso,
                     altura: $command->altura,
-                    composicion: $command->composicion,
+                    descripcion: $command->descripcion,
                     estadoDiagnostico: $estadoDiagnostico,
                     tipoDiagnostico: $tipoDiagnostico
                 );

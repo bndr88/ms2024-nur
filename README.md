@@ -6,7 +6,11 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 ## Descripción de la presentación 
 
 Para esta presenteción, se realizaron las siguientes activiades:
-- **`Instalación PEST`**: Se instaló PEST para realizar los Test unitarios y poder generar el reporte de cobertura. 
+- **`Instalación PEST`**: Se instaló PEST para realizar los Test unitarios en vez de PHPUnit para poder generar el reporte de cobertura. 
+- **`Instalación Mockery`**: Se instaló MOCKERY para realizar los mocks necesarios en algunos tests. 
+   ```bash
+   composer require --dev mockery/mockery
+   ```
 - **`Reporte de Cobertura`**: Para generar el reporte se debe ejecutar el siguiente comando: 
    ```bash
    .\vendor\bin\pest --coverage-html tests/Cobertura

@@ -11,7 +11,7 @@ class Diagnostico extends Model
     protected $table = 'diagnostico';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['id', 'paciente_id', 'peso', 'altura', 'composicion', 'estadoDiagnostico', 'tipoDiagnostico_id'];
+    protected $fillable = ['id', 'paciente_id', 'fecha', 'peso', 'altura', 'descripcion', 'estadoDiagnostico', 'tipoDiagnostico_id'];
     public $timestamps = false;
 
     protected static function boot()
