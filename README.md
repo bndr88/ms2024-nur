@@ -11,6 +11,14 @@ Para esta presenteción, se realizaron las siguientes activiades:
    ```bash
    composer require --dev mockery/mockery
    ```
+- **`Instalación FakerPHP`**: Se instaló FAKERPHP para generar valores aleatorios para algunos tests. 
+   ```bash
+   composer require fakerphp/faker --dev
+   ```
+- **`Instalación Ramsey UUID`**: Se instaló para generar UUIDs aleatorios para algunos tests. 
+   ```bash
+   composer require ramsey/uuid --dev
+   ```
 - **`Reporte de Cobertura`**: Para generar el reporte se debe ejecutar el siguiente comando: 
    ```bash
    .\vendor\bin\pest --coverage-html tests/Cobertura

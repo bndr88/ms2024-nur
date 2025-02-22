@@ -165,6 +165,7 @@ class ComposerStaticInitd27874f1c3b66a0e3dfbba533682ed4b
         array (
             'Fruitcake\\Cors\\' => 15,
             'Fidry\\CpuCoreCounter\\' => 21,
+            'Faker\\' => 6,
         ),
         'E' => 
         array (
@@ -515,6 +516,10 @@ class ComposerStaticInitd27874f1c3b66a0e3dfbba533682ed4b
         'Fidry\\CpuCoreCounter\\' => 
         array (
             0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
