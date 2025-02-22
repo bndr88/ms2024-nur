@@ -23,7 +23,7 @@ class PacienteController
     private CrearPacienteService $servicio;
     private UnitOfWork $unitOfWork;
 
-    public function __construct(CommandBus $commandBus, QueryBus $queryBus, CrearPacienteService $servicio, UnitOfWork $unitOfWork)
+    public function __construct(CommandBus $commandBus, QueryBus $queryBus, CrearPacienteService $servicio, ?UnitOfWork $unitOfWork)
     {
         $this->commandBus = $commandBus;
         $this->queryBus = $queryBus;
@@ -34,10 +34,12 @@ class PacienteController
 
     public function crearPacienteUnitOfWork(array $data)
     {
-        $fecNac = new DateTime($data['fechaNacimiento']);
-        $paciente = new Paciente('',$data['nombre'], $fecNac);
+        /*$fecNac = new DateTime($data['fechaNacimiento']);
+        $paciente = new Paciente('',$data['nombre'], $fecNac);*/
+        $paciente = new Paciente('',$data['nombre'], $data['fechaNacimiento']);
         $this->servicio->ejecutar($paciente);
         $this->unitOfWork->commit();
+        return $paciente;
     }
 
     public function addPaciente(array $data)
