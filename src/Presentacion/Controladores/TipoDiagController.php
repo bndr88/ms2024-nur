@@ -30,9 +30,9 @@ class TipoDiagController
         return $tipoDiagnostico;
     }
 
-    public function destroy(string $id)
+    /*public function destroy(string $id)
     {
-        /*try {
+        try {
             $command = new RemPacienteCommand($id);
             $this->removeHandler->handle($command);
 
@@ -41,6 +41,6 @@ class TipoDiagController
         } catch (\Exception $e) {
             http_response_code(400);
             echo json_encode(['error' => $e->getMessage()]);
-        }*/
-    }
+        }
+    }*/
 }

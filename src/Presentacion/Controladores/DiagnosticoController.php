@@ -43,12 +43,13 @@ class DiagnosticoController
         
         $command = new AddDiagnosticoCommand(
             $paciente->getId(),
+            $fechaDiagnostico ,
             $data['peso'],
             $data['altura'],
             $data['composicion'],
             $data['estadoDiagnostico'],
             $data['idTipoDiagnostico'],
-            $fechaDiagnostico 
+            
         );
 
         $resultado = $this->commandBus->dispatch($command);
