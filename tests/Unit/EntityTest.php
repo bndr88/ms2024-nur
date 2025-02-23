@@ -46,4 +46,17 @@ class EntityTest extends TestCase
         // Assert
         $this->assertFalse($respuesta,  'Las entidades no son iguales.');
     }
+
+    public function testDebeLanzarExcepcionSiElIdEstaVacio()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('El ID proporcionado no puede estar vacío.');
+
+        new class('') extends Entity {
+            protected function esUuidValido(string $id): bool
+            {
+                return true; // Simulación para evitar la segunda validación
+            }
+        };
+    }
 }

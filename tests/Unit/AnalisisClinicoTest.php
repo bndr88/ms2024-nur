@@ -5,7 +5,6 @@ namespace Tests\Unit;
 use DateTime;
 
 use PHPUnit\Framework\TestCase;
-use Mockery;
 use Ramsey\Uuid\Uuid;
 use Faker\Factory;
 use Mod2Nur\Dominio\Diagnostico\AnalisisClinico;
