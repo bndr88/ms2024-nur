@@ -46,7 +46,7 @@ class DiagnosticoController
             $fechaDiagnostico ,
             $data['peso'],
             $data['altura'],
-            $data['composicion'],
+            $data['descripcion'],
             $data['estadoDiagnostico'],
             $data['idTipoDiagnostico'],
             

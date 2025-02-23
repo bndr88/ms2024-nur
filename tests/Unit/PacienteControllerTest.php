@@ -118,6 +118,32 @@ class PacienteControllerTest extends TestCase
         $this->assertEquals($fechaNacimientoEsperado, $fechaString );
     }
 
+    public function testObtenerPacientePorIdFallido()
+    {
+        //Arrange'            
+            $pacienteId = "idInvalido";
+            // Instanciar lo necesario para trabajar con UnitOfWork 
+            $unitOfWork = new UnitOfWork();
+            $repositorio = new EloquentPacienteRepository($unitOfWork);
+            $servicio = new CrearPacienteService($repositorio);
+            // Configuración del Mediator
+            $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
+            $registry = $registryFactory();
+            $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
+            $commandBusMock = $this->createMock(CommandBus::class);// Simula Crear el CommandBus del Mediator
+            $queryBusMock = $this->createMock(QueryBus::class);// Simula Crear el CommandBus del Mediator
+            $queryBusMock->method('ask')->willReturn(null);
+
+        //Act
+            // Instanciar controladores con CommandBus
+            $pacienteController = new PacienteController($commandBusMock, $queryBusMock, $servicio,$unitOfWork);
+
+        //Assert
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Paciente no encontrado');
+        $respuesta = $pacienteController->getPacienteById($pacienteId);  
+    }
+
     public function testEliminarPaciente()
     {
         //Arrange'            
@@ -141,6 +167,39 @@ class PacienteControllerTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('Error al obtener el paciente: Paciente no encontrado');
         $respuesta = $pacienteController->getPacienteById($pacienteId);    
+        
+    }
+
+    public function testEliminarPacienteFallido()
+    {
+        //Arrange'            
+            $pacienteId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
+            // Instanciar lo necesario para trabajar con UnitOfWork 
+            $unitOfWork = new UnitOfWork();
+            $repositorio = new EloquentPacienteRepository($unitOfWork);
+            $servicio = new CrearPacienteService($repositorio);
+            // Configuración del Mediator
+            $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
+            $registry = $registryFactory();
+            $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
+            //$commandBus = new CommandBus($mediator); // Crear el CommandBus del Mediator
+            
+            $commandBusMock = $this->createMock(CommandBus::class);// Simula Crear el CommandBus del Mediator
+            $queryBus = new QueryBus($mediator); // Crear el CommandBus con el Mediator
+
+        //Act
+            // Instanciar controladores con CommandBus
+            $pacienteController = new PacienteController($commandBusMock, $queryBus, $servicio,$unitOfWork);
+            $commandBusMock->method('dispatch')->willThrowException(new \Exception("Error en eliminación"));
+            $queryBus = new QueryBus($mediator); // Crear el CommandBus con el Mediator
+
+        // Act
+            ob_start();
+            $pacienteController->destroy($pacienteId);
+            ob_end_clean();
+
+            // Assert
+            $this->assertEquals(400, http_response_code());    
         
     }
 }
