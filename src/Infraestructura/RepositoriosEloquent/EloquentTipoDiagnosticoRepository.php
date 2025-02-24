@@ -33,9 +33,12 @@ class EloquentTipoDiagnosticoRepository implements TipoDiagnosticoRepository {
 
     public function remove(string $id): bool
     {
-        $tipoDiagModel = TipoDiagModel::find($id);
+       /* $tipoDiagModel = TipoDiagModel::find($id);
         if ($tipoDiagModel) {
             return $tipoDiagModel->delete();
         }
+        return false;
+        */
+        return false;
     }
 }

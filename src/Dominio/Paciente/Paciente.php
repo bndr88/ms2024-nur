@@ -88,7 +88,7 @@ class Paciente extends AggregateRoot {
     public function removeDiagnostico(string $diagnosticoId): void {
         $this->historial = array_filter(
             $this->historial,
-            fn($d) => !$d->getId()->equals($diagnosticoId)
+            fn($d) => !$d->getId()===$diagnosticoId
         );
     }
 

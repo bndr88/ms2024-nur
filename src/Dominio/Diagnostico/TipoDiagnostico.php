@@ -14,8 +14,6 @@ class TipoDiagnostico extends Entity {
             $this->constructorUno($descripcion);
         } elseif ($id !== null) {
             $this->constructorDos($id, $descripcion);
-        } else {
-            throw new InvalidArgumentException("Parámetros no válidos");
         }
     }
 
@@ -36,7 +34,7 @@ class TipoDiagnostico extends Entity {
     }
 
     // Setters
-    public function setDescripcion(float $descripcion): void {
+    public function setDescripcion(string $descripcion): void {
         $this->descripcion = $descripcion;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Mod2Nur\Dominio\Diagnostico;
 
+use DateTime;
 use DomainException;
 use Illuminate\Support\Str;
 use Mod2Nur\Dominio\Abstracciones\AggregateRoot;
@@ -10,51 +11,54 @@ use Mod2Nur\Dominio\Paciente\Paciente;
 
 class Diagnostico extends AggregateRoot {
     private Paciente $paciente;
+    private DateTime $fecha;
     private float $peso;
     private float $altura;
-    private string $composicion;
+    private string $descripcion;
     private EstadoDiagnostico $estadoDiagnostico;
     private TipoDiagnostico $tipoDiagnostico;
     private array $analisisSolicitados = []; 
 
-    public function __construct(string $id,Paciente $paciente, float $peso,float $altura,string $composicion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
+    public function __construct(string|null $id,Paciente $paciente,?DateTime $fecha, float $peso,float $altura,string $descripcion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
     {
         if ($id ==='') {
-            $this->constructorUno($paciente,$peso,$altura,$composicion,$estadoDiagnostico,$tipoDiagnostico);
+            $this->constructorUno($paciente,$fecha,$peso,$altura,$descripcion,$estadoDiagnostico,$tipoDiagnostico);
         } elseif ($id !== null) {
-            $this->constructorDos($id,$paciente,$peso,$altura,$composicion,$estadoDiagnostico,$tipoDiagnostico);
+            $this->constructorDos($id,$paciente,$fecha,$peso,$altura,$descripcion,$estadoDiagnostico,$tipoDiagnostico);
         } else {
             throw new InvalidArgumentException("Parámetros no válidos");
         }
     }
 
-    private function constructorUno(Paciente $paciente, float $peso,float $altura,string $composicion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
+    private function constructorUno(Paciente $paciente, ?DateTime $fecha,float $peso,float $altura,string $descripcion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
     {
         $id = (string) Str::uuid();
         parent::__construct($id);
         $this->paciente = $paciente;
+        $this->fecha = $fecha;
         $this->peso = $peso;
         $this->altura = $altura;
-        $this->composicion = $composicion;
+        $this->descripcion = $descripcion;
         $this->estadoDiagnostico = $estadoDiagnostico;
         $this->tipoDiagnostico = $tipoDiagnostico;
     }
 
-    private function constructorDos(string $id,Paciente $paciente,float $peso,float $altura,string $composicion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
+    private function constructorDos(string $id,Paciente $paciente,?DateTime $fecha, float $peso,float $altura,string $descripcion,EstadoDiagnostico $estadoDiagnostico,TipoDiagnostico $tipoDiagnostico)
     {
         parent::__construct($id);
         $this->paciente = $paciente;
+        $this->fecha = $fecha;
         $this->peso = $peso;
         $this->altura = $altura;
-        $this->composicion = $composicion;
+        $this->descripcion = $descripcion;
         $this->estadoDiagnostico = $estadoDiagnostico;
         $this->tipoDiagnostico = $tipoDiagnostico;
     }
 
-    public function actualizarDiagnostico(float $peso, float $altura, string $composicion): void {
+    public function actualizarDiagnostico(float $peso, float $altura, string $descripcion): void {
         $this->peso = $peso;
         $this->altura = $altura;
-        $this->composicion = $composicion;
+        $this->descripcion = $descripcion;
     }
 
     public function addAnalisisClinico(AnalisisClinico $analisis): void {
@@ -67,7 +71,7 @@ class Diagnostico extends AggregateRoot {
     public function removeAnalisisClinico(string $analisisId): void {
         $this->analisisSolicitados = array_filter(
             $this->analisisSolicitados,
-            fn($a) => !$a->getId()->equals($analisisId)
+            fn($a) => !$a->getId()===$analisisId
         );
     }
 
@@ -85,6 +89,11 @@ class Diagnostico extends AggregateRoot {
         return $this->paciente;
     }
 
+    public function getFecha(): DateTime
+     {
+         return $this->fecha;
+     }
+
     public function getPeso(): float {
         return $this->peso;
     }
@@ -93,8 +102,8 @@ class Diagnostico extends AggregateRoot {
         return $this->altura;
     }
 
-    public function getComposicion(): string {
-        return $this->composicion;
+    public function getDescripcion(): string {
+        return $this->descripcion;
     }
 
     public function getEstadoDiagnostico(): EstadoDiagnostico {
@@ -114,6 +123,11 @@ class Diagnostico extends AggregateRoot {
         $this->paciente = $paciente;
     }
     
+    public function setFecha(DateTime $fecha): void
+    {
+        $this->fecha = $fecha;
+    }
+
     public function setPeso(float $peso): void {
         $this->peso = $peso;
     }
@@ -122,8 +136,8 @@ class Diagnostico extends AggregateRoot {
         $this->altura = $altura;
     }
 
-    public function setComposicion(string $composicion): void {
-        $this->composicion = $composicion;
+    public function setDescripcion(string $descripcion): void {
+        $this->descripcion = $descripcion;
     }
 
     public function setEstadoDiagnostico(EstadoDiagnostico $estadoDiagnostico): void  {

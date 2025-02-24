@@ -25,8 +25,8 @@ class Paciente extends Model
         });
     }
 
-    public function diagnosticos()
+    public function historialClinico()
     {
-        return $this->hasMany(Diagnostico::class, 'paciente_id', 'id');
+        return $this->hasMany(Diagnostico::class, 'pacienteId', 'id');
     }
 }

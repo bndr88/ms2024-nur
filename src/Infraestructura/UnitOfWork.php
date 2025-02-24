@@ -4,6 +4,8 @@ namespace Mod2Nur\Infraestructura;
 
 use Illuminate\Database\Capsule\Manager as DB;
 
+use function Laravel\Prompts\clear;
+
 class UnitOfWork
 {
     private array $newEntities = [];
@@ -55,7 +57,6 @@ class UnitOfWork
             $this->clear();
         });
     }
-
     private function clear()
     {
         $this->newEntities = [];
@@ -63,4 +64,18 @@ class UnitOfWork
         $this->deletedEntities = [];
         $this->domainEvents = [];
     }
+
+    public function getNewEntities(): array{
+        return $this->newEntities;
+    }
+    public function getUpdatedEntities(): array{
+        return $this->updatedEntities;
+    }
+    public function getDeletedEntities(): array{
+        return $this->deletedEntities;
+    }
+    public function getDomainEvents(): array{
+        return $this->domainEvents;
+    }
+
 }

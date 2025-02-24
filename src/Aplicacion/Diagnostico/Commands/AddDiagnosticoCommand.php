@@ -10,37 +10,41 @@ use Mod2Nur\Dominio\Diagnostico\TipoDiagnostico;
 class AddDiagnosticoCommand
 {
     public string $pacienteId;
+    public DateTime $fechaDiagnostico;
     public float $peso;
     public float $altura;
-    public string $composicion;
+    public string $descripcion;
     public string $estadoDiagnostico;
     public string $tipoDiagnosticoId;
-    public DateTime $fechaDiagnostico;
 
     public function __construct(
         string $pacienteId,
+        DateTime $fechaDiagnostico, // se quito string|DateTime
         float $peso,
         float $altura,
-        string $composicion,
+        string $descripcion,
         string $estadoDiagnostico,
-        string $tipoDiagnosticoId,
-        string|DateTime $fechaDiagnostico
+        string $tipoDiagnosticoId
     ) {
-        $this->pacienteId = $pacienteId;
+        $this->pacienteId = $pacienteId;        
+        $this->fechaDiagnostico = $fechaDiagnostico;
         $this->peso = $peso;
         $this->altura = $altura;
-        $this->composicion = $composicion;
+        $this->descripcion = $descripcion;
         $this->estadoDiagnostico = $estadoDiagnostico;
         $this->tipoDiagnosticoId = $tipoDiagnosticoId;
 
-        if (is_string($fechaDiagnostico)) {
+        /*if (is_string($fechaDiagnostico)) {
             try {
                 $this->fechaDiagnostico = new DateTime($fechaDiagnostico);
             } catch (Exception $e) {
                 throw new Exception("Invalid date format for fechaDiagnostico.");
             }
-        } else {
+        } else {*/
             $this->fechaDiagnostico = $fechaDiagnostico;
-        }
+        //}
+    }
+    public function getDescripcion(): string{
+        return $this->descripcion;
     }
 }
