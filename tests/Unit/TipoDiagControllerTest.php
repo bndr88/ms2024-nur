@@ -43,4 +43,37 @@ class TipoDiagControllerTest extends TestCase
         
     }
 
+    public function testCrearNuevoTipoDeDiagnosticoSinMock()
+    {
+        //Arrange'
+            $faker = Factory::create();
+            $descripcion = $faker->sentence();
+            $data = [
+                'descripcion'=> $descripcion
+            ];
+            
+            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';   
+            /*$unitOfWork = new UnitOfWork();
+            $repositorio = new EloquentPacienteRepository($unitOfWork);
+            $servicio = new CrearPacienteService($repositorio);*/
+            // Configuración del Mediator
+            $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
+            $registry = $registryFactory();
+            $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
+            $commandBus = new CommandBus($mediator); 
+            //$commandBusMock = $this->createMock(CommandBus::class);// Simula Crear el CommandBus del Mediator
+            //$commandBusMock->method('dispatch')->willReturn(new TipoDiagnostico('',$descripcion));
+
+        //Act
+            // Instanciar controladores con CommandBus
+            $tipoDiagController = new TipoDiagController($commandBus);
+            $tipoDiagnostico = $tipoDiagController->addTipoDiagnostico($data);
+
+        //Assert
+        $this->assertNotEmpty($tipoDiagnostico->getId());
+        $this->assertMatchesRegularExpression($uuidRegex, $tipoDiagnostico->getId(), 'El ID generado no tiene un formato UUID válido.');
+        $this->assertSame($descripcion, $tipoDiagnostico->getDescripcion());
+        
+    }
+
 }

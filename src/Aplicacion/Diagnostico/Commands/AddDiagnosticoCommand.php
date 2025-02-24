@@ -19,7 +19,7 @@ class AddDiagnosticoCommand
 
     public function __construct(
         string $pacienteId,
-        string|DateTime $fechaDiagnostico,
+        DateTime $fechaDiagnostico, // se quito string|DateTime
         float $peso,
         float $altura,
         string $descripcion,
@@ -34,14 +34,17 @@ class AddDiagnosticoCommand
         $this->estadoDiagnostico = $estadoDiagnostico;
         $this->tipoDiagnosticoId = $tipoDiagnosticoId;
 
-        if (is_string($fechaDiagnostico)) {
+        /*if (is_string($fechaDiagnostico)) {
             try {
                 $this->fechaDiagnostico = new DateTime($fechaDiagnostico);
             } catch (Exception $e) {
                 throw new Exception("Invalid date format for fechaDiagnostico.");
             }
-        } else {
+        } else {*/
             $this->fechaDiagnostico = $fechaDiagnostico;
-        }
+        //}
+    }
+    public function getDescripcion(): string{
+        return $this->descripcion;
     }
 }

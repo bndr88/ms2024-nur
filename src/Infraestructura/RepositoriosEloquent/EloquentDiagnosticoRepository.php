@@ -19,7 +19,7 @@ class EloquentDiagnosticoRepository implements DiagnosticoRepository
         $DiagnosticoModel->pacienteId = $diagnostico->getPaciente()->getId();
         $DiagnosticoModel->peso = $diagnostico->getPeso();
         $DiagnosticoModel->altura = $diagnostico->getAltura();
-        $DiagnosticoModel->composicion = $diagnostico->getComposicion();
+        $DiagnosticoModel->descripcion = $diagnostico->getDescripcion();
         $DiagnosticoModel->tipoDiagnostico_id = $diagnostico->getTipoDiagnostico()->getId();
         
         if ($DiagnosticoModel->save()) {
@@ -32,23 +32,26 @@ class EloquentDiagnosticoRepository implements DiagnosticoRepository
 
     public function findById(string $id): ?Diagnostico
     {
-        $DiagnosticoModel = DiagnosticoModel::find($id);
+       /* $DiagnosticoModel = DiagnosticoModel::find($id);
 
         if (!$DiagnosticoModel) {
             return null;
         }
         
-        $tipoDiag = TipoDiagnosticoModel::find($DiagnosticoModel->tipoDiagnostico_id) ?? new TipoDiagnosticoModel();
-
+        $tipoDiagModel = TipoDiagnosticoModel::find($DiagnosticoModel->tipoDiagnostico_id) ?? new TipoDiagnosticoModel();
+        $tipoDiagnostico = new TipoDiagnostico($tipoDiagModel->id,$tipoDiagModel->descripcion);
         return new Diagnostico(
-            id: $DiagnosticoModel->id,
-            paciente:$DiagnosticoModel->paciente,
-            peso: $DiagnosticoModel->peso,
-            altura: $DiagnosticoModel->altura,
-            composicion: $DiagnosticoModel->composicion,
-            estadoDiagnostico: $DiagnosticoModel->estadoDiagnostico,
-            tipoDiagnostico: $tipoDiag
+            $DiagnosticoModel->id,
+            $DiagnosticoModel->paciente,
+            $DiagnosticoModel->fechaDiagnostico,
+            $DiagnosticoModel->peso,
+            $DiagnosticoModel->altura,
+            $DiagnosticoModel->composicion,
+            $DiagnosticoModel->estadoDiagnostico,
+            $tipoDiagnostico
         );
+        */
+        return null;
     }
 
     public function delete(string $id): void

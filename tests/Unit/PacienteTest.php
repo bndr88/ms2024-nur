@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unitarios;
+namespace Tests\Unit;
 
 use Mod2Nur\Dominio\Paciente\Paciente;
 use PHPUnit\Framework\TestCase;

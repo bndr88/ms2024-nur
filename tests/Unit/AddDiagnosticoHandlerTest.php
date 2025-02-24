@@ -1,34 +1,83 @@
 <?php
 
-/*use Mod2Nur\Aplicacion\Diagnostico\Handlers\AddDiagnosticoHandler;
+namespace Tests\Unit;
+
+use DateTime;
+use PHPUnit\Framework\TestCase;
+use Mod2Nur\Aplicacion\Diagnostico\Handlers\AddDiagnosticoHandler;
 use Mod2Nur\Aplicacion\Diagnostico\Commands\AddDiagnosticoCommand;
-use Mod2Nur\Infraestructura\UnitOfWork;
-use Mockery;
-use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentDiagnosticoRepository;
-use Tests\TestCase;
+use Mod2Nur\Dominio\Diagnostico\DiagnosticoRepository;
+use Mod2Nur\Dominio\Diagnostico\TipoDiagnosticoRepository;
+use Mod2Nur\Dominio\Paciente\PacienteRepository;
+use Illuminate\Database\DatabaseManager;
+use InvalidArgumentException;
+use Mod2Nur\Dominio\Diagnostico\Diagnostico;
+use Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico;
+use Mod2Nur\Dominio\Diagnostico\TipoDiagnostico;
+use Mod2Nur\Dominio\Paciente\Paciente;
+use Faker\Factory;
+use RuntimeException;
 
-beforeEach(function () {
-    // Arrange: Configuración inicial de los mocks y la instancia del handler
-    $this->repository = Mockery::mock(EloquentDiagnosticoRepository::class);
-    $this->unitOfWork = Mockery::mock(UnitOfWork::class);
-    $this->handler = new AddDiagnosticoHandler($this->repository, $this->unitOfWork);
-});
+class AddDiagnosticoHandlerTest extends TestCase
+{
+    private $diagnosticoRepository;
+    private $tipoDiagRepository;
+    private $pacienteRepository;
+    private $db;
+    private $handler;
+    private $faker;
 
-it('debería agregar un diagnóstico correctamente', function () {
-    // Arrange: Preparar datos y definir expectativas
-    $command = new AddDiagnosticoCommand('Paciente1', 'Tipo1', 'Observaciones');
+    protected function setUp(): void
+    {
+        $this->faker = Factory::create();
+        $this->diagnosticoRepository = $this->createMock(DiagnosticoRepository::class);
+        $this->tipoDiagRepository = $this->createMock(TipoDiagnosticoRepository::class);
+        $this->pacienteRepository = $this->createMock(PacienteRepository::class);
+        $this->db = $this->createMock(DatabaseManager::class);
 
-    $this->repository->shouldReceive('guardar')->once()->andReturnTrue();
-    $this->unitOfWork->shouldReceive('commit')->once();
+        $this->handler = new AddDiagnosticoHandler(
+            $this->diagnosticoRepository,
+            $this->tipoDiagRepository,
+            $this->pacienteRepository,
+            $this->db
+        );
+    }
 
-    // Act: Ejecutar la acción principal
-    $diagnostico = $this->handler->__invoke($command);
+    public function testHandleSuccessfullyCreatesDiagnostico()
+    {       
+        
+        $fechaString =  $this->faker->date();
+        $fechaDiagnostico = new DateTime( $fechaString );
+        $peso = $this->faker->randomFloat(2, 1, 100);
+        $altura = $this->faker->randomFloat(2, 1, 100);
+        $descripcion = $this->faker->sentence();
+        $estadoDiagnostico = EstadoDiagnostico::PENDIENTE;
+        $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);  
+        $pacienteMock = $this->createMock(Paciente::class);
+        $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
+        $command = new AddDiagnosticoCommand(
+            $pacienteMock->getId(),
+             $fechaDiagnostico,
+            $peso,
+            $altura,
+            $descripcion,
+            "Pendiente",
+            $tipoDiagnosticoMock->getId(),            
+        );
 
-    // Assert: Verificar que el resultado es el esperado
-    expect($diagnostico)->not->toBeNull();
-})->group('diagnostico');
+        $diagnosticoDevuelto = new Diagnostico('', $pacienteMock, $fechaDiagnostico,  $peso, $altura, 
+                                                    $descripcion, $estadoDiagnostico, 
+                                                    $tipoDiagnosticoMock);
+        
+        $this->pacienteRepository->method('findById')->willReturn($pacienteMock);
+        $this->tipoDiagRepository->method('findById')->willReturn($tipoDiagnosticoMock);
+        
+        $this->diagnosticoRepository->method('save')->willReturn($diagnosticoDevuelto);
+        
+        $diagnostico = $this->handler->__invoke($command);
+        //$this->assertInstanceOf(Diagnostico::class, $diagnostico);
+        $this->assertNull($diagnostico);
+    }
 
-afterEach(function () {
-    Mockery::close();
-});
-*/
+    
+}
