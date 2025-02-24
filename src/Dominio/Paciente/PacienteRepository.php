@@ -12,4 +12,6 @@ interface PacienteRepository extends Repository
     public function save(AggregateRoot $aggregateRoot): ?AggregateRoot; 
     public function delete(string $id): void;
     public function saveConUnitOfWork(Paciente $paciente);
+    public function listarTodos(): array; 
+    public function historialClinico(string $idPaciente): array; 
 }

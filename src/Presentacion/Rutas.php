@@ -104,6 +104,42 @@ if ($requestMethod === 'GET' && preg_match('#^/paciente/([a-f0-9\-]{36})$#', $re
     exit;
 }
 
+if ($requestMethod === 'GET' && $requestUri === '/paciente/list') {
+    try {
+        //Obtener lista de pacientes
+        $response = $pacienteController->listar('');
+        header('Content-Type: application/json');
+        echo json_encode($response, JSON_PRETTY_PRINT);
+    } catch (\Exception $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
+    }
+    exit;
+}
+
+//if ($requestMethod === 'GET' && preg_match('#^/paciente/([a-f0-9\-]{36})$#/diag/', $requestUri, $matches)) {
+if ($requestMethod === 'GET' && preg_match('#^/paciente/([a-f0-9\-]{36})/diag$#', $requestUri, $matches)) {    
+    try {
+        //Obtener un paciente
+        $pacienteId = $matches[1];
+        $response = $pacienteController->getHistorialClinico($pacienteId);
+        header('Content-Type: application/json');
+        if (empty($response) ) {
+            http_response_code(400);
+            echo json_encode(['error' => "El Paciente aun no tiene ningun Diagnostico"], JSON_PRETTY_PRINT);
+        }else if (isset($response['error']) && $response['error']==='paciente no existe') {
+            http_response_code(400);
+            echo json_encode(['error' => "El Paciente paciente no existe"], JSON_PRETTY_PRINT);
+        }else{
+            echo json_encode($response, JSON_PRETTY_PRINT);
+        }
+    } catch (\Exception $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
+    }
+    exit;
+}
+
 if ($requestMethod === 'POST' && $requestUri === '/tipoDiag/add') {
     try {
         // Registrar un Tipo de Diagnostico

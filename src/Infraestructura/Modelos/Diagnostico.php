@@ -26,7 +26,7 @@ class Diagnostico extends Model
 
     public function paciente()
     {
-        return $this->belongsTo(Paciente::class, 'paciente_id', 'id');
+        return $this->belongsTo(Paciente::class, 'pacienteId', 'id');
     }
 
     public function tipoDiagnostico()

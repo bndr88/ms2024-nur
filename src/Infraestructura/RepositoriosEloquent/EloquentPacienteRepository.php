@@ -76,5 +76,37 @@ class EloquentPacienteRepository implements PacienteRepository
             $pacienteModel->delete();
         }
     }
+
+    public function listarTodos(): array
+    {
+        $pacienteModel = PacienteModel::all();
+        if (!$pacienteModel) {
+            return [];
+        }
+
+        return $pacienteModel->toArray();
+    }
+    
+    public function historialClinico(string $idPaciente): array
+    {
+        // Buscar al paciente por UUID
+        $paciente = PacienteModel::where('id', $idPaciente)->first();
+
+        // Si no se encuentra el paciente, devolver un arreglo vacío
+        if (!$paciente) {
+            return ['error'=>'paciente no existe'];
+        }
+
+        // Cargar el historial clínico del paciente usando la relación 'historialClinico'
+        $historialClinico = $paciente->historialClinico;
+
+        // Verificamos si el historial clínico tiene datos
+        if ($historialClinico->isEmpty()) {
+            return [];
+        }
+
+        // Retornamos el historial clínico como un arreglo
+        return $historialClinico->toArray();
+    }
 }
 

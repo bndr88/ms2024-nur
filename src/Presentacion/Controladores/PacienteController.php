@@ -7,6 +7,8 @@ use Mod2Nur\Aplicacion\Paciente\Commands\AddPacienteCommand;
 use Mod2Nur\Aplicacion\Paciente\Commands\RemPacienteCommand;
 use Mod2Nur\Aplicacion\Paciente\Handlers\AddPacienteHandler;
 use Mod2Nur\Aplicacion\Paciente\Handlers\RemPacienteHandler;
+use Mod2Nur\Aplicacion\Paciente\Queries\GetHistorialQuery;
+use Mod2Nur\Aplicacion\Paciente\Queries\GetListaPacientesQuery;
 use Mod2Nur\Aplicacion\Paciente\Queries\GetPacienteByIdQuery;
 use Mod2Nur\Aplicacion\Paciente\Servicios\CrearPacienteService;
 use Mod2Nur\Dominio\Paciente\Paciente;
@@ -86,6 +88,37 @@ class PacienteController
             http_response_code(200);
         } catch (\Exception $e) {
             http_response_code(400);
+        }
+    }
+
+    public function listar(string $filtro): array    
+    {
+        try {
+             // Crear el Query para obtener el paciente
+             $query = new GetListaPacientesQuery($filtro);
+
+             // Pasar el Query al QueryBus mediante el método "ask" del Mediator
+             $lista = $this->queryBus->ask($query);
+ 
+             if (!$lista) {
+                 throw new \Exception("Error al listar");
+             }
+            return $lista;
+        } catch (\Exception $e) {
+            throw new \Exception("Error al listar: " . $e->getMessage());
+        }
+    }
+
+    public function getHistorialClinico(string $idPaciente): array    
+    {
+        try {
+             $query = new GetHistorialQuery($idPaciente);
+
+             // Pasar el Query al QueryBus mediante el método "ask" del Mediator
+             $lista = $this->queryBus->ask($query);
+            return $lista;
+        } catch (\Exception $e) {
+            throw new \Exception("Error al listar: " . $e->getMessage());
         }
     }
 }
