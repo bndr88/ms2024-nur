@@ -37,5 +37,6 @@ class EloquentTipoDiagnosticoRepository implements TipoDiagnosticoRepository {
         if ($tipoDiagModel) {
             return $tipoDiagModel->delete();
         }
+        return false;
     }
 }
