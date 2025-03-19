@@ -7,18 +7,34 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 
 Para esta presenteción, se realizaron las siguientes actividades:
 - **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
-- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando el siguiente comando:
+- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando los siguientes comandos:
+   - **`Crear la imagen`**
    ```bash
    docker build -t wendermendez/nutrinur:1.0 .
    ```
-- **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub, usando los siguientes comandos:
-   **`Login`**
+   - **`Crear contenedor`**
+   ```bash
+   docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
+   ```
+   Luego se desarrolló un endPoint de prueba:
+   **`Hola`**
+   - **Método**: `GET`
+   - **URL**: `/hola`
+   - **Parámetros (Body)**: Ninguno
+   - **Descripción**: Este endpoint permite tener una respuesta de prueba desde el contenedor. Para no usar acceso a la Base de Datos
+   - **Respuesta esperada**:
+      {
+         "message": "Hola Mundo"
+      }
+
+- **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub (wendermendez/nutrinur) usando los siguientes comandos:
+   - **`Login`**
    ```bash
    docker login
    ```
-   **`Subir la imagen`**
+   - **`Subir la imagen`**
    ```bash
-   docker push wendermendez/nutrinur:1.0 .
+   docker push wendermendez/nutrinur:1.1
    ```
 
 ## Estructura del Proyecto
