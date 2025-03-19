@@ -47,6 +47,18 @@ $tipoDiagController = new TipoDiagController($commandBus);
 $diagnosticoController = new DiagnosticoController($commandBus, $queryBus);
 
 // Manejo de rutas
+if ($requestMethod === 'GET' && $requestUri === '/hola') {  
+    try {        
+        header('Content-Type: application/json');
+        http_response_code(200);
+        echo json_encode(['message' => 'Hola Mundo'], JSON_PRETTY_PRINT);
+    } catch (\Exception $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
+    }
+    exit;
+}
+
 if ($requestMethod === 'POST' && $requestUri === '/paciente/add') {    
     try {
         // Crear un paciente

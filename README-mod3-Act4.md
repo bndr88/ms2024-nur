@@ -1,25 +1,29 @@
-# PRESENTACIÓN ACTIVAD NRO. 1 - MÓDULO 4
+# PRESENTACIÓN ACTIVAD NRO. 4 - MÓDULO 3
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
 ## Descripción de la presentación 
 
-Para esta presenteción, se realizaron las siguientes actividades:
-- **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
-- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando el siguiente comando:
+Para esta presenteción, se realizaron las siguientes activiades:
+- **`Instalación PEST`**: Se instaló PEST para realizar los Test unitarios en vez de PHPUnit para poder generar el reporte de cobertura. 
+- **`Instalación Mockery`**: Se instaló MOCKERY para realizar los mocks necesarios en algunos tests. 
    ```bash
-   docker build -t wendermendez/nutrinur:1.0 .
+   composer require --dev mockery/mockery
    ```
-- **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub, usando los siguientes comandos:
-   **`Login`**
+- **`Instalación FakerPHP`**: Se instaló FAKERPHP para generar valores aleatorios para algunos tests. 
    ```bash
-   docker login
+   composer require fakerphp/faker --dev
    ```
-   **`Subir la imagen`**
+- **`Instalación Ramsey UUID`**: Se instaló para generar UUIDs aleatorios para algunos tests. 
    ```bash
-   docker push wendermendez/nutrinur:1.0 .
+   composer require ramsey/uuid --dev
    ```
+- **`Reporte de Cobertura`**: Para generar el reporte se debe ejecutar el siguiente comando: 
+   ```bash
+   .\vendor\bin\pest --coverage-html tests/Cobertura
+   ```
+
 
 ## Estructura del Proyecto
 
