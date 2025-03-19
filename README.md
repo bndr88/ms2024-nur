@@ -76,7 +76,7 @@ A continuación, se describen las APIs disponibles en el proyecto, cómo utiliza
 
 El proyecto utiliza el siguiente modelo de dominio:
 
-![Modelo de Dominio](https://github.com/nur-university/nur-ms2024-m2-act-3-bndr88/blob/175dd7db90d454b9b8a25d985263bef90850a093/Modelo-Dominio-3.0.jpg)
+![Modelo de Dominio](https://github.com/bndr88/ms2024-nur/blob/main/Modelo-Dominio-3.0.jpg)
 
 ## Requisitos Previos
 
