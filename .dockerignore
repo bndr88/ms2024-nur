@@ -1,0 +1,7 @@
+.github
+
+*dockerfile*
+*docker-compose*
+
+tests
+vendor

@@ -1,41 +1,29 @@
-# PRESENTACIÓN ACTIVAD NRO. 1 - MÓDULO 4
+# PRESENTACIÓN ACTIVAD NRO. 4 - MÓDULO 3
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
 ## Descripción de la presentación 
 
-Para esta presenteción, se realizaron las siguientes actividades:
-- **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
-- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando los siguientes comandos:
-   - **`Crear la imagen`**
+Para esta presenteción, se realizaron las siguientes activiades:
+- **`Instalación PEST`**: Se instaló PEST para realizar los Test unitarios en vez de PHPUnit para poder generar el reporte de cobertura. 
+- **`Instalación Mockery`**: Se instaló MOCKERY para realizar los mocks necesarios en algunos tests. 
    ```bash
-   docker build -t wendermendez/nutrinur:1.0 .
+   composer require --dev mockery/mockery
    ```
-   - **`Crear contenedor`**
+- **`Instalación FakerPHP`**: Se instaló FAKERPHP para generar valores aleatorios para algunos tests. 
    ```bash
-   docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
+   composer require fakerphp/faker --dev
    ```
-   Luego se desarrolló un endPoint de prueba:
-   **`Hola`**
-   - **Método**: `GET`
-   - **URL**: `/hola`
-   - **Parámetros (Body)**: Ninguno
-   - **Descripción**: Este endpoint permite tener una respuesta de prueba desde el contenedor. Para no usar acceso a la Base de Datos
-   - **Respuesta esperada**:
-      {
-         "message": "Hola Mundo"
-      }
+- **`Instalación Ramsey UUID`**: Se instaló para generar UUIDs aleatorios para algunos tests. 
+   ```bash
+   composer require ramsey/uuid --dev
+   ```
+- **`Reporte de Cobertura`**: Para generar el reporte se debe ejecutar el siguiente comando: 
+   ```bash
+   .\vendor\bin\pest --coverage-html tests/Cobertura
+   ```
 
-- **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub (wendermendez/nutrinur) usando los siguientes comandos:
-   - **`Login`**
-   ```bash
-   docker login
-   ```
-   - **`Subir la imagen`**
-   ```bash
-   docker push wendermendez/nutrinur:1.1
-   ```
 
 ## Estructura del Proyecto
 
@@ -92,7 +80,7 @@ A continuación, se describen las APIs disponibles en el proyecto, cómo utiliza
 
 El proyecto utiliza el siguiente modelo de dominio:
 
-![Modelo de Dominio](https://github.com/bndr88/ms2024-nur/blob/main/Modelo-Dominio-3.0.jpg)
+![Modelo de Dominio](https://github.com/nur-university/nur-ms2024-m2-act-3-bndr88/blob/175dd7db90d454b9b8a25d985263bef90850a093/Modelo-Dominio-3.0.jpg)
 
 ## Requisitos Previos
 
