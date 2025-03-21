@@ -1,7 +1,7 @@
 <?php
 
 //require __DIR__ . '/../../vendor/autoload.php';
-require __DIR__ . '/vendor/autoload.php';
+//require __DIR__ . '/vendor/autoload.php';
 
 /*use Illuminate\Database\Capsule\Manager as Capsule;
 
@@ -19,6 +19,8 @@ $capsule->addConnection([
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();*/
+
+require 'env.php';
 
 $migrationsDir = __DIR__ . '/src/Infraestructura/Migraciones';
 
