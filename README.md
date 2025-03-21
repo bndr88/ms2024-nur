@@ -26,13 +26,17 @@ Para esta presenteción se presenta el proyecto final del módulo, que consiste 
    docker push wendermendez/nutrinur:1.1
    ```
 - **`Docker-compose`**: Se elaboró un archivo "docker-compose.yml" para levantar todos , usando los siguientes comandos:
-   - **`Crear la imagen`**
+   - **`Levantar el servicio`**
    ```bash
-   docker build -t wendermendez/nutrinur:1.0 .
+   docker compose -f "docker-compose.yml" up -d --build 
    ```
-   - **`Crear contenedor`**
+   - **`Bajar el servicio`**
    ```bash
-   docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
+   docker compose -f "docker-compose.yml" down 
+   ```
+   - **`Borrar todo el servicio (incluso el Volumen)`**
+   ```bash
+   docker compose -f "docker-compose.yml" down -v
    ```
 
 ## Estructura del Proyecto
