@@ -18,14 +18,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=database;Port=5432;Database=contracting;Username=postgres;Password=abc12345
     ports:
-      - 8080:8080
-    networks:
-      - nutritional-network 
+      - "8080:8080"
     depends_on:
       - database
-      
-networks:
-  nutritional-network:
-    driver: bridge
-  
   
