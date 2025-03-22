@@ -1,0 +1,25 @@
+# Usar la imagen oficial de SQL Server
+FROM mcr.microsoft.com/mssql/server:2022-latest
+
+# Establecer variables de entorno
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Password2025
+ENV MSSQL_DATABASE=deliverydb
+ENV MSSQL_USER=pablo
+ENV MSSQL_PASSWORD=Password2025
+
+# Cambiar al usuario root para configurar permisos
+USER root
+
+# Copiar archivos al contenedor
+COPY script_ini.sql /script_ini.sql
+COPY entrypoint.sh /entrypoint.sh
+
+# Dar permisos de ejecución al entrypoint
+RUN chmod +x /entrypoint.sh
+
+# Volver a usar el usuario mssql
+USER mssql
+
+# Usar el entrypoint personalizado
+ENTRYPOINT ["/entrypoint.sh"]

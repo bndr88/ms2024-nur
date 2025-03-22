@@ -1,6 +1,8 @@
 services:
   nur-app:
-    image: wendermendez/nutrinur:2.0
+    build:
+      context: .
+      dockerfile: dockerfile
     ports:
       - 8081:80
     container_name: nur-app

@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "2193472d-53db-4e73-b51b-8bb8dc8eb52c",
+		"name": "Contracting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11216633"
+	},
+	"item": [
+		{
+			"name": "Administrators",
+			"item": [
+				{
+					"name": "PostAdministrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"administratorName\": \"Carlos\",\r\n  \"administratorPhone\": \"70926048\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Administrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Administrator"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

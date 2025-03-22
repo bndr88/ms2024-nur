@@ -1,0 +1,41 @@
+services:
+  # Servicio de tu aplicación .NET
+  nutritional-kitchen-api: 
+    image: stephaniheredia/microservicio-nutritional-kitchen:latest 
+    container_name: nutritional-kitchen-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development 
+      ConnectionStrings__DefaultConnection: "Server=mysql-db;Port=3306;Database=nutritionalkitchen;uid=root;pwd=password;" 
+    ports:
+      - 5075:5075  
+    depends_on:
+      - mysql-db  
+    
+    networks:
+      - nutritional-network 
+
+  # Servicio de la base de datos MySQL
+  mysql-db: 
+    image: stephaniheredia/nutritionalkitchendb:latest
+    container_name: nutritionalkitchen 
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: nutritionalkitchen
+    ports:
+      - 3309:3306
+    networks:
+      - nutritional-network
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+networks:
+  nutritional-network:
+    driver: bridge
+
+volumes:
+  mysql_data:

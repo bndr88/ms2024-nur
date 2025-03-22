@@ -1,6 +1,7 @@
 .github
 
 *dockerfile*
+*docker*
 *docker-compose*
 
 tests

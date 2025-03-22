@@ -1,6 +1,8 @@
 services:
   nur-app:
-    image: wendermendez/nutrinur:2.0
+    build:
+      context: .
+      dockerfile: dockerfile
     ports:
       - 8081:80
     container_name: nur-app
@@ -17,10 +19,12 @@ services:
       DB_PASSWORD: Lm12345
     networks:
       - nur-network
-    command: ["/bin/sh", "-c", "php migrate.php && apache2-foreground"]
+    #command: ["/bin/sh", "-c", "php migrate.php && apache2-foreground"]
     #Primero ejecuta php migrate.php para crear las tablas. Luego arranca Apache con apache2-foreground para que el contenedor siga ejecutándose
   nur-db:
-    image: mysql:8.0
+    build:
+      context: .
+      dockerfile: dockerfile-mysql-ini
     container_name: nur-db
     restart: always
     environment:
