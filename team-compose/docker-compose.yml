@@ -1,6 +1,6 @@
-include:
-  - ./wender/docker-compose.yml 
+include: 
   - ./carlos/docker-compose.yml 
   - ./zuleny/docker-compose.yml  
   - ./stephany/docker-compose.yml
+  - ./wender/docker-compose.yml
   - ./dagner/docker-compose.yml

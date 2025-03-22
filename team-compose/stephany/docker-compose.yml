@@ -9,8 +9,7 @@ services:
     ports:
       - 5075:5075  
     depends_on:
-      - mysql-db  
-    
+      - mysql-db     
     networks:
       - nutritional-network 
 
