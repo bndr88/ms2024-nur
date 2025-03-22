@@ -1,0 +1,12 @@
+# Use the base image mysql:latest
+FROM mysql:8.0
+
+# Set environment variables
+ENV MYSQL_DATABASE=mydb
+ENV MYSQL_ROOT_PASSWORD=Lm12345
+ENV MYSQL_DATABASE=nutrinur
+ENV MYSQL_USER=pablo
+ENV MYSQL_PASSWORD=Lm12345
+
+# Copy custom scripts or configuration files from your host to the container
+COPY ./script-ini.sql /docker-entrypoint-initdb.d/

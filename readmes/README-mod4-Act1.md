@@ -1,11 +1,11 @@
-# PRESENTACIÓN ACTIVAD NRO. 2 - MÓDULO 4
+# PRESENTACIÓN ACTIVAD NRO. 1 - MÓDULO 4
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
 ## Descripción de la presentación 
 
-Para esta presenteción se presenta el proyecto final del módulo, que consiste en poner todo el proyecto en contenedores. Para ello se realizaron las siguientes actividades:
+Para esta presenteción, se realizaron las siguientes actividades:
 - **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
 - **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando los siguientes comandos:
    - **`Crear la imagen`**
@@ -16,6 +16,17 @@ Para esta presenteción se presenta el proyecto final del módulo, que consiste 
    ```bash
    docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
    ```
+   Luego se desarrolló un endPoint de prueba:
+   **`Hola`**
+   - **Método**: `GET`
+   - **URL**: `/hola`
+   - **Parámetros (Body)**: Ninguno
+   - **Descripción**: Este endpoint permite tener una respuesta de prueba desde el contenedor. Para no usar acceso a la Base de Datos
+   - **Respuesta esperada**:
+      {
+         "message": "Hola Mundo"
+      }
+
 - **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub (wendermendez/nutrinur) usando los siguientes comandos:
    - **`Login`**
    ```bash
@@ -24,19 +35,6 @@ Para esta presenteción se presenta el proyecto final del módulo, que consiste 
    - **`Subir la imagen`**
    ```bash
    docker push wendermendez/nutrinur:1.1
-   ```
-- **`Docker-compose`**: Se elaboró un archivo "docker-compose.yml" para levantar todos , usando los siguientes comandos:
-   - **`Levantar el servicio`**
-   ```bash
-   docker compose -f "docker-compose.yml" up -d --build 
-   ```
-   - **`Bajar el servicio`**
-   ```bash
-   docker compose -f "docker-compose.yml" down 
-   ```
-   - **`Borrar todo el servicio (incluso el Volumen)`**
-   ```bash
-   docker compose -f "docker-compose.yml" down -v
    ```
 
 ## Estructura del Proyecto
