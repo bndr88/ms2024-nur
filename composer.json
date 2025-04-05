@@ -1,6 +1,8 @@
 {
     "name": "wender/mod2-nur",
     "type": "project",
+    "license": "proprietary",
+    "description": "Proyecto para diplomado Microservicios",
     "autoload": {
         "psr-4": {
             "Mod2Nur\\": "src/"
