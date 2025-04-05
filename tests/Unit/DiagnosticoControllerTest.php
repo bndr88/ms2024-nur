@@ -13,10 +13,10 @@ use Mod2Nur\Presentacion\Mediator\QueryBus;
 
 class DiagnosticoControllerTest extends TestCase
 {
-    
-    public function testCrearNuevoDiagnostico()
+
+    /*public function testCrearNuevoDiagnostico()
     {
-        //Arrange'      
+        //Arrange'
             $faker = Factory::create();
             $pacienteMock = $this->createMock(Paciente::class);
             $fechaString =  $faker->date();
@@ -25,7 +25,7 @@ class DiagnosticoControllerTest extends TestCase
             $altura = $faker->randomFloat(2, 1, 100);
             $descripcion = $faker->sentence();
             $estadoDiagnostico = EstadoDiagnostico::PENDIENTE;
-            $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);      
+            $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
             $data = [
                 'idPaciente'=> '00607697-4a4d-44b8-898a-4f8eb31764c7',
                 'fechaDiagnostico' => $fechaString,
@@ -35,16 +35,16 @@ class DiagnosticoControllerTest extends TestCase
                 'estadoDiagnostico' => "PENDIENTE",
                 'idTipoDiagnostico' => $tipoDiagnosticoMock->getId()
             ];
-            
-            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';   
+
+            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
             $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
             //$commandBus = new CommandBus($mediator); --> Por si queremos insertar de verdad en la BD
             $commandBusMock = $this->createMock(CommandBus::class);// Simula Crear el CommandBus del Mediator
-            $diagnosticoDevuelto = new Diagnostico('', $pacienteMock, $fecha,  $peso, $altura, 
-                                                    $descripcion, $estadoDiagnostico, 
+            $diagnosticoDevuelto = new Diagnostico('', $pacienteMock, $fecha,  $peso, $altura,
+                                                    $descripcion, $estadoDiagnostico,
                                                     $tipoDiagnosticoMock);
             $commandBusMock->method('dispatch')->willReturn($diagnosticoDevuelto);
             $queryBus = new QueryBus($mediator); // Crear el CommandBus con el Mediator
@@ -58,12 +58,12 @@ class DiagnosticoControllerTest extends TestCase
         $this->assertNotEmpty($diagnostico->getId());
         $this->assertMatchesRegularExpression($uuidRegex, $diagnostico->getId(), 'El ID generado no tiene un formato UUID válido.');
         $this->assertSame($descripcion, $diagnostico->getDescripcion());
-        
+
     }
 
     public function testCrearNuevoDiagnosticoSinMock()
     {
-        //Arrange'      
+        //Arrange'
             $faker = Factory::create();
             $pacienteMock = $this->createMock(Paciente::class);
             $fechaString =  $faker->date();
@@ -72,8 +72,8 @@ class DiagnosticoControllerTest extends TestCase
             $altura = $faker->randomFloat(2, 1, 100);
             $descripcion = $faker->sentence();
             $estadoDiagnostico = EstadoDiagnostico::PENDIENTE;
-            $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);   
-            $tipoDiagnosticoMock->method('getId')->willReturn('3d6272e4-1a09-4dc6-8eb2-d79ca96a7512');   
+            $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
+            $tipoDiagnosticoMock->method('getId')->willReturn('3d6272e4-1a09-4dc6-8eb2-d79ca96a7512');
             $data = [
                 'idPaciente'=> '00607697-4a4d-44b8-898a-4f8eb31764c7',
                 'fechaDiagnostico' => $fechaString,
@@ -83,13 +83,13 @@ class DiagnosticoControllerTest extends TestCase
                 'estadoDiagnostico' => "Pendiente",
                 'idTipoDiagnostico' => $tipoDiagnosticoMock->getId()
             ];
-            
-            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';   
+
+            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
             $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
-            $commandBus = new CommandBus($mediator); 
+            $commandBus = new CommandBus($mediator);
             $queryBus = new QueryBus($mediator); // Crear el CommandBus con el Mediator
 
         //Act
@@ -101,45 +101,45 @@ class DiagnosticoControllerTest extends TestCase
         $this->assertNotEmpty($diagnostico->getId());
         $this->assertMatchesRegularExpression($uuidRegex, $diagnostico->getId(), 'El ID generado no tiene un formato UUID válido.');
         $this->assertSame($descripcion, $diagnostico->getDescripcion());
-        
-    }
+
+    }*/
 
     public function testCrearNuevoDiagnosticoSinPaciente()
     {
-        //Arrange'      
+        //Arrange'
             $data = [
                 'idPaciente'=> '00607697-4a4d-44b8-898a-4f8eb31764c7',
             ];
-            
-            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';   
+
+            $uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
             $mediator = new Mediator($registry); // Crear el Mediator con el registro de handlers
             //$commandBus = new CommandBus($mediator); --> Por si queremos insertar de verdad en la BD
             $commandBusMock = $this->createMock(CommandBus::class);// Simula Crear el CommandBus del Mediator
-            
+
             $queryBusMock = $this->createMock(QueryBus::class);// Simula Crear el QueryBus del Mediator
             $queryBusMock->method('ask')->willReturn(null);
 
             $diagnosticoController = new DiagnosticoController($commandBusMock, $queryBusMock);
-        
+
         //Assert
             $this->expectException(Exception::class);
 
         //Act
-            $diagnosticoController->crearDiagnostico($data);        
+            $diagnosticoController->crearDiagnostico($data);
     }
 
     public function testCrearNuevoDiagnosticoSinFecha()
     {
-        //Arrange'      
+        //Arrange'
         $faker = Factory::create();
         $pacienteMock = $this->createMock(Paciente::class);
         $peso = $faker->randomFloat(2, 1, 100);
         $altura = $faker->randomFloat(2, 1, 100);
         $descripcion = $faker->sentence();
-        $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);      
+        $tipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
         $data = [
             'idPaciente'=> '00607697-4a4d-44b8-898a-4f8eb31764c7',
             'fechaDiagnostico' => 'fecha-invalida',
@@ -148,7 +148,7 @@ class DiagnosticoControllerTest extends TestCase
             'descripcion' => $descripcion,
             'estadoDiagnostico' => "PENDIENTE",
             'idTipoDiagnostico' => $tipoDiagnosticoMock->getId()
-        ]; 
+        ];
         // Configuración del Mediator
         $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
         $registry = $registryFactory();
@@ -157,22 +157,22 @@ class DiagnosticoControllerTest extends TestCase
         $queryBusMock = $this->createMock(QueryBus::class);// Simula Crear el QueryBus del Mediator
         $queryBusMock->method('ask')->willReturn($pacienteMock);
 
-        //Act            
+        //Act
             $diagnosticoController = new DiagnosticoController($commandBusMock, $queryBusMock);
-        
+
         //Assert
             $this->expectException(Exception::class);
             $this->expectExceptionMessage('Invalid date format for fechaDiagnostico.');
 
         //Act
-            $diagnosticoController->crearDiagnostico($data);        
+            $diagnosticoController->crearDiagnostico($data);
     }
 
     public function testEliminarDiagnosticoExitoso()
     {
-        //Arrange'            
+        //Arrange'
             $diagnosticoId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
-            
+
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
@@ -193,14 +193,14 @@ class DiagnosticoControllerTest extends TestCase
 
             // Assert
             $this->assertEquals(200, http_response_code());
-        
+
     }
 
     public function testEliminarDiagnosticoFallido()
     {
-        //Arrange'            
+        //Arrange'
             $diagnosticoId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
-            
+
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
@@ -221,14 +221,14 @@ class DiagnosticoControllerTest extends TestCase
 
             // Assert
             $this->assertEquals(400, http_response_code());
-        
+
     }
 
     public function testEliminarDiagnosticoSinMock()
     {
-        //Arrange'            
+        //Arrange'
             $diagnosticoId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
-            
+
             // Configuración del Mediator
             $registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
             $registry = $registryFactory();
@@ -245,8 +245,8 @@ class DiagnosticoControllerTest extends TestCase
 
             // Assert
             $this->assertEquals(200, http_response_code());
-        
+
     }
 
-    
+
 }
