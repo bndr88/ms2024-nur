@@ -36,7 +36,7 @@ jobs:
       run: chmod +x ./vendor/bin/pest
 
     - name: Run Pest tests
-      run: php ./vendor/bin/pest --do-not-cache-result --no-results ./tests/Unit
+      run: php ./vendor/bin/pest --do-not-cache-result --no-results --no-output ./tests/Unit
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
