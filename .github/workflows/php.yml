@@ -31,9 +31,8 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-
     - name: Fix Pest permissions
-      run: chmod +x ./vendor/bin/pest
+      run: chmod 777 ./vendor/bin/pest
 
     - name: Run Pest tests
       run: php ./vendor/bin/pest --do-not-cache-result --no-results --no-output ./tests/Unit
