@@ -3,7 +3,7 @@
         'name' => 'wender/mod2-nur',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f7f69ee2f3b2c7b463569bab73a5c4aadfde67e8',
+        'reference' => 'dfcf5ee94b2fa1d86d30242c75b3cb7d74044a59',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1439,7 +1439,7 @@
         'wender/mod2-nur' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f7f69ee2f3b2c7b463569bab73a5c4aadfde67e8',
+            'reference' => 'dfcf5ee94b2fa1d86d30242c75b3cb7d74044a59',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
