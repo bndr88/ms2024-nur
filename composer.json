@@ -23,7 +23,8 @@
         "pestphp/pest": "^3.7",
         "pestphp/pest-plugin-laravel": "^3.1",
         "mockery/mockery": "^1.6",
-        "fakerphp/faker": "^1.24"
+        "fakerphp/faker": "^1.24",
+        "friendsofphp/php-cs-fixer": "^3.75"
     },
     "config": {
         "allow-plugins": {
