@@ -1,7 +1,7 @@
 {
     "name": "wender/mod2-nur",
     "type": "project",
-    "license": "GPL",
+    "license": "proprietary",
     "description": "Una breve descripción de lo que hace mi proyecto.",
     "autoload": {
         "psr-4": {
