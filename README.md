@@ -1,43 +1,26 @@
-# PRESENTACIÓN ACTIVAD NRO. 2 - MÓDULO 4
+# PRESENTACIÓN ACTIVAD NRO. 1 - MÓDULO 5
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
-## Descripción de la presentación 
+## Descripción de la presentación
 
-Para esta presenteción se presenta el proyecto final del módulo, que consiste en poner todo el proyecto en contenedores. Para ello se realizaron las siguientes actividades:
-- **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
-- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando los siguientes comandos:
-   - **`Crear la imagen`**
+Para esta presentación se realizaron las siguientes actividades:
+sonarlint
+- **`Sonarlint`**: Se instaló la extensión SonarLint (SonarQube for IDEs) para integrar el análisis estático de código directamente en el entorno de desarrollo y detectar posibles errores, vulnerabilidades y malas prácticas en tiempo real.
+- **`PHP Intelephense`**: Se instaló la extensión PHP Intelephense como linter para el análisis estático del código PHP, lo cual facilita la detección temprana de errores y mejora la calidad del código durante el desarrollo.
+- **`.editorconfig`**: Se agregó un archivo .editorconfig al proyecto con configuraciones básicas de estilo para los editores, incluyendo la regla que fuerza el uso de tabs en lugar de espacios para la indentación. Este archivo ayuda a mantener consistencia en aspectos generales del formato, especialmente cuando se utiliza un editor compatible.
+- **`PHP-CS-Fixer`**: Se configuró PHP-CS-Fixer como herramienta principal de code formatting para archivos PHP. Las reglas específicas de formateo se encuentran definidas en el archivo .php-cs-fixer.dist.php, ya que .editorconfig no puede cubrir todos los aspectos del estilo en archivos PHP. Este paquete permite aplicar automáticamente las convenciones establecidas, mejorando la coherencia del código y facilitando su mantenimiento. Se usa este comando para iniciar el "formateo" del código.
    ```bash
-   docker build -t wendermendez/nutrinur:1.0 .
+   ".\vendor\bin\php-cs-fixer" fix .
    ```
-   - **`Crear contenedor`**
+- **`Husky`**: Se integró Husky para gestionar hooks de Git. En particular, se configuró un hook pre-commit que ejecuta automáticamente PHP-CS-Fixer antes de confirmar cambios. Esto garantiza que el código PHP esté correctamente formateado según las reglas del proyecto antes de ser versionado, reforzando buenas prácticas de desarrollo desde el entorno local. En el Pre-commit se puso las dos reglas descritas más abajo para formatear el código y ejecutar los test antes de hacer un commit.
+
    ```bash
-   docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
+   ".\vendor\bin\php-cs-fixer" fix .
+	".\vendor\bin\pest" ./tests/Unit
    ```
-- **`DockerHub`**: Se subió la imagen a un repositorio público de dockerHub (wendermendez/nutrinur) usando los siguientes comandos:
-   - **`Login`**
-   ```bash
-   docker login
-   ```
-   - **`Subir la imagen`**
-   ```bash
-   docker push wendermendez/nutrinur:1.1
-   ```
-- **`Docker-compose`**: Se elaboró un archivo "docker-compose.yml" para levantar todos , usando los siguientes comandos:
-   - **`Levantar el servicio`**
-   ```bash
-   docker compose -f "docker-compose.yml" up -d --build 
-   ```
-   - **`Bajar el servicio`**
-   ```bash
-   docker compose -f "docker-compose.yml" down 
-   ```
-   - **`Borrar todo el servicio (incluso el Volumen)`**
-   ```bash
-   docker compose -f "docker-compose.yml" down -v
-   ```
+
 
 ## Estructura del Proyecto
 
