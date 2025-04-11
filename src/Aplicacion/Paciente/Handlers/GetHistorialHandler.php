@@ -7,21 +7,21 @@ use Mod2Nur\Dominio\Paciente\PacienteRepository;
 
 class GetHistorialHandler
 {
-    private PacienteRepository $pacienteRepository;
+	private PacienteRepository $pacienteRepository;
 
-    public function __construct(PacienteRepository $pacienteRepository)
-    {
-        $this->pacienteRepository = $pacienteRepository;
-    }
+	public function __construct(PacienteRepository $pacienteRepository)
+	{
+		$this->pacienteRepository = $pacienteRepository;
+	}
 
-    public function __invoke(GetHistorialQuery $query)
-    {     
-        $historialClinico = $this->pacienteRepository->historialClinico($query->getIdPaciente());
+	public function __invoke(GetHistorialQuery $query)
+	{
+		$historialClinico = $this->pacienteRepository->historialClinico($query->getIdPaciente());
 
-        if (empty($historialClinico)) {
-            return [];
-        }
+		if (empty($historialClinico)) {
+			return [];
+		}
 
-        return $historialClinico;
-    }
+		return $historialClinico;
+	}
 }

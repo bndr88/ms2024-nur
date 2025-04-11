@@ -22,32 +22,31 @@ use RuntimeException;
 
 class AddTipoDiagnosticoHandlerTest extends TestCase
 {
-    private $tipoDiagRepository;
-    private $pacienteRepository;
-    private $handler;
-    private $faker;
+	private $tipoDiagRepository;
+	private $pacienteRepository;
+	private $handler;
+	private $faker;
 
-    protected function setUp(): void
-    {
-        $this->faker = Factory::create();
-        $this->tipoDiagRepository = $this->createMock(TipoDiagnosticoRepository::class);
-        $this->pacienteRepository = $this->createMock(PacienteRepository::class);
-        //$this->db = $this->createMock(DatabaseManager::class);
+	protected function setUp(): void
+	{
+		$this->faker = Factory::create();
+		$this->tipoDiagRepository = $this->createMock(TipoDiagnosticoRepository::class);
+		$this->pacienteRepository = $this->createMock(PacienteRepository::class);
+		//$this->db = $this->createMock(DatabaseManager::class);
 
-        $this->handler = new AddTipoDiagnosticoHandler($this->tipoDiagRepository);
-    }
+		$this->handler = new AddTipoDiagnosticoHandler($this->tipoDiagRepository);
+	}
 
-    public function testHandleSuccessfullyCreatesDiagnostico()
-    {       
-        $descripcion = $this->faker->sentence();
-        $command = new AddTipoDiagnosticoCommand($descripcion);
-        
-        $this->tipoDiagRepository->method('save')->willReturn(true);
-        
-        $diagnostico = $this->handler->__invoke($command);
-        $this->assertInstanceOf(TipoDiagnostico::class, $diagnostico);
-       
-    }
+	public function testHandleSuccessfullyCreatesDiagnostico()
+	{
+		$descripcion = $this->faker->sentence();
+		$command = new AddTipoDiagnosticoCommand($descripcion);
 
-    
+		$this->tipoDiagRepository->method('save')->willReturn(true);
+
+		$diagnostico = $this->handler->__invoke($command);
+		$this->assertInstanceOf(TipoDiagnostico::class, $diagnostico);
+
+	}
+
 }

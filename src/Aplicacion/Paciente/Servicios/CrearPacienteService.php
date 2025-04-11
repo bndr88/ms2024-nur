@@ -8,20 +8,20 @@ use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentPacienteRepository;
 
 class CrearPacienteService
 {
-    private EloquentPacienteRepository $repositorio;
+	private EloquentPacienteRepository $repositorio;
 
-    public function __construct(EloquentPacienteRepository $repositorio)
-    {
-        $this->repositorio = $repositorio;
-    }
+	public function __construct(EloquentPacienteRepository $repositorio)
+	{
+		$this->repositorio = $repositorio;
+	}
 
-    public function ejecutar(Paciente $paciente)
-    {
-        //$paciente = new Paciente($datosPaciente);
-        $this->repositorio->saveConUnitOfWork($paciente);
+	public function ejecutar(Paciente $paciente)
+	{
+		//$paciente = new Paciente($datosPaciente);
+		$this->repositorio->saveConUnitOfWork($paciente);
 
-        // Registrar evento de dominio
-        $event = new PacienteCreadoEvent($paciente->getId());
-        $this->repositorio->getUnitOfWork()->registerDomainEvent($event);
-    }
+		// Registrar evento de dominio
+		$event = new PacienteCreadoEvent($paciente->getId());
+		$this->repositorio->getUnitOfWork()->registerDomainEvent($event);
+	}
 }
