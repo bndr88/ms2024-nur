@@ -1,1 +1,4 @@
+".\vendor\bin\php-cs-fixer" fix .
+#php php-cs-fixer.phar fix .
+
 ".\vendor\bin\pest" ./tests/Unit

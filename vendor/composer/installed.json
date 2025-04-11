@@ -4557,6 +4557,56 @@
             "install-path": "../phar-io/version"
         },
         {
+            "name": "php-cs-fixer/shim",
+            "version": "v3.9.3",
+            "version_normalized": "3.9.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-CS-Fixer/shim.git",
+                "reference": "9014ca3ab81b3d73ab22ffdeaf236071db9a047c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/9014ca3ab81b3d73ab22ffdeaf236071db9a047c",
+                "reference": "9014ca3ab81b3d73ab22ffdeaf236071db9a047c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": "^7.4 || ^8.0"
+            },
+            "suggest": {
+                "ext-dom": "For handling output formats in XML",
+                "ext-mbstring": "For handling non-UTF8 characters."
+            },
+            "time": "2022-07-13T10:02:07+00:00",
+            "bin": [
+                "php-cs-fixer"
+            ],
+            "type": "application",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Dariusz Rumiński",
+                    "email": "dariusz.ruminski@gmail.com"
+                }
+            ],
+            "description": "A tool to automatically fix PHP code style",
+            "support": {
+                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.9.3"
+            },
+            "install-path": "../php-cs-fixer/shim"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "version_normalized": "2.2.0.0",
@@ -10627,6 +10677,7 @@
         "pestphp/pest-plugin-mutate",
         "phar-io/manifest",
         "phar-io/version",
+        "php-cs-fixer/shim",
         "phpdocumentor/reflection-common",
         "phpdocumentor/reflection-docblock",
         "phpdocumentor/type-resolver",
