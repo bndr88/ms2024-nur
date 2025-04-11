@@ -8,15 +8,15 @@ use Mod2Nur\Dominio\Paciente\PacienteRepository;
 
 class RemPacienteHandler
 {
-    private PacienteRepository $repository;
+	private PacienteRepository $repository;
 
-    public function __construct(PacienteRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(PacienteRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(RemPacienteCommand $command): void
-    {
-        $this->repository->delete($command->id);
-    }
+	public function __invoke(RemPacienteCommand $command): void
+	{
+		$this->repository->delete($command->id);
+	}
 }

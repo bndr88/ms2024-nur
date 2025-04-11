@@ -13,20 +13,26 @@ use Mod2Nur\Dominio\Paciente\Paciente;
 
 class AddDiagnosticoCommandTest extends TestCase
 {
-    public function testConstructorConFechaString()
-    {
-        $FechaEnString = new DateTime('2024-02-21');
-        $PacienteMock = $this->createMock(Paciente::class);
-        $Peso = 75.0;
-        $Altura = 1.80;
-        $Descripcion = 'Diagnóstico actualizado';
-        $EstadoDiagnosticoMock = EstadoDiagnostico::CONCLUIDO;
-        $TipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
+	public function testConstructorConFechaString()
+	{
+		$FechaEnString = new DateTime('2024-02-21');
+		$PacienteMock = $this->createMock(Paciente::class);
+		$Peso = 75.0;
+		$Altura = 1.80;
+		$Descripcion = 'Diagnóstico actualizado';
+		$EstadoDiagnosticoMock = EstadoDiagnostico::CONCLUIDO;
+		$TipoDiagnosticoMock = $this->createMock(TipoDiagnostico::class);
 
-        $command = new AddDiagnosticoCommand($PacienteMock->getId(),$FechaEnString,
-                                                $Peso, $Altura, $Descripcion,
-                                                "Concluido", $TipoDiagnosticoMock->getId() );
+		$command = new AddDiagnosticoCommand(
+			$PacienteMock->getId(),
+			$FechaEnString,
+			$Peso,
+			$Altura,
+			$Descripcion,
+			"Concluido",
+			$TipoDiagnosticoMock->getId()
+		);
 
-        $this->assertSame($Descripcion, $command->getDescripcion());
-    }
+		$this->assertSame($Descripcion, $command->getDescripcion());
+	}
 }

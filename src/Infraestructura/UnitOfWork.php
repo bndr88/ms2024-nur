@@ -8,74 +8,78 @@ use function Laravel\Prompts\clear;
 
 class UnitOfWork
 {
-    private array $newEntities = [];
-    private array $updatedEntities = [];
-    private array $deletedEntities = [];
-    private array $domainEvents = [];
+	private array $newEntities = [];
+	private array $updatedEntities = [];
+	private array $deletedEntities = [];
+	private array $domainEvents = [];
 
-    public function registerNew($entity)
-    {
-        $this->newEntities[] = $entity;
-    }
+	public function registerNew($entity)
+	{
+		$this->newEntities[] = $entity;
+	}
 
-    public function registerUpdated($entity)
-    {
-        $this->updatedEntities[] = $entity;
-    }
+	public function registerUpdated($entity)
+	{
+		$this->updatedEntities[] = $entity;
+	}
 
-    public function registerDeleted($entity)
-    {
-        $this->deletedEntities[] = $entity;
-    }
+	public function registerDeleted($entity)
+	{
+		$this->deletedEntities[] = $entity;
+	}
 
-    public function registerDomainEvent($event)
-    {
-        $this->domainEvents[] = $event;
-    }
+	public function registerDomainEvent($event)
+	{
+		$this->domainEvents[] = $event;
+	}
 
-    public function commit()
-    {
-        DB::transaction(function () {
-            foreach ($this->newEntities as $entity) {
-                $entity->save();
-            }
+	public function commit()
+	{
+		DB::transaction(function () {
+			foreach ($this->newEntities as $entity) {
+				$entity->save();
+			}
 
-            foreach ($this->updatedEntities as $entity) {
-                $entity->save();
-            }
+			foreach ($this->updatedEntities as $entity) {
+				$entity->save();
+			}
 
-            foreach ($this->deletedEntities as $entity) {
-                $entity->delete();
-            }
+			foreach ($this->deletedEntities as $entity) {
+				$entity->delete();
+			}
 
-            foreach ($this->domainEvents as $event) {
-                // Poner los eventos de dominio
-                // Por simplicidad, solo lo  estoy imprimiendo
-                echo "Procesando evento de dominio: " . get_class($event) . PHP_EOL;
-            }
+			foreach ($this->domainEvents as $event) {
+				// Poner los eventos de dominio
+				// Por simplicidad, solo lo  estoy imprimiendo
+				echo "Procesando evento de dominio: " . get_class($event) . PHP_EOL;
+			}
 
-            $this->clear();
-        });
-    }
-    private function clear()
-    {
-        $this->newEntities = [];
-        $this->updatedEntities = [];
-        $this->deletedEntities = [];
-        $this->domainEvents = [];
-    }
+			$this->clear();
+		});
+	}
+	private function clear()
+	{
+		$this->newEntities = [];
+		$this->updatedEntities = [];
+		$this->deletedEntities = [];
+		$this->domainEvents = [];
+	}
 
-    public function getNewEntities(): array{
-        return $this->newEntities;
-    }
-    public function getUpdatedEntities(): array{
-        return $this->updatedEntities;
-    }
-    public function getDeletedEntities(): array{
-        return $this->deletedEntities;
-    }
-    public function getDomainEvents(): array{
-        return $this->domainEvents;
-    }
+	public function getNewEntities(): array
+	{
+		return $this->newEntities;
+	}
+	public function getUpdatedEntities(): array
+	{
+		return $this->updatedEntities;
+	}
+	public function getDeletedEntities(): array
+	{
+		return $this->deletedEntities;
+	}
+	public function getDomainEvents(): array
+	{
+		return $this->domainEvents;
+	}
 
 }

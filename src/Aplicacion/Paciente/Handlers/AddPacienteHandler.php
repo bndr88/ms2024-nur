@@ -10,18 +10,18 @@ use Mod2Nur\Dominio\Paciente\PacienteRepository;
 
 class AddPacienteHandler
 {
-    //private EloquentPacienteRepository $repository;
-    private PacienteRepository $repository;
+	//private EloquentPacienteRepository $repository;
+	private PacienteRepository $repository;
 
-    public function __construct(PacienteRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(PacienteRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(AddPacienteCommand $command): Paciente
-    {
-        $paciente = new Paciente('', $command->nombre, $command->fechaNacimiento);
-        $this->repository->save($paciente);
-        return $paciente;
-    }
+	public function __invoke(AddPacienteCommand $command): Paciente
+	{
+		$paciente = new Paciente('', $command->nombre, $command->fechaNacimiento);
+		$this->repository->save($paciente);
+		return $paciente;
+	}
 }

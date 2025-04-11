@@ -24,27 +24,25 @@ use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentTipoDiagnosticoReposito
 use Mod2Nur\Infraestructura\UnitOfWork;
 
 return function (): HandlersRegistry {
-    $registry = new HandlersRegistry();
-    $capsule = require __DIR__ . '/../../env.php';
-    $db = $capsule->getDatabaseManager();
-    $UoW = new UnitOfWork();
-    $repositoryPaciente = new EloquentPacienteRepository($UoW);
-    $repositoryTipoDiag = new EloquentTipoDiagnosticoRepository();
-    $repositoryDiagnostico = new EloquentDiagnosticoRepository();
-    
-    // Registro de Handlers para Commands y Queries
-    $registry->register(AddPacienteCommand::class, new AddPacienteHandler($repositoryPaciente));
-    $registry->register(RemPacienteCommand::class, new RemPacienteHandler($repositoryPaciente));
-    $registry->register(GetPacienteByIdQuery::class, new GetPacienteByIdHandler($repositoryPaciente));
-    $registry->register(GetListaPacientesQuery::class, new ListaPacientesHandler($repositoryPaciente));
-    $registry->register(GetHistorialQuery::class, new GetHistorialHandler($repositoryPaciente));
+	$registry = new HandlersRegistry();
+	$capsule = require __DIR__ . '/../../env.php';
+	$db = $capsule->getDatabaseManager();
+	$UoW = new UnitOfWork();
+	$repositoryPaciente = new EloquentPacienteRepository($UoW);
+	$repositoryTipoDiag = new EloquentTipoDiagnosticoRepository();
+	$repositoryDiagnostico = new EloquentDiagnosticoRepository();
 
-    $registry->register(AddDiagnosticoCommand::class, new AddDiagnosticoHandler($repositoryDiagnostico,$repositoryTipoDiag,$repositoryPaciente,$db));
-    $registry->register(RemDiagnosticoCommand::class, new RemDiagnosticoHandler($repositoryDiagnostico));
+	// Registro de Handlers para Commands y Queries
+	$registry->register(AddPacienteCommand::class, new AddPacienteHandler($repositoryPaciente));
+	$registry->register(RemPacienteCommand::class, new RemPacienteHandler($repositoryPaciente));
+	$registry->register(GetPacienteByIdQuery::class, new GetPacienteByIdHandler($repositoryPaciente));
+	$registry->register(GetListaPacientesQuery::class, new ListaPacientesHandler($repositoryPaciente));
+	$registry->register(GetHistorialQuery::class, new GetHistorialHandler($repositoryPaciente));
 
-    $registry->register(AddTipoDiagnosticoCommand::class, new AddTipoDiagnosticoHandler($repositoryTipoDiag));
-    
-    
+	$registry->register(AddDiagnosticoCommand::class, new AddDiagnosticoHandler($repositoryDiagnostico, $repositoryTipoDiag, $repositoryPaciente, $db));
+	$registry->register(RemDiagnosticoCommand::class, new RemDiagnosticoHandler($repositoryDiagnostico));
 
-    return $registry;
+	$registry->register(AddTipoDiagnosticoCommand::class, new AddTipoDiagnosticoHandler($repositoryTipoDiag));
+
+	return $registry;
 };

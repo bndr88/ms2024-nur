@@ -13,89 +13,88 @@ use Mod2Nur\Presentacion\Mediator\QueryBus;
 
 class DiagnosticoController
 {
-    private AddDiagnosticoHandler $removeHandler;
-    private CommandBus $commandBus;
-    private QueryBus $queryBus;
+	private AddDiagnosticoHandler $removeHandler;
+	private CommandBus $commandBus;
+	private QueryBus $queryBus;
 
-    public function __construct(CommandBus $commandBus, QueryBus $queryBus)
-    {
-        $this->commandBus = $commandBus;
-        $this->queryBus = $queryBus;
-    }
+	public function __construct(CommandBus $commandBus, QueryBus $queryBus)
+	{
+		$this->commandBus = $commandBus;
+		$this->queryBus = $queryBus;
+	}
 
-    public function crearDiagnostico(array $data)
-    {
-        $pacienteId = $data['idPaciente'];
-        $query = new GetPacienteByIdQuery($pacienteId);
+	public function crearDiagnostico(array $data)
+	{
+		$pacienteId = $data['idPaciente'];
+		$query = new GetPacienteByIdQuery($pacienteId);
 
-        // Pasar el Query al QueryBus mediante el método "ask" del Mediator
-        $paciente = $this->queryBus->ask($query);
+		// Pasar el Query al QueryBus mediante el método "ask" del Mediator
+		$paciente = $this->queryBus->ask($query);
 
-        if (!$paciente) {
-            throw new \Exception("Paciente no encontrado");
-        }
+		if (!$paciente) {
+			throw new \Exception("Paciente no encontrado");
+		}
 
-        try {
-            $fechaDiagnostico = new DateTime($data['fechaDiagnostico']);
-        } catch (Exception $e) {
-            throw new Exception("Invalid date format for fechaDiagnostico.");
-        }
-        
-        $command = new AddDiagnosticoCommand(
-            $paciente->getId(),
-            $fechaDiagnostico ,
-            $data['peso'],
-            $data['altura'],
-            $data['descripcion'],
-            $data['estadoDiagnostico'],
-            $data['idTipoDiagnostico'],
-            
-        );
+		try {
+			$fechaDiagnostico = new DateTime($data['fechaDiagnostico']);
+		} catch (Exception $e) {
+			throw new Exception("Invalid date format for fechaDiagnostico.");
+		}
 
-        $resultado = $this->commandBus->dispatch($command);
-        return $resultado;
-    }
+		$command = new AddDiagnosticoCommand(
+			$paciente->getId(),
+			$fechaDiagnostico,
+			$data['peso'],
+			$data['altura'],
+			$data['descripcion'],
+			$data['estadoDiagnostico'],
+			$data['idTipoDiagnostico'],
+		);
 
-    public function eliminarDiagnostico(string $id)
-    {
-        try {
-            $command = new RemDiagnosticoCommand($id);
-            $this->commandBus->dispatch($command);
-            http_response_code(200);
-        } catch (\Exception $e) {
-            http_response_code(400);
-        }
-    }
+		$resultado = $this->commandBus->dispatch($command);
+		return $resultado;
+	}
 
-    /*public function obtenerDiagnostico(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {
-        $id = $args['id'];
-        $query = new ObtenerDiagnosticoQuery($id);
+	public function eliminarDiagnostico(string $id)
+	{
+		try {
+			$command = new RemDiagnosticoCommand($id);
+			$this->commandBus->dispatch($command);
+			http_response_code(200);
+		} catch (\Exception $e) {
+			http_response_code(400);
+		}
+	}
 
-        $diagnostico = $this->mediator->handle($query);
+	/*public function obtenerDiagnostico(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+	{
+		$id = $args['id'];
+		$query = new ObtenerDiagnosticoQuery($id);
 
-        $response->getBody()->write(json_encode($diagnostico));
-        return $response->withHeader('Content-Type', 'application/json');
-    }
+		$diagnostico = $this->mediator->handle($query);
 
-    public function actualizarDiagnostico(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {
-        $id = $args['id'];
-        $data = $request->getParsedBody();
+		$response->getBody()->write(json_encode($diagnostico));
+		return $response->withHeader('Content-Type', 'application/json');
+	}
 
-        $command = new ActualizarDiagnosticoCommand(
-            $id,
-            $data['peso'],
-            $data['altura'],
-            $data['composicion'],
-            $data['estadoDiagnostico'],
-            $data['tipoDiagnostico']
-        );
+	public function actualizarDiagnostico(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+	{
+		$id = $args['id'];
+		$data = $request->getParsedBody();
 
-        $resultado = $this->mediator->handle($command);
+		$command = new ActualizarDiagnosticoCommand(
+			$id,
+			$data['peso'],
+			$data['altura'],
+			$data['composicion'],
+			$data['estadoDiagnostico'],
+			$data['tipoDiagnostico']
+		);
 
-        $response->getBody()->write(json_encode($resultado));
-        return $response->withHeader('Content-Type', 'application/json');
-    }
-    */
+		$resultado = $this->mediator->handle($command);
+
+		$response->getBody()->write(json_encode($resultado));
+		return $response->withHeader('Content-Type', 'application/json');
+	}
+	*/
 }
