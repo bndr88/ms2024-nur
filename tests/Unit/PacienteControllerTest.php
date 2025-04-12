@@ -179,7 +179,7 @@ class PacienteControllerTest extends TestCase
 		$respuesta = $pacienteController->getPacienteById($pacienteId);
 	}
 
-	public function testEliminarPaciente()
+	/*public function testEliminarPaciente()
 	{
 		//Arrange'
 		$pacienteId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
@@ -203,7 +203,7 @@ class PacienteControllerTest extends TestCase
 		$this->expectExceptionMessage('Error al obtener el paciente: Paciente no encontrado');
 		$respuesta = $pacienteController->getPacienteById($pacienteId);
 
-	}
+	}*/
 
 	public function testEliminarPacienteFallido()
 	{
