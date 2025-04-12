@@ -7,11 +7,20 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 
 Para esta presentación se realizaron las siguientes actividades:
 sonarlint
-- **`lint-staged`**: Se instaló el lintern  SonarLint (SonarQube for IDEs) para integrar el análisis estático de código directamente en el entorno de desarrollo y detectar posibles errores, vulnerabilidades y malas prácticas en tiempo real.
-
+- **`lint-staged`**: Se instaló el lintern lint-staged....
+  - **Instalación**: Representa las reglas de negocio y la lógica central.
    ```bash
-   ".\vendor\bin\php-cs-fixer" fix .
-	".\vendor\bin\pest" ./tests/Unit
+   npm install --save-dev lint-staged
+   ```
+  - **Configurar pre-commit con Husky**: Realizado en la anterior actividad
+  - **Configurar Code Formatter**: Realizado en la anterior actividad al instalar PHP-CS-Fixer
+  - **Configurar lint-staged**: En el archivo package.json
+   ```bash
+   "lint-staged": {
+    "*.php": [
+      "\"./vendor/bin/php-cs-fixer\" fix --using-cache=no --quiet"
+    ]
+  }
    ```
 
 
