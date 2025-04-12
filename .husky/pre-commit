@@ -1,4 +1,4 @@
 # npx lint-staged --relative
-".\vendor\bin\php-cs-fixer" fix .
+./vendor/bin/php-cs-fixer fix . && git add
 
-".\vendor\bin\pest" ./tests/Unit
+./vendor/bin/pest ./tests/Unit
