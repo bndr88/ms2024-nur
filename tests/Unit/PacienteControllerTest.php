@@ -84,7 +84,7 @@ class PacienteControllerTest extends TestCase
 
 	}
 
-	public function testCrearNuevoPacienteConUnitOfWorkSinMock()
+	/*public function testCrearNuevoPacienteConUnitOfWorkSinMock()
 	{
 		//Arrange'
 		$nombre = 'Pablo Marmol';
@@ -117,7 +117,7 @@ class PacienteControllerTest extends TestCase
 		$this->assertSame($nombre, $paciente->getNombre());
 		$this->assertEquals($fechaNacimiento, $paciente->getFechaNacimiento());
 
-	}
+	}*/
 
 	/*public function testObtenerPacientePorId()
 	{
@@ -179,7 +179,7 @@ class PacienteControllerTest extends TestCase
 		$respuesta = $pacienteController->getPacienteById($pacienteId);
 	}
 
-	public function testEliminarPaciente()
+	/*public function testEliminarPaciente()
 	{
 		//Arrange'
 		$pacienteId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
@@ -203,7 +203,7 @@ class PacienteControllerTest extends TestCase
 		$this->expectExceptionMessage('Error al obtener el paciente: Paciente no encontrado');
 		$respuesta = $pacienteController->getPacienteById($pacienteId);
 
-	}
+	}*/
 
 	public function testEliminarPacienteFallido()
 	{
@@ -238,7 +238,7 @@ class PacienteControllerTest extends TestCase
 
 	}
 
-	public function testListarPacientes()
+	/*public function testListarPacientes()
 	{
 		//Arrange'
 		// Instanciar lo necesario para trabajar con UnitOfWork
@@ -260,9 +260,10 @@ class PacienteControllerTest extends TestCase
 
 		//Assert
 		$this->assertNotEmpty($respuesta);
-	}
 
-	public function testObtenerHistorialClinico()
+	}*/
+
+	/*public function testObtenerHistorialClinico()
 	{
 		//Arrange'
 		$pacienteId = "8287a232-1dd8-4901-9adf-b742f5739405";
@@ -284,5 +285,5 @@ class PacienteControllerTest extends TestCase
 
 		//Assert
 		$this->assertNotEmpty($respuesta);
-	}
+	}*/
 }

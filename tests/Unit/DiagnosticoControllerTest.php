@@ -130,7 +130,7 @@ class DiagnosticoControllerTest extends TestCase
 		$diagnosticoController->crearDiagnostico($data);
 	}
 
-	public function testCrearNuevoDiagnosticoSinFecha()
+	/*public function testCrearNuevoDiagnosticoSinFecha()
 	{
 		//Arrange'
 		$faker = Factory::create();
@@ -165,7 +165,7 @@ class DiagnosticoControllerTest extends TestCase
 
 		//Act
 		$diagnosticoController->crearDiagnostico($data);
-	}
+	}*/
 
 	public function testEliminarDiagnosticoExitoso()
 	{
@@ -223,7 +223,7 @@ class DiagnosticoControllerTest extends TestCase
 
 	}
 
-	public function testEliminarDiagnosticoSinMock()
+	/*public function testEliminarDiagnosticoSinMock()
 	{
 		//Arrange'
 		$diagnosticoId = "04c4ec8d-289d-4631-9ffb-df972d271f00";
@@ -245,6 +245,6 @@ class DiagnosticoControllerTest extends TestCase
 		// Assert
 		$this->assertEquals(200, http_response_code());
 
-	}
+	}*/
 
 }

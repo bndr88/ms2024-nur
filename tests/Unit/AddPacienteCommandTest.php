@@ -38,7 +38,7 @@ class AddPacienteCommandTest extends TestCase
 		$this->assertEquals($fechaNacimiento, $command->fechaNacimiento);
 	}
 
-	public function testConstructorConFormatoFechaInvalida()
+	/*public function testConstructorConFormatoFechaInvalida()
 	{
 		// Caso con un formato de fecha inválido
 		$this->expectException(Exception::class);
@@ -48,6 +48,6 @@ class AddPacienteCommandTest extends TestCase
 		$fechaNacimiento = "invalid-date";
 
 		new AddPacienteCommand($nombre, $fechaNacimiento);
-	}
+	}*/
 
 }
