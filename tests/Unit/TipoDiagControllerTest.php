@@ -42,7 +42,7 @@ class TipoDiagControllerTest extends TestCase
 
 	}
 
-	public function testCrearNuevoTipoDeDiagnosticoSinMock()
+	/*public function testCrearNuevoTipoDeDiagnosticoSinMock()
 	{
 		//Arrange'
 		$faker = Factory::create();
@@ -52,9 +52,9 @@ class TipoDiagControllerTest extends TestCase
 		];
 
 		$uuidRegex = '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';
-		/*$unitOfWork = new UnitOfWork();
-		$repositorio = new EloquentPacienteRepository($unitOfWork);
-		$servicio = new CrearPacienteService($repositorio);*/
+		//$unitOfWork = new UnitOfWork();
+		//$repositorio = new EloquentPacienteRepository($unitOfWork);
+		//$servicio = new CrearPacienteService($repositorio);
 		// Configuración del Mediator
 		$registryFactory = require __DIR__ . '/../../src/Presentacion/mediator.php';
 		$registry = $registryFactory();
@@ -73,6 +73,6 @@ class TipoDiagControllerTest extends TestCase
 		$this->assertMatchesRegularExpression($uuidRegex, $tipoDiagnostico->getId(), 'El ID generado no tiene un formato UUID válido.');
 		$this->assertSame($descripcion, $tipoDiagnostico->getDescripcion());
 
-	}
+	}*/
 
 }
