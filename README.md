@@ -7,22 +7,23 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 
 Para esta presentación se realizaron las siguientes actividades:
 sonarlint
-- **`lint-staged`**: Se instaló el lintern lint-staged....
-  - **Instalación**: Representa las reglas de negocio y la lógica central.
+- **`lint-staged`**: Se configuró lint-staged para ejecutar PHP-CS-Fixer únicamente sobre los archivos PHP modificados antes de cada commit.
+  - **Instalación**: Se instaló mediante el siguiente comando.
    ```bash
    npm install --save-dev lint-staged
    ```
-  - **Configurar pre-commit con Husky**: Realizado en la anterior actividad
   - **Configurar Code Formatter**: Realizado en la anterior actividad al instalar PHP-CS-Fixer
   - **Configurar lint-staged**: En el archivo package.json
    ```bash
    "lint-staged": {
-    "*.php": [
-      "\"./vendor/bin/php-cs-fixer\" fix --using-cache=no --quiet"
-    ]
-  }
+    	"*.php": "./vendor/bin/php-cs-fixer fix --using-cache=no --quiet"
+  	}
    ```
-
+  - **Configurar pre-commit con Husky**: Realizado en la anterior actividad. Pero con esta variación:
+   ```bash
+	npx lint-staged --relative
+	".\vendor\bin\pest" ./tests/Unit
+   ```
 
 ## Estructura del Proyecto
 
