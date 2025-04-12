@@ -32,5 +32,8 @@
             "pact-foundation/composer-downloads-plugin": true,
             "pestphp/pest-plugin": true
         }
-    }
+    },
+	"scripts": {
+		"test": "vendor/bin/pest ./tests/Unit"
+	}
 }
