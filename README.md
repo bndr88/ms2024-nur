@@ -1,22 +1,29 @@
-# PRESENTACIÓN ACTIVAD NRO. 2 - MÓDULO 4
+# PRESENTACIÓN ACTIVAD NRO. 2 - MÓDULO 5
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
 
 ## Descripción de la presentación
 
-Para esta presenteción se presenta el proyecto final del módulo, que consiste en poner todo el proyecto en contenedores. Para ello se realizaron las siguientes actividades:
-- **`.Dockerignore`**: Se elaboró un archivo .dockerignore para generar omitir ciertos archivos que no se desea que se agreguen a la imagen.
-- **`Dockerfile`**: Se elaboró un archivo Dockerfile para generar una imagen de todo el proyecto, usando los siguientes comandos:
-   - **`Crear la imagen`**
+Para esta presentación se realizaron las siguientes actividades:
+sonarlint
+- **`lint-staged`**: Se configuró lint-staged para ejecutar PHP-CS-Fixer únicamente sobre los archivos PHP modificados antes de cada commit.
+  - **Instalación**: Se instaló mediante el siguiente comando.
    ```bash
-   docker build -t wendermendez/nutrinur:1.0 .
+   npm install --save-dev lint-staged
    ```
-   - **`Crear contenedor`**
+  - **Configurar Code Formatter**: Realizado en la anterior actividad al instalar PHP-CS-Fixer
+  - **Configurar lint-staged**: En el archivo package.json
    ```bash
-   docker run -d -p 8080:80 --name mi-microservicio wendermendez/nutrinur:1.0
+   "lint-staged": {
+    	"*.php": "./vendor/bin/php-cs-fixer fix --using-cache=no --quiet"
+  	}
    ```
-
+  - **Configurar pre-commit con Husky**: Realizado en la anterior actividad. Pero con esta variación:
+   ```bash
+	npx lint-staged --relative
+	".\vendor\bin\pest" ./tests/Unit
+   ```
 
 ## Estructura del Proyecto
 

@@ -19,106 +19,106 @@ use Mod2Nur\Presentacion\Mediator\QueryBus;
 
 class PacienteController
 {
-    private CommandBus $commandBus;
-    private QueryBus $queryBus;
+	private CommandBus $commandBus;
+	private QueryBus $queryBus;
 
-    private CrearPacienteService $servicio;
-    private UnitOfWork $unitOfWork;
+	private CrearPacienteService $servicio;
+	private UnitOfWork $unitOfWork;
 
-    public function __construct(CommandBus $commandBus, QueryBus $queryBus, CrearPacienteService $servicio, ?UnitOfWork $unitOfWork)
-    {
-        $this->commandBus = $commandBus;
-        $this->queryBus = $queryBus;
+	public function __construct(CommandBus $commandBus, QueryBus $queryBus, CrearPacienteService $servicio, ?UnitOfWork $unitOfWork)
+	{
+		$this->commandBus = $commandBus;
+		$this->queryBus = $queryBus;
 
-        $this->servicio = $servicio;
-        $this->unitOfWork = $unitOfWork;
-    }
+		$this->servicio = $servicio;
+		$this->unitOfWork = $unitOfWork;
+	}
 
-    public function crearPacienteUnitOfWork(array $data)
-    {
-        /*$fecNac = new DateTime($data['fechaNacimiento']);
-        $paciente = new Paciente('',$data['nombre'], $fecNac);*/
-        $paciente = new Paciente('',$data['nombre'], $data['fechaNacimiento']);
-        $this->servicio->ejecutar($paciente);
-        $this->unitOfWork->commit();
-        return $paciente;
-    }
+	public function crearPacienteUnitOfWork(array $data)
+	{
+		/*$fecNac = new DateTime($data['fechaNacimiento']);
+		$paciente = new Paciente('',$data['nombre'], $fecNac);*/
+		$paciente = new Paciente('', $data['nombre'], $data['fechaNacimiento']);
+		$this->servicio->ejecutar($paciente);
+		$this->unitOfWork->commit();
+		return $paciente;
+	}
 
-    public function addPaciente(array $data)
-    {
-        // Crear el comando con los datos de entrada
-        $command = new AddPacienteCommand($data['nombre'], $data['fechaNacimiento']);
+	public function addPaciente(array $data)
+	{
+		// Crear el comando con los datos de entrada
+		$command = new AddPacienteCommand($data['nombre'], $data['fechaNacimiento']);
 
-        // Enviar el comando a través del Mediator (vía CommandBus)
-        $paciente = $this->commandBus->dispatch($command);
+		// Enviar el comando a través del Mediator (vía CommandBus)
+		$paciente = $this->commandBus->dispatch($command);
 
-        return $paciente;
-    }
+		return $paciente;
+	}
 
-    public function getPacienteById(string $pacienteId)
-    {
-        try {
-             // Crear el Query para obtener el paciente
-             $query = new GetPacienteByIdQuery($pacienteId);
+	public function getPacienteById(string $pacienteId)
+	{
+		try {
+			// Crear el Query para obtener el paciente
+			$query = new GetPacienteByIdQuery($pacienteId);
 
-             // Pasar el Query al QueryBus mediante el método "ask" del Mediator
-             $paciente = $this->queryBus->ask($query);
- 
-             if (!$paciente) {
-                 throw new \Exception("Paciente no encontrado");
-             }
-            
-             $fechaNac = $paciente->getFechaNacimiento()->format('d/m/Y');
-            return [
-                'id' => $paciente->getId(),
-                'nombre' => $paciente->getNombre(),
-                'fechaNacimiento' => $fechaNac,
-            ];
-        } catch (\Exception $e) {
-            throw new \Exception("Error al obtener el paciente: " . $e->getMessage());
-        }
-    }
+			// Pasar el Query al QueryBus mediante el método "ask" del Mediator
+			$paciente = $this->queryBus->ask($query);
 
-    public function destroy(string $id)
-    {
-        try {
-            $command = new RemPacienteCommand($id);
-            //$this->removeHandler->handle($command);
-            $paciente = $this->commandBus->dispatch($command);
-            http_response_code(200);
-        } catch (\Exception $e) {
-            http_response_code(400);
-        }
-    }
+			if (!$paciente) {
+				throw new \Exception("Paciente no encontrado");
+			}
 
-    public function listar(string $filtro): array    
-    {
-        try {
-             // Crear el Query para obtener el paciente
-             $query = new GetListaPacientesQuery($filtro);
+			$fechaNac = $paciente->getFechaNacimiento()->format('d/m/Y');
+			return [
+				'id' => $paciente->getId(),
+				'nombre' => $paciente->getNombre(),
+				'fechaNacimiento' => $fechaNac,
+			];
+		} catch (\Exception $e) {
+			throw new \Exception("Error al obtener el paciente: " . $e->getMessage());
+		}
+	}
 
-             // Pasar el Query al QueryBus mediante el método "ask" del Mediator
-             $lista = $this->queryBus->ask($query);
- 
-             if (!$lista) {
-                 throw new \Exception("Error al listar");
-             }
-            return $lista;
-        } catch (\Exception $e) {
-            throw new \Exception("Error al listar: " . $e->getMessage());
-        }
-    }
+	public function destroy(string $id)
+	{
+		try {
+			$command = new RemPacienteCommand($id);
+			//$this->removeHandler->handle($command);
+			$paciente = $this->commandBus->dispatch($command);
+			http_response_code(200);
+		} catch (\Exception $e) {
+			http_response_code(400);
+		}
+	}
 
-    public function getHistorialClinico(string $idPaciente): array    
-    {
-        try {
-             $query = new GetHistorialQuery($idPaciente);
+	public function listar(string $filtro): array
+	{
+		try {
+			// Crear el Query para obtener el paciente
+			$query = new GetListaPacientesQuery($filtro);
 
-             // Pasar el Query al QueryBus mediante el método "ask" del Mediator
-             $lista = $this->queryBus->ask($query);
-            return $lista;
-        } catch (\Exception $e) {
-            throw new \Exception("Error al listar: " . $e->getMessage());
-        }
-    }
+			// Pasar el Query al QueryBus mediante el método "ask" del Mediator
+			$lista = $this->queryBus->ask($query);
+
+			if (!$lista) {
+				throw new \Exception("Error al listar");
+			}
+			return $lista;
+		} catch (\Exception $e) {
+			throw new \Exception("Error al listar: " . $e->getMessage());
+		}
+	}
+
+	public function getHistorialClinico(string $idPaciente): array
+	{
+		try {
+			$query = new GetHistorialQuery($idPaciente);
+
+			// Pasar el Query al QueryBus mediante el método "ask" del Mediator
+			$lista = $this->queryBus->ask($query);
+			return $lista;
+		} catch (\Exception $e) {
+			throw new \Exception("Error al listar: " . $e->getMessage());
+		}
+	}
 }

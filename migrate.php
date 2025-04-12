@@ -7,14 +7,14 @@
 
 $capsule = new Capsule();
 $capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
-    'database'  => 'nutrinur',
-    'username'  => 'root',
-    'password'  => 'Lm12345',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
+	'driver'    => 'mysql',
+	'host'      => '127.0.0.1',
+	'database'  => 'nutrinur',
+	'username'  => 'root',
+	'password'  => 'Lm12345',
+	'charset'   => 'utf8',
+	'collation' => 'utf8_unicode_ci',
+	'prefix'    => '',
 ]);
 
 $capsule->setAsGlobal();
@@ -26,5 +26,5 @@ $migrationsDir = __DIR__ . '/src/Infraestructura/Migraciones';
 
 // Ejecutar todas las migraciones
 foreach (glob("$migrationsDir/*.php") as $migration) {
-    require_once $migration;
+	require_once $migration;
 }

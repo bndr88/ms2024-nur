@@ -6,35 +6,41 @@ use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Mod2Nur\Dominio\Abstracciones\Entity;
 
-class TipoDiagnostico extends Entity {
-    private string $descripcion;
+class TipoDiagnostico extends Entity
+{
+	private string $descripcion;
 
-    public function __construct(string $id, string $descripcion) {
-        if ($id ==='') {
-            $this->constructorUno($descripcion);
-        } elseif ($id !== null) {
-            $this->constructorDos($id, $descripcion);
-        }
-    }
+	public function __construct(string $id, string $descripcion)
+	{
+		if ($id === '') {
+			$this->constructorUno($descripcion);
+		} elseif ($id !== null) {
+			$this->constructorDos($id, $descripcion);
+		}
+	}
 
-    private function constructorUno(string $descripcion) {
-        $id = (string) Str::uuid();
-        parent::__construct($id);
-        $this->descripcion = $descripcion;
-    }
+	private function constructorUno(string $descripcion)
+	{
+		$id = (string) Str::uuid();
+		parent::__construct($id);
+		$this->descripcion = $descripcion;
+	}
 
-    private function constructorDos(string $id, string $descripcion) {
-        parent::__construct($id);
-        $this->descripcion = $descripcion;
-    }
+	private function constructorDos(string $id, string $descripcion)
+	{
+		parent::__construct($id);
+		$this->descripcion = $descripcion;
+	}
 
-    // Getters
-    public function getDescripcion(): string {
-        return $this->descripcion;
-    }
+	// Getters
+	public function getDescripcion(): string
+	{
+		return $this->descripcion;
+	}
 
-    // Setters
-    public function setDescripcion(string $descripcion): void {
-        $this->descripcion = $descripcion;
-    }
+	// Setters
+	public function setDescripcion(string $descripcion): void
+	{
+		$this->descripcion = $descripcion;
+	}
 }
