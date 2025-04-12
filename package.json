@@ -7,6 +7,6 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.php": ["./vendor/bin/php-cs-fixer fix --using-cache=no --quiet"]
+    "*.php": "./vendor/bin/php-cs-fixer fix --using-cache=no --quiet"
   }
 }
