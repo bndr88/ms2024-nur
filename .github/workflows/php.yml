@@ -33,8 +33,6 @@ jobs:
       run: composer install --prefer-dist --no-progress
     - name: Fix Pest permissions
       run: chmod +x ./vendor/bin/pest
-    - name: Fix Pest cache permissions
-      run: chmod 777 -R ./tests/Unit/pest-cache
     - name: Run test suite
       run: composer run-script test
 
