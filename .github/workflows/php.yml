@@ -31,8 +31,10 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-    - name: Fix Pest permissions
+    - name: Fix PHPUnit permissions
       run: chmod +x ./vendor/bin/phpunit
+    - name: Fix PEST permissions
+      run: chmod +x ./vendor/bin/pest
     - name: Run test suite
       run: composer run-script test 
 
