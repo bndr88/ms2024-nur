@@ -17,7 +17,7 @@ $capsule->addConnection([
 	'collation' => 'utf8_unicode_ci',
 	'prefix' => '',
 ], 'default');
-//solo prueba para el sonar y code-coverage
+//Ahora prueba para Release-1
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
