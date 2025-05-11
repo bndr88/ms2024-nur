@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Sun May 11 23:39:36 UTC 2025" phpunit="11.5.3" coverage="11.0.8">
+    <runtime name="PHP" version="8.3.17" url="https://www.php.net/"/>
+    <driver name="xdebug" version="3.3.0"/>
+  </build>
+  <project source="C:\Users\el_bu\Herd\ms2024-nur-tf\src">
+    <tests>
+      <test name="Tests\Unit\AddDiagnosticoCommandTest::testConstructorConFechaString" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddPacienteCommandTest::testConstructorConFechaStringValida" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddPacienteCommandTest::testConstructorConObjetoDatetime" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddTipoDiagnosticoCommandTest::testGetter" size="unknown" status="success"/>
+      <test name="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido" size="unknown" status="success"/>
+      <test name="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis" size="unknown" status="success"/>
+      <test name="Tests\Unit\CrearPacienteServiceTest::testEjecutar" size="unknown" status="success"/>
+      <test name="DiagnosticoControllerTest::testCrearNuevoDiagnosticoSinPaciente" size="unknown" status="success"/>
+      <test name="DiagnosticoControllerTest::testEliminarDiagnosticoExitoso" size="unknown" status="success"/>
+      <test name="DiagnosticoControllerTest::testEliminarDiagnosticoFallido" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testLanzaExcepcionConstructorAsignaValoresIncorrectos" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testGettersYSetters" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\EntityTest::testSettersYGetters" size="unknown" status="success"/>
+      <test name="Tests\Unit\EntityTest::testFuncionEquals" size="unknown" status="success"/>
+      <test name="Tests\Unit\EntityTest::testDebeLanzarExcepcionSiElIdEstaVacio" size="unknown" status="success"/>
+      <test name="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido" size="unknown" status="success"/>
+      <test name="Tests\Unit\EntrevistaTest::testGetters" size="unknown" status="success"/>
+      <test name="PacienteControllerTest::testCrearNuevoPaciente" size="unknown" status="success"/>
+      <test name="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork" size="unknown" status="success"/>
+      <test name="PacienteControllerTest::testObtenerPacientePorIdFallido" size="unknown" status="success"/>
+      <test name="PacienteControllerTest::testEliminarPacienteFallido" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorAceptaUuid" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConParametrosNulos" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testSettersYGetters" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testAgregarDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testRemoverDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\PacienteTest::testAgregarEntrevista" size="unknown" status="success"/>
+      <test name="Tests\Unit\SentryTest::testCaptureExceptionIsCalled" size="unknown" status="success"/>
+      <test name="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico" size="unknown" status="success"/>
+      <test name="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente" size="unknown" status="success"/>
+      <test name="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid" size="unknown" status="success"/>
+      <test name="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido" size="unknown" status="success"/>
+      <test name="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters" size="unknown" status="success"/>
+      <test name="Tests\Unit\UnitOfWorkTest::testSetNuevaEntidad" size="unknown" status="success"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="2328" comments="164" code="2164" executable="638" executed="235" percent="36.83"/>
+        <methods count="143" tested="94" percent="65.73"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="41" tested="16" percent="39.02"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Aplicacion">
+        <totals>
+          <lines total="493" comments="33" code="460" executable="87" executed="49" percent="56.32"/>
+          <methods count="31" tested="19" percent="61.29"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="17" tested="7" percent="41.18"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Diagnostico">
+          <totals>
+            <lines total="228" comments="23" code="205" executable="50" executed="32" percent="64.00"/>
+            <methods count="11" tested="9" percent="81.82"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="6" tested="4" percent="66.67"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Commands">
+            <totals>
+              <lines total="103" comments="19" code="84" executable="12" executed="12" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="3" tested="3" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="AddDiagnosticoCommand.php" href="Aplicacion/Diagnostico/Commands/AddDiagnosticoCommand.php.xml">
+              <totals>
+                <lines total="52" comments="9" code="43" executable="9" executed="9" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="AddTipoDiagnosticoCommand.php" href="Aplicacion/Diagnostico/Commands/AddTipoDiagnosticoCommand.php.xml">
+              <totals>
+                <lines total="19" comments="0" code="19" executable="2" executed="2" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="RemDiagnosticoCommand.php" href="Aplicacion/Diagnostico/Commands/RemDiagnosticoCommand.php.xml">
+              <totals>
+                <lines total="14" comments="0" code="14" executable="1" executed="1" percent="100.00"/>
+                <methods count="1" tested="1" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="RemTipoDiagnosticoCommand.php" href="Aplicacion/Diagnostico/Commands/RemTipoDiagnosticoCommand.php.xml">
+              <totals>
+                <lines total="18" comments="10" code="8" executable="0" executed="0" percent="0"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Handlers">
+            <totals>
+              <lines total="125" comments="4" code="121" executable="38" executed="20" percent="52.63"/>
+              <methods count="6" tested="4" percent="66.67"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="3" tested="1" percent="33.33"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="AddDiagnosticoHandler.php" href="Aplicacion/Diagnostico/Handlers/AddDiagnosticoHandler.php.xml">
+              <totals>
+                <lines total="77" comments="3" code="74" executable="32" executed="15" percent="46.88"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="AddTipoDiagnosticoHandler.php" href="Aplicacion/Diagnostico/Handlers/AddTipoDiagnosticoHandler.php.xml">
+              <totals>
+                <lines total="26" comments="1" code="25" executable="4" executed="4" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="RemDiagnosticoHandler.php" href="Aplicacion/Diagnostico/Handlers/RemDiagnosticoHandler.php.xml">
+              <totals>
+                <lines total="22" comments="0" code="22" executable="2" executed="1" percent="50.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+        </directory>
+        <directory name="Paciente">
+          <totals>
+            <lines total="265" comments="10" code="255" executable="37" executed="17" percent="45.95"/>
+            <methods count="20" tested="10" percent="50.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="11" tested="3" percent="27.27"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Commands">
+            <totals>
+              <lines total="41" comments="0" code="41" executable="7" executed="4" percent="57.14"/>
+              <methods count="2" tested="1" percent="50.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="1" percent="50.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="AddPacienteCommand.php" href="Aplicacion/Paciente/Commands/AddPacienteCommand.php.xml">
+              <totals>
+                <lines total="27" comments="0" code="27" executable="6" executed="3" percent="50.00"/>
+                <methods count="1" tested="0" percent="0.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="RemPacienteCommand.php" href="Aplicacion/Paciente/Commands/RemPacienteCommand.php.xml">
+              <totals>
+                <lines total="14" comments="0" code="14" executable="1" executed="1" percent="100.00"/>
+                <methods count="1" tested="1" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Handlers">
+            <totals>
+              <lines total="139" comments="8" code="131" executable="20" executed="8" percent="40.00"/>
+              <methods count="10" tested="6" percent="60.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="5" tested="1" percent="20.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="AddPacienteHandler.php" href="Aplicacion/Paciente/Handlers/AddPacienteHandler.php.xml">
+              <totals>
+                <lines total="28" comments="2" code="26" executable="4" executed="4" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="GetHistorialHandler.php" href="Aplicacion/Paciente/Handlers/GetHistorialHandler.php.xml">
+              <totals>
+                <lines total="28" comments="0" code="28" executable="5" executed="1" percent="20.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="GetPacienteByIdHandler.php" href="Aplicacion/Paciente/Handlers/GetPacienteByIdHandler.php.xml">
+              <totals>
+                <lines total="29" comments="1" code="28" executable="5" executed="1" percent="20.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="ListaPacientesHandler.php" href="Aplicacion/Paciente/Handlers/ListaPacientesHandler.php.xml">
+              <totals>
+                <lines total="31" comments="5" code="26" executable="4" executed="1" percent="25.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="RemPacienteHandler.php" href="Aplicacion/Paciente/Handlers/RemPacienteHandler.php.xml">
+              <totals>
+                <lines total="23" comments="0" code="23" executable="2" executed="1" percent="50.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Queries">
+            <totals>
+              <lines total="57" comments="0" code="57" executable="6" executed="1" percent="16.67"/>
+              <methods count="6" tested="1" percent="16.67"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="3" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="GetHistorialQuery.php" href="Aplicacion/Paciente/Queries/GetHistorialQuery.php.xml">
+              <totals>
+                <lines total="19" comments="0" code="19" executable="2" executed="0" percent="0.00"/>
+                <methods count="2" tested="0" percent="0.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="GetListaPacientesQuery.php" href="Aplicacion/Paciente/Queries/GetListaPacientesQuery.php.xml">
+              <totals>
+                <lines total="19" comments="0" code="19" executable="2" executed="0" percent="0.00"/>
+                <methods count="2" tested="0" percent="0.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="GetPacienteByIdQuery.php" href="Aplicacion/Paciente/Queries/GetPacienteByIdQuery.php.xml">
+              <totals>
+                <lines total="19" comments="0" code="19" executable="2" executed="1" percent="50.00"/>
+                <methods count="2" tested="1" percent="50.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="0" percent="0.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Servicios">
+            <totals>
+              <lines total="28" comments="2" code="26" executable="4" executed="4" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="CrearPacienteService.php" href="Aplicacion/Paciente/Servicios/CrearPacienteService.php.xml">
+              <totals>
+                <lines total="28" comments="2" code="26" executable="4" executed="4" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+        </directory>
+      </directory>
+      <directory name="Dominio">
+        <totals>
+          <lines total="528" comments="6" code="522" executable="112" executed="112" percent="100.00"/>
+          <methods count="56" tested="56" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="8" tested="8" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Abstracciones">
+          <totals>
+            <lines total="67" comments="0" code="67" executable="11" executed="11" percent="100.00"/>
+            <methods count="6" tested="6" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="AggregateRoot.php" href="Dominio/Abstracciones/AggregateRoot.php.xml">
+            <totals>
+              <lines total="12" comments="0" code="12" executable="1" executed="1" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Entity.php" href="Dominio/Abstracciones/Entity.php.xml">
+            <totals>
+              <lines total="44" comments="0" code="44" executable="10" executed="10" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Repository.php" href="Dominio/Abstracciones/Repository.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Diagnostico">
+          <totals>
+            <lines total="290" comments="4" code="286" executable="69" executed="69" percent="100.00"/>
+            <methods count="31" tested="31" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="3" tested="3" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="AnalisisClinico.php" href="Dominio/Diagnostico/AnalisisClinico.php.xml">
+            <totals>
+              <lines total="33" comments="0" code="33" executable="6" executed="6" percent="100.00"/>
+              <methods count="3" tested="3" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Diagnostico.php" href="Dominio/Diagnostico/Diagnostico.php.xml">
+            <totals>
+              <lines total="175" comments="2" code="173" executable="52" executed="52" percent="100.00"/>
+              <methods count="23" tested="23" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="DiagnosticoRepository.php" href="Dominio/Diagnostico/DiagnosticoRepository.php.xml">
+            <totals>
+              <lines total="13" comments="0" code="13" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="EstadoDiagnostico.php" href="Dominio/Diagnostico/EstadoDiagnostico.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TipoDiagnostico.php" href="Dominio/Diagnostico/TipoDiagnostico.php.xml">
+            <totals>
+              <lines total="47" comments="2" code="45" executable="11" executed="11" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TipoDiagnosticoRepository.php" href="Dominio/Diagnostico/TipoDiagnosticoRepository.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Entrevista">
+          <totals>
+            <lines total="23" comments="0" code="23" executable="3" executed="3" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="Entrevista.php" href="Dominio/Entrevista/Entrevista.php.xml">
+            <totals>
+              <lines total="23" comments="0" code="23" executable="3" executed="3" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Paciente">
+          <totals>
+            <lines total="148" comments="2" code="146" executable="29" executed="29" percent="100.00"/>
+            <methods count="17" tested="17" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="Paciente.php" href="Dominio/Paciente/Paciente.php.xml">
+            <totals>
+              <lines total="111" comments="2" code="109" executable="27" executed="27" percent="100.00"/>
+              <methods count="15" tested="15" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="PacienteCreadoEvent.php" href="Dominio/Paciente/PacienteCreadoEvent.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="2" executed="2" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="PacienteRepository.php" href="Dominio/Paciente/PacienteRepository.php.xml">
+            <totals>
+              <lines total="18" comments="0" code="18" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+      </directory>
+      <directory name="Infraestructura">
+        <totals>
+          <lines total="637" comments="32" code="605" executable="211" executed="9" percent="4.27"/>
+          <methods count="36" tested="9" percent="25.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="9" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Migraciones">
+          <totals>
+            <lines total="153" comments="0" code="153" executable="83" executed="0" percent="0.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="20250310_create_users_table.php" href="Infraestructura/Migraciones/20250310_create_users_table.php.xml">
+            <totals>
+              <lines total="21" comments="0" code="21" executable="11" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250311_create_tipoanalisis_table.php" href="Infraestructura/Migraciones/20250311_create_tipoanalisis_table.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="9" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250312_create_tipodiagnosticos_table.php" href="Infraestructura/Migraciones/20250312_create_tipodiagnosticos_table.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="9" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250313_create_pacientes_table.php" href="Infraestructura/Migraciones/20250313_create_pacientes_table.php.xml">
+            <totals>
+              <lines total="20" comments="0" code="20" executable="10" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250314_create_entrevistas_table.php" href="Infraestructura/Migraciones/20250314_create_entrevistas_table.php.xml">
+            <totals>
+              <lines total="21" comments="0" code="21" executable="11" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250315_create_diagnosticos_table.php" href="Infraestructura/Migraciones/20250315_create_diagnosticos_table.php.xml">
+            <totals>
+              <lines total="27" comments="0" code="27" executable="17" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="20250316_create_analisisclinicos_table.php" href="Infraestructura/Migraciones/20250316_create_analisisclinicos_table.php.xml">
+            <totals>
+              <lines total="26" comments="0" code="26" executable="16" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Modelos">
+          <totals>
+            <lines total="175" comments="0" code="175" executable="37" executed="0" percent="0.00"/>
+            <methods count="12" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="5" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="Diagnostico.php" href="Infraestructura/Modelos/Diagnostico.php.xml">
+            <totals>
+              <lines total="43" comments="0" code="43" executable="9" executed="0" percent="0.00"/>
+              <methods count="4" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Entrevista.php" href="Infraestructura/Modelos/Entrevista.php.xml">
+            <totals>
+              <lines total="33" comments="0" code="33" executable="7" executed="0" percent="0.00"/>
+              <methods count="2" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Paciente.php" href="Infraestructura/Modelos/Paciente.php.xml">
+            <totals>
+              <lines total="33" comments="0" code="33" executable="7" executed="0" percent="0.00"/>
+              <methods count="2" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TipoAnalisis.php" href="Infraestructura/Modelos/TipoAnalisis.php.xml">
+            <totals>
+              <lines total="33" comments="0" code="33" executable="7" executed="0" percent="0.00"/>
+              <methods count="2" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TipoDiagnostico.php" href="Infraestructura/Modelos/TipoDiagnostico.php.xml">
+            <totals>
+              <lines total="33" comments="0" code="33" executable="7" executed="0" percent="0.00"/>
+              <methods count="2" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="RepositoriosEloquent">
+          <totals>
+            <lines total="223" comments="30" code="193" executable="68" executed="1" percent="1.47"/>
+            <methods count="14" tested="1" percent="7.14"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="3" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="EloquentDiagnosticoRepository.php" href="Infraestructura/RepositoriosEloquent/EloquentDiagnosticoRepository.php.xml">
+            <totals>
+              <lines total="66" comments="19" code="47" executable="15" executed="0" percent="0.00"/>
+              <methods count="3" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="EloquentPacienteRepository.php" href="Infraestructura/RepositoriosEloquent/EloquentPacienteRepository.php.xml">
+            <totals>
+              <lines total="111" comments="5" code="106" executable="41" executed="1" percent="2.44"/>
+              <methods count="8" tested="1" percent="12.50"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="EloquentTipoDiagnosticoRepository.php" href="Infraestructura/RepositoriosEloquent/EloquentTipoDiagnosticoRepository.php.xml">
+            <totals>
+              <lines total="46" comments="6" code="40" executable="12" executed="0" percent="0.00"/>
+              <methods count="3" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <file name="UnitOfWork.php" href="Infraestructura/UnitOfWork.php.xml">
+          <totals>
+            <lines total="86" comments="2" code="84" executable="23" executed="8" percent="34.78"/>
+            <methods count="10" tested="8" percent="80.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Presentacion">
+        <totals>
+          <lines total="670" comments="93" code="577" executable="228" executed="65" percent="28.51"/>
+          <methods count="20" tested="10" percent="50.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="7" tested="1" percent="14.29"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Controladores">
+          <totals>
+            <lines total="273" comments="59" code="214" executable="70" executed="37" percent="52.86"/>
+            <methods count="12" tested="7" percent="58.33"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="3" tested="1" percent="33.33"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="DiagnosticoController.php" href="Presentacion/Controladores/DiagnosticoController.php.xml">
+            <totals>
+              <lines total="101" comments="32" code="69" executable="26" executed="12" percent="46.15"/>
+              <methods count="3" tested="2" percent="66.67"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="PacienteController.php" href="Presentacion/Controladores/PacienteController.php.xml">
+            <totals>
+              <lines total="125" comments="10" code="115" executable="40" executed="21" percent="52.50"/>
+              <methods count="7" tested="3" percent="42.86"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TipoDiagController.php" href="Presentacion/Controladores/TipoDiagController.php.xml">
+            <totals>
+              <lines total="47" comments="17" code="30" executable="4" executed="4" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Mediator">
+          <totals>
+            <lines total="115" comments="1" code="114" executable="11" executed="3" percent="27.27"/>
+            <methods count="8" tested="3" percent="37.50"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="4" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Exceptions">
+            <totals>
+              <lines total="20" comments="0" code="20" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="HandlerNotFoundException.php" href="Presentacion/Mediator/Exceptions/HandlerNotFoundException.php.xml">
+              <totals>
+                <lines total="10" comments="0" code="10" executable="0" executed="0" percent="0"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="InvalidMessageException.php" href="Presentacion/Mediator/Exceptions/InvalidMessageException.php.xml">
+              <totals>
+                <lines total="10" comments="0" code="10" executable="0" executed="0" percent="0"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <file name="CommandBus.php" href="Presentacion/Mediator/CommandBus.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="2" executed="0" percent="0.00"/>
+              <methods count="2" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="HandlersRegistry.php" href="Presentacion/Mediator/HandlersRegistry.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="2" executed="1" percent="50.00"/>
+              <methods count="2" tested="1" percent="50.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="IMediator.php" href="Presentacion/Mediator/IMediator.php.xml">
+            <totals>
+              <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="Mediator.php" href="Presentacion/Mediator/Mediator.php.xml">
+            <totals>
+              <lines total="29" comments="1" code="28" executable="5" executed="1" percent="20.00"/>
+              <methods count="2" tested="1" percent="50.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="QueryBus.php" href="Presentacion/Mediator/QueryBus.php.xml">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="2" executed="1" percent="50.00"/>
+              <methods count="2" tested="1" percent="50.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <file name="Rutas.php" href="Presentacion/Rutas.php.xml">
+          <totals>
+            <lines total="201" comments="23" code="178" executable="116" executed="0" percent="0.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="index.php" href="Presentacion/index.php.xml">
+          <totals>
+            <lines total="19" comments="7" code="12" executable="6" executed="0" percent="0.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="mediator.php" href="Presentacion/mediator.php.xml">
+          <totals>
+            <lines total="49" comments="1" code="48" executable="18" executed="18" percent="100.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="sentry.php" href="Presentacion/sentry.php.xml">
+          <totals>
+            <lines total="13" comments="2" code="11" executable="7" executed="7" percent="100.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+    </directory>
+  </project>
+</phpunit>

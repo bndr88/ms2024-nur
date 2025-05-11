@@ -1,0 +1,1774 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="Diagnostico.php" path="\Dominio\Diagnostico">
+    <totals>
+      <lines total="175" comments="2" code="173" executable="52" executed="52" percent="100.00"/>
+      <methods count="23" tested="23" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Mod2Nur\Dominio\Diagnostico\Diagnostico" start="12" executable="52" executed="52" crap="28">
+      <namespace name="Mod2Nur\Dominio\Diagnostico"/>
+      <method name="__construct" signature="__construct(string|null $id, Mod2Nur\Dominio\Paciente\Paciente $paciente, ?DateTime $fecha, float $peso, float $altura, string $descripcion, Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico $estadoDiagnostico, Mod2Nur\Dominio\Diagnostico\TipoDiagnostico $tipoDiagnostico)" start="23" end="32" crap="3" executable="5" executed="5" coverage="100"/>
+      <method name="constructorUno" signature="constructorUno(Mod2Nur\Dominio\Paciente\Paciente $paciente, ?DateTime $fecha, float $peso, float $altura, string $descripcion, Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico $estadoDiagnostico, Mod2Nur\Dominio\Diagnostico\TipoDiagnostico $tipoDiagnostico)" start="34" end="45" crap="1" executable="9" executed="9" coverage="100"/>
+      <method name="constructorDos" signature="constructorDos(string $id, Mod2Nur\Dominio\Paciente\Paciente $paciente, ?DateTime $fecha, float $peso, float $altura, string $descripcion, Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico $estadoDiagnostico, Mod2Nur\Dominio\Diagnostico\TipoDiagnostico $tipoDiagnostico)" start="47" end="57" crap="1" executable="8" executed="8" coverage="100"/>
+      <method name="actualizarDiagnostico" signature="actualizarDiagnostico(float $peso, float $altura, string $descripcion): void" start="59" end="64" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="addAnalisisClinico" signature="addAnalisisClinico(Mod2Nur\Dominio\Diagnostico\AnalisisClinico $analisis): void" start="66" end="72" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="removeAnalisisClinico" signature="removeAnalisisClinico(string $analisisId): void" start="74" end="80" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="concluirDiagnostico" signature="concluirDiagnostico(): void" start="82" end="90" crap="3" executable="4" executed="4" coverage="100"/>
+      <method name="getPaciente" signature="getPaciente(): Mod2Nur\Dominio\Paciente\Paciente" start="93" end="96" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getFecha" signature="getFecha(): DateTime" start="98" end="101" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getPeso" signature="getPeso(): float" start="103" end="106" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getAltura" signature="getAltura(): float" start="108" end="111" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getDescripcion" signature="getDescripcion(): string" start="113" end="116" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getEstadoDiagnostico" signature="getEstadoDiagnostico(): Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico" start="118" end="121" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getAnalisisSolicitados" signature="getAnalisisSolicitados(): array" start="123" end="126" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getTipoDiagnostico" signature="getTipoDiagnostico(): Mod2Nur\Dominio\Diagnostico\TipoDiagnostico" start="128" end="131" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setPaciente" signature="setPaciente(Mod2Nur\Dominio\Paciente\Paciente $paciente): void" start="134" end="137" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setFecha" signature="setFecha(DateTime $fecha): void" start="139" end="142" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setPeso" signature="setPeso(float $peso): void" start="144" end="147" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setAltura" signature="setAltura(float $altura): void" start="149" end="152" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setDescripcion" signature="setDescripcion(string $descripcion): void" start="154" end="157" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setEstadoDiagnostico" signature="setEstadoDiagnostico(Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico $estadoDiagnostico): void" start="159" end="162" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setAnalisisSolicitados" signature="setAnalisisSolicitados(array $analisisSolicitados): void" start="164" end="167" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setTipoDiagnostico" signature="setTipoDiagnostico(Mod2Nur\Dominio\Diagnostico\TipoDiagnostico $tipoDiagnostico): void" start="169" end="172" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="25">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testLanzaExcepcionConstructorAsignaValoresIncorrectos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="26">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="27">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testLanzaExcepcionConstructorAsignaValoresIncorrectos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="28">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="30">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testLanzaExcepcionConstructorAsignaValoresIncorrectos"/>
+      </line>
+      <line nr="36">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="37">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="38">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="39">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="40">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="41">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="42">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="43">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="44">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+      </line>
+      <line nr="49">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="50">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="51">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="52">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="53">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="54">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="55">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="56">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="61">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+      </line>
+      <line nr="62">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+      </line>
+      <line nr="63">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+      </line>
+      <line nr="68">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="69">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+      </line>
+      <line nr="71">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="76">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="77">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="78">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="79">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="84">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="85">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="86">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="89">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+      </line>
+      <line nr="95">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="100">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="105">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="110">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="115">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="120">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+      </line>
+      <line nr="125">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+      </line>
+      <line nr="130">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="136">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="141">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="146">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="151">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="156">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="161">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+      <line nr="166">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+      </line>
+      <line nr="171">
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Dominio\Diagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DomainException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Support\Str</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Dominio\Abstracciones\AggregateRoot</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">InvalidArgumentException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Dominio\Paciente\Paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11"/>
+      <line no="12">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Diagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AggregateRoot</token>
+      </line>
+      <line no="13">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisisSolicitados</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="22"/>
+      <line no="23">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">null</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">constructorUno</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_NOT_IDENTICAL">!==</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">constructorDos</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSE">else</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">InvalidArgumentException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"Par&#xE1;metros no v&#xE1;lidos"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="33"/>
+      <line no="34">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">constructorUno</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING_CAST">(string)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Str</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">uuid</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_STRING">parent</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">fecha</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">peso</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">altura</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">descripcion</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">tipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="46"/>
+      <line no="47">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">constructorDos</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_STRING">parent</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">fecha</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">peso</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">altura</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">descripcion</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">tipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="58"/>
+      <line no="59">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">actualizarDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="61">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">peso</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="62">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">altura</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">descripcion</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="64">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="65"/>
+      <line no="66">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">addAnalisisClinico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">AnalisisClinico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisis</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">CONCLUIDO</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DomainException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"No se pueden agregar an&#xE1;lisis a un diagn&#xF3;stico concluido."</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="70">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="71">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisis</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="73"/>
+      <line no="74">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">removeAnalisisClinico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisisId</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="75">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="76">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">array_filter</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="77">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_FN">fn</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$a</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$a</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getId</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisisId</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="81"/>
+      <line no="82">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">concluirDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_FOREACH">foreach</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_AS">as</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisis</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$analisis</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isConcluido</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">				</token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DomainException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"No se puede concluir el diagn&#xF3;stico si hay an&#xE1;lisis pendientes."</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="87">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="89">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">CONCLUIDO</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="90">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="91"/>
+      <line no="92">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_COMMENT">// Getters</token>
+      </line>
+      <line no="93">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getPaciente</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Paciente</token>
+      </line>
+      <line no="94">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="95">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="96">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="97"/>
+      <line no="98">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getFecha</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTime</token>
+      </line>
+      <line no="99">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="100">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">fecha</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="101">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="102"/>
+      <line no="103">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getPeso</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+      </line>
+      <line no="104">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="105">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="106">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="107"/>
+      <line no="108">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAltura</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">float</token>
+      </line>
+      <line no="109">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="110">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="111">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="112"/>
+      <line no="113">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getDescripcion</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="114">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="115">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="116">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="117"/>
+      <line no="118">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getEstadoDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+      </line>
+      <line no="119">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="120">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="121">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="122"/>
+      <line no="123">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAnalisisSolicitados</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="124">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="125">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="126">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="127"/>
+      <line no="128">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getTipoDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagnostico</token>
+      </line>
+      <line no="129">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="130">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="131">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="132"/>
+      <line no="133">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_COMMENT">// Setters</token>
+      </line>
+      <line no="134">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setPaciente</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="135">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="136">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paciente</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$paciente</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="137">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="138"/>
+      <line no="139">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setFecha</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">DateTime</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="140">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="141">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">fecha</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fecha</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="142">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="143"/>
+      <line no="144">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setPeso</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="145">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="146">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">peso</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$peso</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="147">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="148"/>
+      <line no="149">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setAltura</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">float</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="150">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="151">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">altura</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$altura</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="152">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="153"/>
+      <line no="154">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setDescripcion</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="155">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="156">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">descripcion</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$descripcion</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="157">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="158"/>
+      <line no="159">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setEstadoDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">EstadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="160">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="161">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">estadoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$estadoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="162">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="163"/>
+      <line no="164">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setAnalisisSolicitados</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisisSolicitados</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="165">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="166">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">analisisSolicitados</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$analisisSolicitados</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="167">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="168"/>
+      <line no="169">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setTipoDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">TipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="170">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="171">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">tipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="172">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="173"/>
+      <line no="174">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="175"/>
+    </source>
+  </file>
+</phpunit>

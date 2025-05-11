@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="Entity.php" path="\Dominio\Abstracciones">
+    <totals>
+      <lines total="44" comments="0" code="44" executable="10" executed="10" percent="100.00"/>
+      <methods count="5" tested="5" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Mod2Nur\Dominio\Abstracciones\Entity" start="8" executable="10" executed="10" crap="7">
+      <namespace name="Mod2Nur\Dominio\Abstracciones"/>
+      <method name="__construct" signature="__construct(string $id)" start="12" end="21" crap="3" executable="5" executed="5" coverage="100"/>
+      <method name="esUuidValido" signature="esUuidValido(string $id): bool" start="23" end="27" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="getId" signature="getId(): string" start="29" end="32" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setId" signature="setId(string $id): void" start="34" end="37" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="equals" signature="equals(Mod2Nur\Dominio\Abstracciones\Entity $other): bool" start="39" end="42" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="14">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntityTest::testDebeLanzarExcepcionSiElIdEstaVacio"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\EntrevistaTest::testGetters"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters"/>
+      </line>
+      <line nr="15">
+        <covered by="Tests\Unit\EntityTest::testDebeLanzarExcepcionSiElIdEstaVacio"/>
+      </line>
+      <line nr="17">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\EntrevistaTest::testGetters"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters"/>
+      </line>
+      <line nr="18">
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+      </line>
+      <line nr="20">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\EntrevistaTest::testGetters"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters"/>
+      </line>
+      <line nr="25">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\EntrevistaTest::testGetters"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters"/>
+      </line>
+      <line nr="26">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unit\AddTipoDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConcluirAnalisis"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\EntrevistaTest::testGetters"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testSettersYGetters"/>
+      </line>
+      <line nr="31">
+        <covered by="Tests\Unit\AnalisisClinicoTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="Tests\Unit\EntrevistaTest::testConstructorAceptaUuidValido"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\TipoDiagnosticoTest::testConstructorAceptaUuid"/>
+      </line>
+      <line nr="36">
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+      </line>
+      <line nr="41">
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Dominio\Abstracciones</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">InvalidArgumentException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">PHPUnit\Framework\Constraint\IsEmpty</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7"/>
+      <line no="8">
+        <token name="T_ABSTRACT">abstract</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Entity</token>
+      </line>
+      <line no="9">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE">  </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11"/>
+      <line no="12">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">InvalidArgumentException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'El ID proporcionado no puede estar vac&#xED;o.'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">esUuidValido</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">			</token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">InvalidArgumentException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'El ID proporcionado no tiene un formato UUID v&#xE1;lido.'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="22"/>
+      <line no="23">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">esUuidValido</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$uuidRegex</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">preg_match</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$uuidRegex</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="28"/>
+      <line no="29">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getId</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="33"/>
+      <line no="34">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setId</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">equals</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Entity</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$other</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$other</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getId</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="43">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="44"/>
+    </source>
+  </file>
+</phpunit>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="AggregateRoot.php" path="\Dominio\Abstracciones">
+    <totals>
+      <lines total="12" comments="0" code="12" executable="1" executed="1" percent="100.00"/>
+      <methods count="1" tested="1" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Mod2Nur\Dominio\Abstracciones\AggregateRoot" start="5" executable="1" executed="1" crap="1">
+      <namespace name="Mod2Nur\Dominio\Abstracciones"/>
+      <method name="__construct" signature="__construct(string $id)" start="7" end="10" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="9">
+        <covered by="Tests\Unit\AddDiagnosticoHandlerTest::testHandleSuccessfullyCreatesDiagnostico"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaCrearYGuardarPaciente"/>
+        <covered by="Tests\Unit\AddPacienteHandlerTest::testInvokeDeberiaRetornarUnPaciente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorAsignaValoresCorrectamente"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testActualizarDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testGettersYSetters"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testAgregarAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testIntentarAgregarAnalisisClinicosADiagnosticoConcluido"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testRemoverAnalisisClinicos"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testConcluirDiagnostico"/>
+        <covered by="Tests\Unitarios\DiagnosticoTest::testExcepcionEnConcluirDiagnostico"/>
+        <covered by="Tests\Unit\EntityTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\EntityTest::testFuncionEquals"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPaciente"/>
+        <covered by="PacienteControllerTest::testCrearNuevoPacienteConUnitOfWork"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidAutomaticamente"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuid"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorAceptaUuidValido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorLanzaExcepcionConUuidInvalido"/>
+        <covered by="Tests\Unit\PacienteTest::testConstructorGeneraUuidCuandoIdEsVacio"/>
+        <covered by="Tests\Unit\PacienteTest::testSettersYGetters"/>
+        <covered by="Tests\Unit\PacienteTest::testHistorialYEntrevistasInicialmenteVacias"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testRemoverDiagnostico"/>
+        <covered by="Tests\Unit\PacienteTest::testAgregarEntrevista"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Dominio\Abstracciones</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_ABSTRACT">abstract</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AggregateRoot</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Entity</token>
+      </line>
+      <line no="6">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="7">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="8">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="9">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_STRING">parent</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="11">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="12"/>
+    </source>
+  </file>
+</phpunit>

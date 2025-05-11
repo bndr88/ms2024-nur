@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="TipoDiagController.php" path="\Presentacion\Controladores">
+    <totals>
+      <lines total="47" comments="17" code="30" executable="4" executed="4" percent="100.00"/>
+      <methods count="2" tested="2" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Mod2Nur\Presentacion\Controladores\TipoDiagController" start="10" executable="4" executed="4" crap="2">
+      <namespace name="Mod2Nur\Presentacion\Controladores"/>
+      <method name="__construct" signature="__construct(Mod2Nur\Presentacion\Mediator\CommandBus $commandBus)" start="16" end="19" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="addTipoDiagnostico" signature="addTipoDiagnostico(array $data)" start="21" end="31" crap="1" executable="3" executed="3" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="18">
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+      </line>
+      <line nr="24">
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+      </line>
+      <line nr="27">
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+      </line>
+      <line nr="30">
+        <covered by="TipoDiagControllerTest::testCrearNuevoTipoDeDiagnostico"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Presentacion\Controladores</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Aplicacion\Diagnostico\Commands\AddTipoDiagnosticoCommand</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Aplicacion\Diagnostico\Handlers\AddTipoDiagnosticoHandler</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentTipoDiagnosticoRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mod2Nur\Presentacion\Mediator\CommandBus</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9"/>
+      <line no="10">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TipoDiagController</token>
+      </line>
+      <line no="11">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="12">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AddTipoDiagnosticoHandler</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$addHandler</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_COMMENT">//private RemTipoDiagnostico $removeHandler;</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">CommandBus</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$commandBus</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">CommandBus</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$commandBus</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">commandBus</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$commandBus</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="20"/>
+      <line no="21">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">addTipoDiagnostico</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_COMMENT">// Crear el comando con los datos de entrada</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$command</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AddTipoDiagnosticoCommand</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'descripcion'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="25"/>
+      <line no="26">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_COMMENT">// Enviar el comando a trav&#xE9;s del Mediator (v&#xED;a CommandBus)</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">commandBus</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">dispatch</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$command</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="28"/>
+      <line no="29">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_COMMENT">// Retornar el resultado (o manejarlo seg&#xFA;n tu aplicaci&#xF3;n)</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$tipoDiagnostico</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="32"/>
+      <line no="33">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_COMMENT">/*public function destroy(string $id)</token>
+      </line>
+      <line no="34">
+        <token name="T_COMMENT">	{</token>
+      </line>
+      <line no="35">
+        <token name="T_COMMENT">		try {</token>
+      </line>
+      <line no="36">
+        <token name="T_COMMENT">			$command = new RemPacienteCommand($id);</token>
+      </line>
+      <line no="37">
+        <token name="T_COMMENT">			$this-&gt;removeHandler-&gt;handle($command);</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
+        <token name="T_COMMENT">			http_response_code(200);</token>
+      </line>
+      <line no="40">
+        <token name="T_COMMENT">			echo json_encode(['message' =&gt; 'Paciente eliminado']);</token>
+      </line>
+      <line no="41">
+        <token name="T_COMMENT">		} catch (\Exception $e) {</token>
+      </line>
+      <line no="42">
+        <token name="T_COMMENT">			http_response_code(400);</token>
+      </line>
+      <line no="43">
+        <token name="T_COMMENT">			echo json_encode(['error' =&gt; $e-&gt;getMessage()]);</token>
+      </line>
+      <line no="44">
+        <token name="T_COMMENT">		}</token>
+      </line>
+      <line no="45">
+        <token name="T_COMMENT">	}*/</token>
+      </line>
+      <line no="46">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="47"/>
+    </source>
+  </file>
+</phpunit>

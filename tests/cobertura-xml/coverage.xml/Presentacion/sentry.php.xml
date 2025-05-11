@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="sentry.php" path="\Presentacion">
+    <totals>
+      <lines total="13" comments="2" code="11" executable="7" executed="7" percent="100.00"/>
+      <methods count="0" tested="0" percent="0"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="0" tested="0" percent="0"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <coverage>
+      <line nr="4">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="6">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="8">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="9">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="10">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="11">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+      <line nr="12">
+        <covered by="Tests\Unit\SentryTest::testCaptureExceptionIsCalled"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_COMMENT">// sentry.php</token>
+      </line>
+      <line no="3"/>
+      <line no="4">
+        <token name="T_REQUIRE_ONCE">require_once</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DIR">__DIR__</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOT">.</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'/../../vendor/autoload.php'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="5"/>
+      <line no="6">
+        <token name="T_NAME_FULLY_QUALIFIED">\Sentry\init</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="7">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">//'dsn' =&gt; 'https://&lt;PUBLIC_KEY&gt;@&lt;HOST&gt;/&lt;PROJECT_ID&gt;',</token>
+      </line>
+      <line no="8">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'dsn'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'https://9be17d9a71fa8832e84d4400c4498c1f@o4509306343587840.ingest.us.sentry.io/4509306347192320'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="9">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'environment'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'production'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'release'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'mi-proyecto@1.0.0'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="11">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'error_types'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">E_ALL</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COMMENT">// captura todos los errores</token>
+      </line>
+      <line no="12">
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13"/>
+    </source>
+  </file>
+</phpunit>
