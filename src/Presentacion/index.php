@@ -35,4 +35,8 @@ register_shutdown_function(function () {
 });
 
 // Código de prueba para enviar un error
-throw new Exception("¡Este es un error de prueba!");
+try {
+  $this->functionFailsForSure();
+} catch (Throwable $exception) {
+  \Sentry\captureException($exception);
+}
