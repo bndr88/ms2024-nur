@@ -1,9 +1,14 @@
 <?php
 
+namespace Tests\Unit;
+
+use Exception;
+
 use PHPUnit\Framework\TestCase;
 use Sentry\ClientInterface;
 use Sentry\SentrySdk;
 use Sentry\State\Hub;
+use Throwable;
 
 class SentryTest extends TestCase
 {
@@ -17,6 +22,12 @@ class SentryTest extends TestCase
 
     public function testCaptureExceptionIsCalled()
     {
+		// Ejecutar sentry.php explícitamente para que su código se cubra
+		include_once __DIR__ . '/../../src/Presentacion/sentry.php';
+
+		// Ejecutar index.php, que depende de sentry.php
+		//include_once __DIR__ . '/../../src/Presentacion/index.php';
+
         // Mock del ClientInterface
         $mockClient = $this->createMock(ClientInterface::class);
 
@@ -39,4 +50,5 @@ class SentryTest extends TestCase
         restore_error_handler();
         restore_exception_handler();
     }
+
 }

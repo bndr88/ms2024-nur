@@ -1,7 +1,7 @@
 <?php
 // sentry.php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 \Sentry\init([
     //'dsn' => 'https://<PUBLIC_KEY>@<HOST>/<PROJECT_ID>',

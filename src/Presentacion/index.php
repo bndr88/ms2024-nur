@@ -35,8 +35,8 @@ register_shutdown_function(function () {
 });
 
 // Código de prueba para enviar un error
-try {
+/*try {
   $this->functionFailsForSure();
 } catch (Throwable $exception) {
   \Sentry\captureException($exception);
-}
+}*/
