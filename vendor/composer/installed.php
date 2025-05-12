@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wender/mod2-nur',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '1e7eba53152e15fdfb58c2849f21829e0fc61e02',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => 'b2a365f3dbd273df38413e597b1b3b46d786ce93',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -467,7 +467,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../jean85/pretty-package-versions',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -1211,6 +1211,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'sentry/sentry' => array(
+            'pretty_version' => '4.11.0',
+            'version' => '4.11.0.0',
+            'reference' => 'ebf67deb9902b6da58a4b3383cbd12fed3f4f555',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sentry/sentry',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/once' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -1356,7 +1365,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/options-resolver',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
             'pretty_version' => 'v1.31.0',
@@ -1581,9 +1590,9 @@
             'dev_requirement' => false,
         ),
         'wender/mod2-nur' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '1e7eba53152e15fdfb58c2849f21829e0fc61e02',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => 'b2a365f3dbd273df38413e597b1b3b46d786ce93',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
