@@ -17,7 +17,7 @@ $capsule->addConnection([
 	'collation' => 'utf8_unicode_ci',
 	'prefix' => '',
 ], 'default');
-//Ahora prueba para Release-1
+//Ahora prueba para Release-2
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
