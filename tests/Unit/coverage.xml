@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1747020138">
+  <project timestamp="1747020138">
+    <package name="Mod2Nur\Dominio\Abstracciones">
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Abstracciones\AggregateRoot.php">
+        <class name="Mod2Nur\Dominio\Abstracciones\AggregateRoot" namespace="Mod2Nur\Dominio\Abstracciones">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        </class>
+        <line num="7" type="method" name="__construct" visibility="protected" complexity="1" crap="1" count="26"/>
+        <line num="9" type="stmt" count="26"/>
+        <metrics loc="12" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </file>
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Abstracciones\Entity.php">
+        <class name="Mod2Nur\Dominio\Abstracciones\Entity" namespace="Mod2Nur\Dominio\Abstracciones">
+          <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="15" coveredelements="15"/>
+        </class>
+        <line num="12" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="37"/>
+        <line num="14" type="stmt" count="37"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="17" type="stmt" count="36"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="20" type="stmt" count="34"/>
+        <line num="23" type="method" name="esUuidValido" visibility="private" complexity="1" crap="1" count="36"/>
+        <line num="25" type="stmt" count="36"/>
+        <line num="26" type="stmt" count="36"/>
+        <line num="29" type="method" name="getId" visibility="public" complexity="1" crap="1" count="15"/>
+        <line num="31" type="stmt" count="15"/>
+        <line num="34" type="method" name="setId" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="39" type="method" name="equals" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <metrics loc="44" ncloc="44" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="15" coveredelements="15"/>
+      </file>
+    </package>
+    <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Abstracciones\Repository.php">
+      <metrics loc="11" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Mod2Nur\Dominio\Diagnostico">
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\AnalisisClinico.php">
+        <class name="Mod2Nur\Dominio\Diagnostico\AnalisisClinico" namespace="Mod2Nur\Dominio\Diagnostico">
+          <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
+        </class>
+        <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="17" type="stmt" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="19" type="stmt" count="2"/>
+        <line num="20" type="stmt" count="2"/>
+        <line num="23" type="method" name="concluirAnalisis" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="28" type="method" name="isConcluido" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <metrics loc="33" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
+      </file>
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\Diagnostico.php">
+        <class name="Mod2Nur\Dominio\Diagnostico\Diagnostico" namespace="Mod2Nur\Dominio\Diagnostico">
+          <metrics complexity="28" methods="23" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="52" coveredstatements="52" elements="75" coveredelements="75"/>
+        </class>
+        <line num="23" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="11"/>
+        <line num="25" type="stmt" count="11"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="9"/>
+        <line num="28" type="stmt" count="8"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="34" type="method" name="constructorUno" visibility="private" complexity="1" crap="1" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="37" type="stmt" count="2"/>
+        <line num="38" type="stmt" count="2"/>
+        <line num="39" type="stmt" count="2"/>
+        <line num="40" type="stmt" count="2"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="44" type="stmt" count="2"/>
+        <line num="47" type="method" name="constructorDos" visibility="private" complexity="1" crap="1" count="8"/>
+        <line num="49" type="stmt" count="8"/>
+        <line num="50" type="stmt" count="8"/>
+        <line num="51" type="stmt" count="8"/>
+        <line num="52" type="stmt" count="8"/>
+        <line num="53" type="stmt" count="8"/>
+        <line num="54" type="stmt" count="8"/>
+        <line num="55" type="stmt" count="8"/>
+        <line num="56" type="stmt" count="8"/>
+        <line num="59" type="method" name="actualizarDiagnostico" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
+        <line num="66" type="method" name="addAnalisisClinico" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="68" type="stmt" count="3"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="2"/>
+        <line num="74" type="method" name="removeAnalisisClinico" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="82" type="method" name="concluirDiagnostico" visibility="public" complexity="3" crap="3" count="2"/>
+        <line num="84" type="stmt" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="93" type="method" name="getPaciente" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="95" type="stmt" count="3"/>
+        <line num="98" type="method" name="getFecha" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="100" type="stmt" count="3"/>
+        <line num="103" type="method" name="getPeso" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="105" type="stmt" count="4"/>
+        <line num="108" type="method" name="getAltura" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="110" type="stmt" count="4"/>
+        <line num="113" type="method" name="getDescripcion" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="115" type="stmt" count="4"/>
+        <line num="118" type="method" name="getEstadoDiagnostico" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="120" type="stmt" count="4"/>
+        <line num="123" type="method" name="getAnalisisSolicitados" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="125" type="stmt" count="5"/>
+        <line num="128" type="method" name="getTipoDiagnostico" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="130" type="stmt" count="3"/>
+        <line num="134" type="method" name="setPaciente" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="136" type="stmt" count="1"/>
+        <line num="139" type="method" name="setFecha" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="141" type="stmt" count="1"/>
+        <line num="144" type="method" name="setPeso" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="146" type="stmt" count="1"/>
+        <line num="149" type="method" name="setAltura" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="151" type="stmt" count="1"/>
+        <line num="154" type="method" name="setDescripcion" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="156" type="stmt" count="1"/>
+        <line num="159" type="method" name="setEstadoDiagnostico" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="161" type="stmt" count="1"/>
+        <line num="164" type="method" name="setAnalisisSolicitados" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="166" type="stmt" count="5"/>
+        <line num="169" type="method" name="setTipoDiagnostico" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="171" type="stmt" count="1"/>
+        <metrics loc="175" ncloc="173" classes="1" methods="23" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="52" coveredstatements="52" elements="75" coveredelements="75"/>
+      </file>
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\TipoDiagnostico.php">
+        <class name="Mod2Nur\Dominio\Diagnostico\TipoDiagnostico" namespace="Mod2Nur\Dominio\Diagnostico">
+          <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="16" coveredelements="16"/>
+        </class>
+        <line num="13" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="6"/>
+        <line num="15" type="stmt" count="6"/>
+        <line num="16" type="stmt" count="4"/>
+        <line num="17" type="stmt" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="22" type="method" name="constructorUno" visibility="private" complexity="1" crap="1" count="4"/>
+        <line num="24" type="stmt" count="4"/>
+        <line num="25" type="stmt" count="4"/>
+        <line num="26" type="stmt" count="4"/>
+        <line num="29" type="method" name="constructorDos" visibility="private" complexity="1" crap="1" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="36" type="method" name="getDescripcion" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="38" type="stmt" count="4"/>
+        <line num="42" type="method" name="setDescripcion" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <metrics loc="47" ncloc="45" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="16" coveredelements="16"/>
+      </file>
+    </package>
+    <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\DiagnosticoRepository.php">
+      <metrics loc="13" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\EstadoDiagnostico.php">
+      <metrics loc="11" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Diagnostico\TipoDiagnosticoRepository.php">
+      <metrics loc="11" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Mod2Nur\Dominio\Entrevista">
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Entrevista\Entrevista.php">
+        <class name="Mod2Nur\Dominio\Entrevista\Entrevista" namespace="Mod2Nur\Dominio\Entrevista">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="14" type="stmt" count="2"/>
+        <line num="15" type="stmt" count="2"/>
+        <line num="18" type="method" name="getFechaRealizacion" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <metrics loc="23" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+    </package>
+    <package name="Mod2Nur\Dominio\Paciente">
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Paciente\Paciente.php">
+        <class name="Mod2Nur\Dominio\Paciente\Paciente" namespace="Mod2Nur\Dominio\Paciente">
+          <metrics complexity="19" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="42" coveredelements="42"/>
+        </class>
+        <line num="20" type="method" name="__construct" visibility="public" complexity="5" crap="5" count="17"/>
+        <line num="22" type="stmt" count="17"/>
+        <line num="23" type="stmt" count="13"/>
+        <line num="24" type="stmt" count="4"/>
+        <line num="25" type="stmt" count="3"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="31" type="method" name="constructorUno" visibility="private" complexity="1" crap="1" count="13"/>
+        <line num="33" type="stmt" count="13"/>
+        <line num="34" type="stmt" count="13"/>
+        <line num="35" type="stmt" count="13"/>
+        <line num="36" type="stmt" count="13"/>
+        <line num="39" type="method" name="constructorDos" visibility="private" complexity="1" crap="1" count="3"/>
+        <line num="41" type="stmt" count="3"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="47" type="method" name="getNombre" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="49" type="stmt" count="6"/>
+        <line num="52" type="method" name="getFechaNacimiento" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="54" type="stmt" count="6"/>
+        <line num="57" type="method" name="getHistorial" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="62" type="method" name="getEntrevistas" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="64" type="stmt" count="3"/>
+        <line num="68" type="method" name="setNombre" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="73" type="method" name="setFechaNacimiento" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="78" type="method" name="setHistorial" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="83" type="method" name="setEntrevistas" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="88" type="method" name="addDiagnostico" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="90" type="stmt" count="2"/>
+        <line num="93" type="method" name="removeDiagnostico" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="97" type="stmt" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="101" type="method" name="addEntrevista" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="103" type="stmt" count="1"/>
+        <line num="106" type="method" name="getDiagnosticos" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="108" type="stmt" count="2"/>
+        <metrics loc="111" ncloc="109" classes="1" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="42" coveredelements="42"/>
+      </file>
+      <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Paciente\PacienteCreadoEvent.php">
+        <class name="Mod2Nur\Dominio\Paciente\PacienteCreadoEvent" namespace="Mod2Nur\Dominio\Paciente">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+        </class>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="14" type="method" name="getIdPaciente" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="19" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </file>
+    </package>
+    <file name="C:\Users\el_bu\Herd\ms2024-nur-tf\src\Dominio\Paciente\PacienteRepository.php">
+      <metrics loc="18" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="13" loc="528" ncloc="522" classes="8" methods="56" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="112" coveredstatements="112" elements="168" coveredelements="168"/>
+  </project>
+</coverage>
