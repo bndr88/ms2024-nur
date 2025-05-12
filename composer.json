@@ -37,7 +37,7 @@
         }
     },
 	"scripts": {
-		"test": "vendor/bin/pest --coverage-clover tests/Unit/cobertura-xml/cobertura2.xml"
+		"test": "vendor/bin/pest --ci --coverage-clover cobertura2.xml"
 
 	}
 }
