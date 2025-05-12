@@ -11,6 +11,7 @@ use Mod2Nur\Presentacion\Mediator\CommandBus;
 use Mod2Nur\Presentacion\Controladores\PacienteController;
 use Mod2Nur\Presentacion\Controladores\TipoDiagController;
 use Mod2Nur\Presentacion\Mediator\QueryBus;
+use Throwable;
 
 // Permitir solicitudes desde cualquier origen (para evitar error 'CORS')
 //header("Access-Control-Allow-Origin: http://tudominio.com"); Si se quiere acceder solo desde un dominio
@@ -55,6 +56,16 @@ if ($requestMethod === 'GET' && $requestUri === '/hola') {
 	} catch (\Exception $e) {
 		http_response_code(500);
 		echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
+	}
+	exit;
+}
+
+if ($requestMethod === 'GET' && $requestUri === '/log-test') {
+	// Código de prueba para enviar un error
+	try {
+	$this->functionFailsForSure();
+	} catch (Throwable $exception) {
+	\Sentry\captureException($exception);
 	}
 	exit;
 }
