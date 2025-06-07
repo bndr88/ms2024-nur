@@ -67,6 +67,7 @@ class AddDiagnosticoHandler
 			});
 			// Si todo salió bien, la transacción hará commit automáticamente.
 			$this->db->commit();
+			//publicar evento en broker
 			return $diagnostico;
 		} catch (\Exception $e) {
 			// Si ocurre cualquier excepción, se realizará un rollback automáticamente
