@@ -1,4 +1,4 @@
-# PRESENTACIÓN ACTIVAD NRO. 2 - MÓDULO 5
+# PRESENTACIÓN ACTIVAD NRO.3 - MÓDULO 6
 # Universidad NUR - Diplomado en Arq. con Microservicios
 
 Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en Arq. con Microservicios.
@@ -6,24 +6,17 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 ## Descripción de la presentación
 
 Para esta presentación se realizaron las siguientes actividades:
-sonarlint
-- **`lint-staged`**: Se configuró lint-staged para ejecutar PHP-CS-Fixer únicamente sobre los archivos PHP modificados antes de cada commit.
-  - **Instalación**: Se instaló mediante el siguiente comando.
-   ```bash
-   npm install --save-dev lint-staged
-   ```
-  - **Configurar Code Formatter**: Realizado en la anterior actividad al instalar PHP-CS-Fixer
-  - **Configurar lint-staged**: En el archivo package.json
-   ```bash
-   "lint-staged": {
-    	"*.php": "./vendor/bin/php-cs-fixer fix --using-cache=no --quiet"
-  	}
-   ```
-  - **Configurar pre-commit con Husky**: Realizado en la anterior actividad. Pero con esta variación:
-   ```bash
-	npx lint-staged --relative
-	".\vendor\bin\pest" ./tests/Unit
-   ```
+
+### Implementación de la infraestructura
+
+Se creo un proyecto aparte para implementar una infraestructura base para ejecutar múltiples microservicios en contenedores Docker, gestionados a través de:
+
+- 🧭 **Kong API Gateway** (como puerta de entrada y enrutamiento)
+- 🐇 **RabbitMQ** (como sistema de mensajería entre microservicios)
+- 🐳 **Docker Compose** para orquestar todos los servicios
+- 🧬 Repositorios de microservicios clonados automáticamente desde GitHub
+
+---
 
 ## Estructura del Proyecto
 
