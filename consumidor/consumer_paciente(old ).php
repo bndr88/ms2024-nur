@@ -3,13 +3,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
-$host = 'localhost';
+//$host = 'localhost';
+$host = 'host.docker.internal';
 $port = 5672;
 $user = 'storeUser';
 $password = 'storeUserPassword';
 $vhost = '/';
 
-$queue = 'billing-order-created';
+$queue = 'contratacion-paciente-creado';
 
 $connection = new AMQPStreamConnection($host, $port, $user, $password, $vhost);
 $channel = $connection->channel();

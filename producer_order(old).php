@@ -10,18 +10,14 @@ $user = 'storeUser';
 $password = 'storeUserPassword';
 $vhost = '/';
 
-$exchange = 'paciente-creado';
+$exchange = 'order-created';
 
 $connection = new AMQPStreamConnection($host, $port, $user, $password, $vhost);
 $channel = $connection->channel();
 
 $channel->exchange_declare($exchange, 'fanout', true, true, false);
 
-$data = json_encode([
-    'id' => '',
-    'nombre' => 'Pablo mar',
-    'fechaNacimiento' => '2025-05-01'
-]);
+$data = json_encode(['id' => 504, 'amount' => 99.99]);
 
 $msg = new AMQPMessage($data, ['delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]);
 
