@@ -44,7 +44,6 @@ trait DatabaseRule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return void
      */
     public function __construct($table, $column = 'NULL')
     {
@@ -84,7 +83,7 @@ trait DatabaseRule
      * Set a "where" constraint on the query.
      *
      * @param  \Closure|string  $column
-     * @param  \Illuminate\Contracts\Support\Arrayable|\BackedEnum|\Closure|array|string|int|bool|null  $value
+     * @param  \Illuminate\Contracts\Support\Arrayable|\UnitEnum|\Closure|array|string|int|bool|null  $value
      * @return $this
      */
     public function where($column, $value = null)
@@ -112,7 +111,7 @@ trait DatabaseRule
      * Set a "where not" constraint on the query.
      *
      * @param  string  $column
-     * @param  \Illuminate\Contracts\Support\Arrayable|\BackedEnum|array|string  $value
+     * @param  \Illuminate\Contracts\Support\Arrayable|\UnitEnum|array|string  $value
      * @return $this
      */
     public function whereNot($column, $value)

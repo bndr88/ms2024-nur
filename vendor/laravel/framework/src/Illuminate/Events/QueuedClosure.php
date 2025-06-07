@@ -49,7 +49,6 @@ class QueuedClosure
      * Create a new queued closure event listener resolver.
      *
      * @param  \Closure  $closure
-     * @return void
      */
     public function __construct(Closure $closure)
     {
@@ -59,12 +58,12 @@ class QueuedClosure
     /**
      * Set the desired connection for the job.
      *
-     * @param  string|null  $connection
+     * @param  \UnitEnum|string|null  $connection
      * @return $this
      */
     public function onConnection($connection)
     {
-        $this->connection = $connection;
+        $this->connection = enum_value($connection);
 
         return $this;
     }
@@ -72,7 +71,7 @@ class QueuedClosure
     /**
      * Set the desired queue for the job.
      *
-     * @param  \BackedEnum|string|null  $queue
+     * @param  \UnitEnum|string|null  $queue
      * @return $this
      */
     public function onQueue($queue)

@@ -31,7 +31,6 @@ class PendingDispatch
      * Create a new pending job dispatch.
      *
      * @param  mixed  $job
-     * @return void
      */
     public function __construct($job)
     {
@@ -176,7 +175,7 @@ class PendingDispatch
         }
 
         return (new UniqueLock(Container::getInstance()->make(Cache::class)))
-                    ->acquire($this->job);
+            ->acquire($this->job);
     }
 
     /**

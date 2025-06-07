@@ -79,7 +79,7 @@ trait Queueable
     /**
      * Set the desired connection for the job.
      *
-     * @param  \BackedEnum|string|null  $connection
+     * @param  \UnitEnum|string|null  $connection
      * @return $this
      */
     public function onConnection($connection)
@@ -92,7 +92,7 @@ trait Queueable
     /**
      * Set the desired queue for the job.
      *
-     * @param  \BackedEnum|string|null  $queue
+     * @param  \UnitEnum|string|null  $queue
      * @return $this
      */
     public function onQueue($queue)
@@ -105,7 +105,7 @@ trait Queueable
     /**
      * Set the desired connection for the chain.
      *
-     * @param  \BackedEnum|string|null  $connection
+     * @param  \UnitEnum|string|null  $connection
      * @return $this
      */
     public function allOnConnection($connection)
@@ -121,7 +121,7 @@ trait Queueable
     /**
      * Set the desired queue for the chain.
      *
-     * @param  \BackedEnum|string|null  $queue
+     * @param  \UnitEnum|string|null  $queue
      * @return $this
      */
     public function allOnQueue($queue)
@@ -221,9 +221,11 @@ trait Queueable
      */
     public function prependToChain($job)
     {
-        $jobs = ChainedBatch::prepareNestedBatches(new Collection([$job]));
+        $jobs = ChainedBatch::prepareNestedBatches(Collection::wrap($job));
 
-        $this->chained = Arr::prepend($this->chained, $this->serializeJob($jobs->first()));
+        foreach ($jobs->reverse() as $job) {
+            $this->chained = Arr::prepend($this->chained, $this->serializeJob($job));
+        }
 
         return $this;
     }
@@ -236,9 +238,11 @@ trait Queueable
      */
     public function appendToChain($job)
     {
-        $jobs = ChainedBatch::prepareNestedBatches(new Collection([$job]));
+        $jobs = ChainedBatch::prepareNestedBatches(Collection::wrap($job));
 
-        $this->chained = array_merge($this->chained, [$this->serializeJob($jobs->first())]);
+        foreach ($jobs as $job) {
+            $this->chained = array_merge($this->chained, [$this->serializeJob($job)]);
+        }
 
         return $this;
     }

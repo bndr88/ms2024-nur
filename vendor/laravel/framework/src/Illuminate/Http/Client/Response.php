@@ -51,7 +51,6 @@ class Response implements ArrayAccess, Stringable
      * Create a new response instance.
      *
      * @param  \Psr\Http\Message\MessageInterface  $response
-     * @return void
      */
     public function __construct($response)
     {
@@ -236,7 +235,7 @@ class Response implements ArrayAccess, Stringable
     /**
      * Execute the given callback if there was a server or client error.
      *
-     * @param  callable  $callback
+     * @param  callable|(\Closure(\Illuminate\Http\Client\Response): mixed)  $callback
      * @return $this
      */
     public function onError(callable $callback)
@@ -340,7 +339,7 @@ class Response implements ArrayAccess, Stringable
     /**
      * Throw an exception if the response status code matches the given code.
      *
-     * @param  callable|int  $statusCode
+     * @param  int|(\Closure(int, \Illuminate\Http\Client\Response): bool)|callable  $statusCode
      * @return $this
      *
      * @throws \Illuminate\Http\Client\RequestException
@@ -358,7 +357,7 @@ class Response implements ArrayAccess, Stringable
     /**
      * Throw an exception unless the response status code matches the given code.
      *
-     * @param  callable|int  $statusCode
+     * @param  int|(\Closure(int, \Illuminate\Http\Client\Response): bool)|callable  $statusCode
      * @return $this
      *
      * @throws \Illuminate\Http\Client\RequestException
@@ -394,6 +393,68 @@ class Response implements ArrayAccess, Stringable
     public function throwIfServerError()
     {
         return $this->serverError() ? $this->throw() : $this;
+    }
+
+    /**
+     * Dump the content from the response.
+     *
+     * @param  string|null  $key
+     * @return $this
+     */
+    public function dump($key = null)
+    {
+        $content = $this->body();
+
+        $json = json_decode($content);
+
+        if (json_last_error() === JSON_ERROR_NONE) {
+            $content = $json;
+        }
+
+        if (! is_null($key)) {
+            dump(data_get($content, $key));
+        } else {
+            dump($content);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Dump the content from the response and end the script.
+     *
+     * @param  string|null  $key
+     * @return never
+     */
+    public function dd($key = null)
+    {
+        $this->dump($key);
+
+        exit(1);
+    }
+
+    /**
+     * Dump the headers from the response.
+     *
+     * @return $this
+     */
+    public function dumpHeaders()
+    {
+        dump($this->headers());
+
+        return $this;
+    }
+
+    /**
+     * Dump the headers from the response and end the script.
+     *
+     * @return never
+     */
+    public function ddHeaders()
+    {
+        $this->dumpHeaders();
+
+        exit(1);
     }
 
     /**
@@ -465,7 +526,7 @@ class Response implements ArrayAccess, Stringable
     public function __call($method, $parameters)
     {
         return static::hasMacro($method)
-                    ? $this->macroCall($method, $parameters)
-                    : $this->response->{$method}(...$parameters);
+            ? $this->macroCall($method, $parameters)
+            : $this->response->{$method}(...$parameters);
     }
 }
