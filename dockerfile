@@ -29,6 +29,9 @@ RUN apt-get update && apt-get install -y \
 # Instalar Composer globalmente
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Instala sockets y otras extensiones necesarias
+RUN docker-php-ext-install sockets
+
 # Instalar dependencias de Composer
 RUN composer install --no-dev --optimize-autoloader
 
