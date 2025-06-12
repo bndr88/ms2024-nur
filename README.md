@@ -7,7 +7,7 @@ Respositorio del Proyecto para ir aplicando todo lo aprendido en el Diplomado en
 
 Para esta presentación se realizaron las siguientes actividades:
 
-### Implementación de la infraestructura
+## Implementación de la infraestructura
 
 Se creo un proyecto aparte para implementar una infraestructura base para ejecutar múltiples microservicios en contenedores Docker, gestionados a través de:
 
@@ -17,7 +17,6 @@ Se creo un proyecto aparte para implementar una infraestructura base para ejecut
 - 🧬 Repositorios de microservicios clonados automáticamente desde GitHub
 
 ---
-
 ## Estructura del Proyecto
 
 Este microservicio se encarga de gestionar todo el historial de diagnósticos de un paciente y las entrevistas que solicitó

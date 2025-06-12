@@ -21,6 +21,7 @@ class EloquentDiagnosticoRepository implements DiagnosticoRepository
 		$DiagnosticoModel->altura = $diagnostico->getAltura();
 		$DiagnosticoModel->descripcion = $diagnostico->getDescripcion();
 		$DiagnosticoModel->tipoDiagnostico_id = $diagnostico->getTipoDiagnostico()->getId();
+		$DiagnosticoModel->fecha = $diagnostico->getFecha();
 
 		if ($DiagnosticoModel->save()) {
 			$diagnostico->setId($DiagnosticoModel->id);

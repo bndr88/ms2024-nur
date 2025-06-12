@@ -21,8 +21,8 @@ trait HasFactory
         $factory = static::newFactory() ?? Factory::factoryForModel(static::class);
 
         return $factory
-                    ->count(is_numeric($count) ? $count : null)
-                    ->state(is_callable($count) || is_array($count) ? $count : $state);
+            ->count(is_numeric($count) ? $count : null)
+            ->state(is_callable($count) || is_array($count) ? $count : $state);
     }
 
     /**
@@ -52,7 +52,7 @@ trait HasFactory
         if ($attributes !== []) {
             $useFactory = $attributes[0]->newInstance();
 
-            $factory = new $useFactory->factoryClass;
+            $factory = $useFactory->factoryClass::new();
 
             $factory->guessModelNamesUsing(fn () => static::class);
 

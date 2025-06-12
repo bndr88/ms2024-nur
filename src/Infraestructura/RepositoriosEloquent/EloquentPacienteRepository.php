@@ -11,9 +11,9 @@ use Mod2Nur\Infraestructura\UnitOfWork;
 
 class EloquentPacienteRepository implements PacienteRepository
 {
-	private UnitOfWork $unitOfWork;
+	private ?UnitOfWork $unitOfWork;
 
-	public function __construct(UnitOfWork $unitOfWork)
+	public function __construct(?UnitOfWork $unitOfWork)
 	{
 		$this->unitOfWork = $unitOfWork;
 	}

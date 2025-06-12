@@ -21,6 +21,7 @@ use Mod2Nur\Aplicacion\Paciente\Queries\GetHistorialQuery;
 use Mod2Nur\Aplicacion\Paciente\Queries\GetPacienteByIdQuery;
 use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentDiagnosticoRepository;
 use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentTipoDiagnosticoRepository;
+use Mod2Nur\Infraestructura\Publicador\RabbitMQEventPublisher;
 use Mod2Nur\Infraestructura\UnitOfWork;
 
 return function (): HandlersRegistry {
@@ -31,6 +32,7 @@ return function (): HandlersRegistry {
 	$repositoryPaciente = new EloquentPacienteRepository($UoW);
 	$repositoryTipoDiag = new EloquentTipoDiagnosticoRepository();
 	$repositoryDiagnostico = new EloquentDiagnosticoRepository();
+	$eventPublisher = new RabbitMQEventPublisher();
 
 	// Registro de Handlers para Commands y Queries
 	$registry->register(AddPacienteCommand::class, new AddPacienteHandler($repositoryPaciente));
@@ -39,7 +41,7 @@ return function (): HandlersRegistry {
 	$registry->register(GetListaPacientesQuery::class, new ListaPacientesHandler($repositoryPaciente));
 	$registry->register(GetHistorialQuery::class, new GetHistorialHandler($repositoryPaciente));
 
-	$registry->register(AddDiagnosticoCommand::class, new AddDiagnosticoHandler($repositoryDiagnostico, $repositoryTipoDiag, $repositoryPaciente, $db));
+	$registry->register(AddDiagnosticoCommand::class, new AddDiagnosticoHandler($repositoryDiagnostico, $repositoryTipoDiag, $repositoryPaciente,$eventPublisher, $db));
 	$registry->register(RemDiagnosticoCommand::class, new RemDiagnosticoHandler($repositoryDiagnostico));
 
 	$registry->register(AddTipoDiagnosticoCommand::class, new AddTipoDiagnosticoHandler($repositoryTipoDiag));

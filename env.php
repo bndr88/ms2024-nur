@@ -9,7 +9,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule();
 $capsule->addConnection([
 	'driver' => env('DB_CONNECTION', 'mysql'),
-	'host' => env('DB_HOST', '127.0.0.1'),
+	'host' => env('DB_HOST', 'nur-db'),
 	'database' => env('DB_DATABASE', 'nutrinur2'),
 	'username' => env('DB_USERNAME', 'root'),
 	'password' => env('DB_PASSWORD', 'Lm12345'),
