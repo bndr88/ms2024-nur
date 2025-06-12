@@ -10,7 +10,7 @@ $user = 'storeUser';
 $password = 'storeUserPassword';
 $vhost = '/';
 
-$exchange = 'paciente-creado';
+$exchange = 'diagnosticos-realizados';
 
 $connection = new AMQPStreamConnection($host, $port, $user, $password, $vhost);
 $channel = $connection->channel();
@@ -18,9 +18,9 @@ $channel = $connection->channel();
 $channel->exchange_declare($exchange, 'fanout', true, true, false);
 
 $data = json_encode([
-    'id'=> '',
-    'nombre'=> 'Pablo Marmol',
-    'fechaNacimiento'=> '2025-05-25'
+    'id'=> 'a1b2c3d4-e5f6-7890-1234-56789abcdef0',
+    'descripcion'=> 'Análisis de sangre 34',
+    'pacienteId'=> '12345678-90ab-cdef-1234-567890abcdef'
 ]);
 
 $msg = new AMQPMessage($data, ['delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]);

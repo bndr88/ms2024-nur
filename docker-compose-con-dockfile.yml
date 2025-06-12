@@ -5,31 +5,36 @@ services:
       dockerfile: dockerfile
     ports:
       - 8081:80
+    volumes:
+      - .:/app
     container_name: nur-app
     restart: always
     depends_on:
-      nur-db:
-        condition: service_healthy
-    #   nur-consumidor:
-    #     condition: service_healthy
+      - nur-db
     environment:
       DB_CONNECTION: mysql
       DB_HOST: nur-db
       DB_PORT: 3307
-      DB_DATABASE: nutrinur
+      DB_DATABASE: nutrinur2
       DB_USERNAME: pablo
       DB_PASSWORD: Lm12345
     networks:
       - nur-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 30s
     command: ["/bin/sh", "-c", "php migrate.php && apache2-foreground"]
     #Primero ejecuta php migrate.php para crear las tablas. Luego arranca Apache con apache2-foreground para que el contenedor siga ejecutándose
+
   nur-db:
     image: mysql:8.0
     container_name: nur-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Lm12345
-      MYSQL_DATABASE: nutrinur
+      MYSQL_DATABASE: nutrinur2
       MYSQL_USER: pablo
       MYSQL_PASSWORD: Lm12345
     ports:
@@ -38,25 +43,24 @@ services:
       - nur-network
     volumes:
       - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      retries: 5
-      start_period: 20s
 
-#   nur-consumidor:
-#     build:
-#       context: ./consumidor
-#     container_name: nur-consumidor
-#     networks:
-#       - nur-network
-#     depends_on:
-#       - nur-db
-#     healthcheck:
-#       test: ["CMD-SHELL", "php -r 'exit(0);'"]
-#       interval: 10s
-#       retries: 3
-#       start_period: 5s
+  nur-consumidor:
+    build:
+      context: src/Infraestructura/Consumidor
+      dockerfile: Dockerfile
+    container_name: nur-consumidor
+    volumes:
+      - .:/app
+    working_dir: /app/src/Infraestructura/Consumidor
+    networks:
+      - nur-network
+    depends_on:
+      - nur-app
+    healthcheck:
+      test: ["CMD-SHELL", "php -r 'exit(0);'"]
+      interval: 10s
+      retries: 3
+      start_period: 5s
 
 networks:
   nur-network:
