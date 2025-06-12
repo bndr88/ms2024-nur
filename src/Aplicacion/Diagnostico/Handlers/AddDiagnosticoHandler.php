@@ -10,6 +10,7 @@ use Mod2Nur\Aplicacion\Diagnostico\Commands\AddDiagnosticoCommand;
 use Mod2Nur\Dominio\Diagnostico\EstadoDiagnostico;
 use Mod2Nur\Dominio\Diagnostico\TipoDiagnostico;
 use Mod2Nur\Dominio\Diagnostico\TipoDiagnosticoRepository;
+use Mod2Nur\Aplicacion\Eventos\EventPublisher;
 
 class AddDiagnosticoHandler
 {
@@ -17,12 +18,18 @@ class AddDiagnosticoHandler
 	private TipoDiagnosticoRepository $tipoDiagRepository;
 	private PacienteRepository $pacienteRepository;
 	private DatabaseManager $db;
+    private EventPublisher $eventPublisher;
 
-	public function __construct(DiagnosticoRepository $diagnosticoRepository, TipoDiagnosticoRepository $tipoDiagRepository, PacienteRepository $pacienteRepository, DatabaseManager $DBManager)
+	public function __construct(DiagnosticoRepository $diagnosticoRepository,
+								TipoDiagnosticoRepository $tipoDiagRepository,
+								PacienteRepository $pacienteRepository,
+        						EventPublisher $eventPublisher,
+								DatabaseManager $DBManager)
 	{
 		$this->diagnosticoRepository = $diagnosticoRepository;
 		$this->tipoDiagRepository = $tipoDiagRepository;
 		$this->pacienteRepository = $pacienteRepository;
+		$this->eventPublisher = $eventPublisher;
 		$this->db = $DBManager;
 	}
 
@@ -47,7 +54,7 @@ class AddDiagnosticoHandler
 		}
 
 		try {
-			$diagnostico = null;
+			//$diagnostico = new Diagnostico();
 			$this->db->transaction(function () use ($command, $paciente, $tipoDiagnostico, $estadoDiagnostico, &$diagnostico) {
 
 				$diagnostico = new Diagnostico(
@@ -68,6 +75,15 @@ class AddDiagnosticoHandler
 			// Si todo salió bien, la transacción hará commit automáticamente.
 			$this->db->commit();
 			//publicar evento en broker
+			$this->eventPublisher->publish(
+				'diagnostico-realizado',
+				[
+					'id' => (string)$diagnostico->getId(),
+					'pacienteId' => $diagnostico->getPaciente()->getId(),
+					'descripcion' => $diagnostico->getDescripcion(),
+					//'fecha' => $diagnostico->getFecha()->format('Y-m-d'),
+				]
+			);
 			return $diagnostico;
 		} catch (\Exception $e) {
 			// Si ocurre cualquier excepción, se realizará un rollback automáticamente

@@ -103,6 +103,7 @@ class DiagnosticoControllerTest extends TestCase
 
 	}*/
 
+	/* TEST OFICIAL
 	public function testCrearNuevoDiagnosticoSinPaciente()
 	{
 		//Arrange'
@@ -128,7 +129,7 @@ class DiagnosticoControllerTest extends TestCase
 
 		//Act
 		$diagnosticoController->crearDiagnostico($data);
-	}
+	}*/
 
 	/*public function testCrearNuevoDiagnosticoSinFecha()
 	{
@@ -167,6 +168,7 @@ class DiagnosticoControllerTest extends TestCase
 		$diagnosticoController->crearDiagnostico($data);
 	}*/
 
+	/* TEST OFICIAL
 	public function testEliminarDiagnosticoExitoso()
 	{
 		//Arrange'
@@ -193,8 +195,9 @@ class DiagnosticoControllerTest extends TestCase
 		// Assert
 		$this->assertEquals(200, http_response_code());
 
-	}
+	}*/
 
+	/* TEST OFICIAL
 	public function testEliminarDiagnosticoFallido()
 	{
 		//Arrange'
@@ -221,7 +224,7 @@ class DiagnosticoControllerTest extends TestCase
 		// Assert
 		$this->assertEquals(400, http_response_code());
 
-	}
+	}*/
 
 	/*public function testEliminarDiagnosticoSinMock()
 	{

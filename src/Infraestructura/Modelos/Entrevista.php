@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../../env.php';
 
 class Entrevista extends Model
 {
-	protected $table = 'Entrevista';
+	protected $table = 'entrevista';
 	public $incrementing = false;
 	protected $keyType = 'string';
 	protected $fillable = ['id', 'paciente_id', 'fechaRealizacion'];

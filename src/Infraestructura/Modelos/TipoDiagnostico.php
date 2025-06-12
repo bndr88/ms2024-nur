@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../../env.php';
 
 class TipoDiagnostico extends Model
 {
-	protected $table = 'TipoDiagnostico';
+	protected $table = 'tipodiagnostico';
 	public $incrementing = false;
 	protected $keyType = 'string';
 	protected $fillable = ['id', 'descripcion'];
