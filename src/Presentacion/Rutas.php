@@ -11,6 +11,9 @@ use Mod2Nur\Presentacion\Mediator\CommandBus;
 use Mod2Nur\Presentacion\Controladores\PacienteController;
 use Mod2Nur\Presentacion\Controladores\TipoDiagController;
 use Mod2Nur\Presentacion\Mediator\QueryBus;
+use Mod2Nur\Dominio\Outbox\OutboxMessage;
+use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentOutboxRepository;
+use DateTime;
 
 // Permitir solicitudes desde cualquier origen (para evitar error 'CORS')
 //header("Access-Control-Allow-Origin: http://tudominio.com"); Si se quiere acceder solo desde un dominio
@@ -67,6 +70,27 @@ if ($requestMethod === 'POST' && $requestUri === '/paciente/add') {
 		header('Content-Type: application/json');
 		http_response_code(200);
 		echo json_encode(['message' => 'Paciente creado', 'ID paciente registrado' => $paciente->getId()], JSON_PRETTY_PRINT);
+	} catch (\Exception $e) {
+		http_response_code(500);
+		echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
+	}
+	exit;
+}
+
+if ($requestMethod === 'GET' && $requestUri === '/test-outbox') {
+	try {
+		// Registra un mensaje de prueba en el Outbox
+		$mensaje = new OutboxMessage(
+			id: \Ramsey\Uuid\Uuid::uuid4()->toString(),
+			tipo: 'DiagnosticoCreado',
+			contenido: ['id' => 123, 'data' => 'ejemplo'],
+			fechaCreacion: new DateTime("2025-06-12")
+		);
+		$repo = new EloquentOutboxRepository();
+    	$resultado = $repo->guardar($mensaje);
+		header('Content-Type: application/json');
+		http_response_code(200);
+	echo json_encode(['message' => 'Outbox registrado'/*, 'ID mensaje registrado' => $resultado->getId()*/], JSON_PRETTY_PRINT);
 	} catch (\Exception $e) {
 		http_response_code(500);
 		echo json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT);
