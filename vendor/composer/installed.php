@@ -3,7 +3,7 @@
         'name' => 'wender/mod2-nur',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '0374c70a668e1791891df6c8bcd85e4e59ff6350',
+        'reference' => '76a48dd2210e3414859e34d261870bc47681c4c1',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -176,9 +176,9 @@
             'dev_requirement' => true,
         ),
         'filp/whoops' => array(
-            'pretty_version' => '2.18.1',
-            'version' => '2.18.1.0',
-            'reference' => '8fcc6a862f2e7b94eb4221fd0819ddba3d30ab26',
+            'pretty_version' => '2.18.2',
+            'version' => '2.18.2.0',
+            'reference' => '89dabca1490bc77dbcab41c2b20968c7e44bf7c3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
@@ -259,205 +259,205 @@
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/broadcasting' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/bus' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/cache' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/collections' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/concurrency' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/conditionable' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/config' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/console' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/container' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/cookie' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/database' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/encryption' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/events' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/filesystem' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/hashing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/http' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/log' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/macroable' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/mail' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/notifications' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/pagination' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/pipeline' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/process' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/queue' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/redis' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/routing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/session' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/support' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/testing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/translation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/validation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'illuminate/view' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.17.0',
+                0 => 'v12.18.0',
             ),
         ),
         'jean85/pretty-package-versions' => array(
@@ -476,9 +476,9 @@
             ),
         ),
         'laravel/framework' => array(
-            'pretty_version' => 'v12.17.0',
-            'version' => '12.17.0.0',
-            'reference' => '8729d084510480fdeec9b6ad198180147d4a7f06',
+            'pretty_version' => 'v12.18.0',
+            'version' => '12.18.0.0',
+            'reference' => '7d264a0dad2bfc5c154240b38e8ce9b2c4cdd14d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
@@ -608,9 +608,9 @@
             'dev_requirement' => true,
         ),
         'nesbot/carbon' => array(
-            'pretty_version' => '3.9.1',
-            'version' => '3.9.1.0',
-            'reference' => 'ced71f79398ece168e24f7f7710462f462310d4d',
+            'pretty_version' => '3.10.0',
+            'version' => '3.10.0.0',
+            'reference' => 'c1397390dd0a7e0f11660f0ae20f753d88c1f3d9',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
@@ -644,9 +644,9 @@
             'dev_requirement' => true,
         ),
         'nunomaduro/collision' => array(
-            'pretty_version' => 'v8.8.0',
-            'version' => '8.8.0.0',
-            'reference' => '4cf9f3b47afff38b139fb79ce54fc71799022ce8',
+            'pretty_version' => 'v8.8.1',
+            'version' => '8.8.1.0',
+            'reference' => '44ccb82e3e21efb5446748d2a3c81a030ac22bd5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/collision',
             'aliases' => array(),
@@ -1625,7 +1625,7 @@
         'wender/mod2-nur' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '0374c70a668e1791891df6c8bcd85e4e59ff6350',
+            'reference' => '76a48dd2210e3414859e34d261870bc47681c4c1',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
