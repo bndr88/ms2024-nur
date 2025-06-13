@@ -45,7 +45,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pLm12345"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       retries: 5
       start_period: 20s
@@ -55,6 +55,7 @@ services:
       context: src/Infraestructura/Consumidor
       dockerfile: Dockerfile
     container_name: nur-consumidor
+    restart: always
     volumes:
       - .:/app
     working_dir: /app/src/Infraestructura/Consumidor
