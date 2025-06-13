@@ -27,6 +27,7 @@ return array(
     '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     '47e1160838b5e5a10346ac4084b58c23' => $vendorDir . '/laravel/prompts/src/helpers.php',
     'a1cfe24d14977df6878b9bf804af2d1c' => $vendorDir . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
+    '5255c38a0faeba867671b61dfda6d864' => $vendorDir . '/paragonie/random_compat/lib/random.php',
     'aadac1114cab8dc19489a7f6dc24c003' => $vendorDir . '/pestphp/pest-plugin-arch/src/Autoload.php',
     'e39a8b23c42d4e1452234d762b03835a' => $vendorDir . '/ramsey/uuid/src/functions.php',
     '476ca15b8d69b04665cd879be9cb4c68' => $vendorDir . '/laravel/framework/src/Illuminate/Collections/functions.php',
