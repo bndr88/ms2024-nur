@@ -1,3 +1,0 @@
-[submodule "compatibility-suite/pact-compatibility-suite"]
-	path = compatibility-suite/pact-compatibility-suite
-	url = https://github.com/pact-foundation/pact-compatibility-suite.git

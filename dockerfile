@@ -35,7 +35,7 @@ RUN docker-php-ext-install sockets
 # Instalar dependencias de Composer
 RUN composer install --no-dev --optimize-autoloader
 
-RUN composer require phpseclib/phpseclib:^3.0 -W
+# RUN composer require phpseclib/phpseclib:^3.0 -W
 
 # Exponer el puerto de Apache
 EXPOSE 80
