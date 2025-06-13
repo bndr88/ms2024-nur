@@ -7,11 +7,20 @@ RUN apt-get update && apt-get install -y \
     git \
     && docker-php-ext-install sockets zip pdo pdo_mysql
 
-COPY . /app
+# Instalar Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Crear directorio de trabajo
 WORKDIR /app
 
-RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer && \
-    composer install
+# Copiar archivos del consumidor
+COPY . /app
 
+# Instalar dependencias con Composer
+RUN composer install
+
+# Asegurar que el autoload esté actualizado
+RUN composer dump-autoload
+
+# Ejecutar el consumidor por defecto
 CMD ["php", "publish.php"]
