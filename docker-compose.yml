@@ -85,7 +85,7 @@ services:
       DB_DATABASE: nutrinur2
       DB_USERNAME: pablo
       DB_PASSWORD: Lm12345
-      RABBITMQ_HOST: host.docker.internal
+      RABBITMQ_HOST: rabbitmq
       RABBITMQ_PORT: 5672
       RABBITMQ_USER: storeUser
       RABBITMQ_PASSWORD: storeUserPassword
