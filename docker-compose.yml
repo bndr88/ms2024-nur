@@ -1,6 +1,6 @@
 services:
   nur-app:
-    image: wendermendez/nutrinur:3.0
+    image: wendermendez/nutrinur:3.1
     ports:
       - 8081:80
     volumes:
