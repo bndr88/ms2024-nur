@@ -40,9 +40,9 @@ foreach ($queues as $queue) {
 
         switch ($queue) {
             case 'contratacion-paciente-creado':
-                if (isset($data['IdPatient'], $data['Name'])) {
+                if (isset($data['PatientId'], $data['Name'])) {
                     $paciente = new Paciente(
-                        $data['IdPatient'],
+                        $data['PatientId'],
                         $data['Name'],
                         new DateTime('2025-05-25')
                     );
