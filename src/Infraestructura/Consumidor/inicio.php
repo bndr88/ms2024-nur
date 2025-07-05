@@ -6,7 +6,7 @@ use Mod2Nur\Infraestructura\RepositoriosEloquent\EloquentPacienteRepository;
 use Mod2Nur\Dominio\Paciente\Paciente;
 
 // Configuración de RabbitMQ
-$host = 'host.docker.internal';
+$host = 'rabbitmq';
 $port = 5672;
 $user = 'storeUser';
 $password = 'storeUserPassword';
@@ -40,11 +40,11 @@ foreach ($queues as $queue) {
 
         switch ($queue) {
             case 'contratacion-paciente-creado':
-                if (isset($data['id'], $data['nombre'], $data['fechaNacimiento'])) {
+                if (isset($data['IdPatient'], $data['Name'])) {
                     $paciente = new Paciente(
-                        $data['id'],
-                        $data['nombre'],
-                        new DateTime($data['fechaNacimiento'])
+                        $data['IdPatient'],
+                        $data['Name'],
+                        new DateTime('2025-05-25')
                     );
                     $repositorio->save($paciente);
                     echo " [✓] Paciente registrado desde {$queue}.\n";
