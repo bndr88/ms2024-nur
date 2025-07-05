@@ -1,6 +1,6 @@
 services:
   nur-app:
-    image: wendermendez/nutrinur:3.0
+    image: wendermendez/nutrinur:3.1
     ports:
       - 8081:80
     volumes:
@@ -85,14 +85,14 @@ services:
       DB_DATABASE: nutrinur2
       DB_USERNAME: pablo
       DB_PASSWORD: Lm12345
-      RABBITMQ_HOST: host.docker.internal
+      RABBITMQ_HOST: rabbitmq
       RABBITMQ_PORT: 5672
       RABBITMQ_USER: storeUser
       RABBITMQ_PASSWORD: storeUserPassword
 
 networks:
   nur-network:
-    driver: bridge
+    external: true
 
 volumes:
   mysql_data:
